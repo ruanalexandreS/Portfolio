@@ -1,0 +1,79 @@
+<div class="stars-bg"></div>
+<div class="stars-overlay"></div>
+
+<div class="container">
+  
+  <nav>
+    <div class="logo">
+      Ruan<span style="color: var(--accent)">.dev</span>
+    </div>
+
+    @if (modoEdicao) {
+      <a routerLink="/cadastro" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">
+        + Adicionar Projeto
+      </a>
+    }
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      
+      <div class="hero-text">
+        <p class="greeting">Olá, bem-vindo ao meu mundo</p>
+        <h1 class="hero-title">Transformando ideias em <br> Software Real.</h1>
+        <p class="hero-desc">
+          Sou estudante de Engenharia de Software focado em criar soluções robustas com 
+          <strong>.NET, C# e Angular</strong>. Explore meus projetos abaixo.
+        </p>
+        <div>
+          <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+          <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="profile-frame">
+          <div class="profile-glow"></div>
+          <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 class="section-title">Meus Projetos Recentes</h2>
+
+    @if (projetos$ | async; as lista) {
+      
+      <div class="projects-grid">
+        @for (projeto of lista; track projeto.id) {
+          <div class="card">
+            <img [src]="projeto.urlImagem" class="card-img" alt="{{ projeto.titulo }}">
+            
+            <div class="card-body">
+              <h3 class="card-title">{{ projeto.titulo }}</h3>
+              <p class="card-text">{{ projeto.descricaoPT }}</p>
+              
+              <div style="margin-bottom: 20px;">
+                <span class="tech-tag">{{ projeto.tecnologias }}</span>
+              </div>
+
+              <div style="display: flex; gap: 10px;">
+                <a [href]="projeto.urlGithub" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 8px 15px; margin:0; flex:1; text-align:center;">GitHub</a>
+                <a [href]="projeto.urlDeploy" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px 15px; margin:0; flex:1; text-align:center;">Demo</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+    } @else {
+      <div style="text-align: center; padding: 50px; color: var(--muted);">
+        <p>Carregando projetos do servidor...</p>
+      </div>
+    }
+
+  </section>
+
+</div>

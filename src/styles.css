@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* Definição das Cores Globais */
+:root {
+  --bg-1: #0f172a;
+  --bg-2: #000000;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.5);
+  --card-bg: rgba(30, 41, 59, 0.7);
+}
+
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-1);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow-x: hidden;
+}
