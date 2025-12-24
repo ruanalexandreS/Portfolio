@@ -1,79 +1,141 @@
 <div class="stars-bg"></div>
 <div class="stars-overlay"></div>
 
-<div class="container">
+<nav class="container">
+  <div class="logo">Ruan<span style="color: var(--accent)">.dev</span></div>
   
-  <nav>
-    <div class="logo">
-      Ruan<span style="color: var(--accent)">.dev</span>
-    </div>
+  <div style="display: flex; gap: 15px; align-items: center;">
+    
+    <a href="assets/curriculo.pdf" download="Currículo_Ruan_Alexandre.pdf" class="btn btn-primary" style="padding: 8px 25px; font-size: 0.9rem; box-shadow: 0 0 15px var(--accent-glow);">
+      Download CV 📄
+    </a>
 
-    @if (modoEdicao) {
-      <a routerLink="/cadastro" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">
-        + Adicionar Projeto
-      </a>
+    @if (modoEdicao) { 
+      <a routerLink="/cadastro" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
+        + Admin
+      </a> 
     }
-  </nav>
 
-  <section class="hero">
-    <div class="hero-content">
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-content">
+    
+    <div>
+      <p class="greeting">OLÁ, EU SOU O RUAN</p>
+      <h1 class="hero-title">Construindo o futuro com <br>.NET & Angular</h1>
+      <p class="hero-desc">
+        Estudante de Engenharia de Software focado em criar soluções robustas, escaláveis e performáticas. 
+        Transformando café em código limpo. ☕
+      </p>
       
-      <div class="hero-text">
-        <p class="greeting">Olá, bem-vindo ao meu mundo</p>
-        <h1 class="hero-title">Transformando ideias em <br> Software Real.</h1>
-        <p class="hero-desc">
-          Sou estudante de Engenharia de Software focado em criar soluções robustas com 
-          <strong>.NET, C# e Angular</strong>. Explore meus projetos abaixo.
-        </p>
-        <div>
-          <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-          <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">GitHub</a>
-        </div>
+      <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px;">
+        <a href="#projects" class="btn btn-primary">
+          Ver Projetos
+        </a>
+        <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank" class="btn btn-outline">
+          LinkedIn
+        </a>
       </div>
-
-      <div class="hero-image">
-        <div class="profile-frame">
-          <div class="profile-glow"></div>
-          <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <section id="projetos">
-    <h2 class="section-title">Meus Projetos Recentes</h2>
+    <div class="orbit-container">
+      <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
+      
+      <div class="orbit-ring">
+        <div class="tech-icon" title="C#"><i class="devicon-csharp-plain"></i></div>
+        <div class="tech-icon" title="Angular"><i class="devicon-angular-plain"></i></div>
+        <div class="tech-icon" title=".NET"><i class="devicon-dotnetcore-plain"></i></div>
+        <div class="tech-icon" title="SQL Server"><i class="devicon-microsoftsqlserver-plain"></i></div>
+        <div class="tech-icon" title="TypeScript"><i class="devicon-typescript-plain"></i></div>
+        <div class="tech-icon" title="Git"><i class="devicon-git-plain"></i></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section id="about" class="about-section">
+  <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+    <div>
+      <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Sobre Mim</h2>
+      <p style="color: var(--muted); line-height: 1.8; margin-bottom: 20px;">
+        Minha jornada na programação começou com a curiosidade de entender como as coisas funcionam. 
+        Hoje, estou me especializando no ecossistema Microsoft (.NET), criando APIs RESTful e integrando 
+        com interfaces modernas em Angular.
+      </p>
+      <p style="color: var(--muted); line-height: 1.8;">
+        Busco sempre aplicar boas práticas como SOLID e Clean Code para entregar software de qualidade.
+      </p>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Tech Stack</h3>
+      <div>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">.NET 8/9</span>
+        <span class="skill-tag">ASP.NET Core</span>
+        <span class="skill-tag">Entity Framework</span>
+        <span class="skill-tag">Angular</span>
+        <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">Git / GitHub</span>
+        <span class="skill-tag">Tailwind CSS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding: 80px 0;">
+  <div class="container">
+    <h2 class="section-title">Meus Projetos</h2>
+    <p style="text-align: center; color: var(--muted); margin-bottom: 50px;">O que tenho construído recentemente</p>
 
     @if (projetos$ | async; as lista) {
-      
       <div class="projects-grid">
         @for (projeto of lista; track projeto.id) {
           <div class="card">
-            <img [src]="projeto.urlImagem" class="card-img" alt="{{ projeto.titulo }}">
-            
+            <img [src]="projeto.urlImagem" class="card-img" alt="Imagem do projeto">
             <div class="card-body">
               <h3 class="card-title">{{ projeto.titulo }}</h3>
-              <p class="card-text">{{ projeto.descricaoPT }}</p>
+              <p class="card-text">
+                {{ projeto.descricaoPT }}
+              </p>
               
               <div style="margin-bottom: 20px;">
-                <span class="tech-tag">{{ projeto.tecnologias }}</span>
+                <span class="tech-tag">
+                  {{ projeto.tecnologias }}
+                </span>
               </div>
 
-              <div style="display: flex; gap: 10px;">
-                <a [href]="projeto.urlGithub" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 8px 15px; margin:0; flex:1; text-align:center;">GitHub</a>
-                <a [href]="projeto.urlDeploy" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px 15px; margin:0; flex:1; text-align:center;">Demo</a>
+              <div style="display: flex;">
+                <a [href]="projeto.urlGithub" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center; margin-left:0; margin-right: 10px; padding: 10px 0;">GitHub</a>
+                <a [href]="projeto.urlDeploy" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center; padding: 10px 0;">Deploy</a>
               </div>
             </div>
           </div>
         }
       </div>
-
     } @else {
-      <div style="text-align: center; padding: 50px; color: var(--muted);">
-        <p>Carregando projetos do servidor...</p>
+      <div style="text-align: center; padding: 50px;">
+        <p style="color: var(--muted);">Carregando projetos do banco de dados...</p>
       </div>
     }
+  </div>
+</section>
 
-  </section>
-
-</div>
+<section id="contact" style="padding: 100px 0;">
+  <div class="container">
+    <div class="contact-box">
+      <h2 class="section-title" style="margin-bottom: 20px;">Vamos Conversar?</h2>
+      <p style="color: var(--muted); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Estou disponível para novas oportunidades. Se você tem uma vaga, um projeto ou apenas quer dar um "Oi", minha caixa de entrada está sempre aberta!
+      </p>
+      <a href="ruanalexandre625@gmail.com" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">
+        Mandar E-mail 📧
+      </a>
+    </div>
+  </div>
+</section>

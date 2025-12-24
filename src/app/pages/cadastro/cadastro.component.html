@@ -1,1 +1,51 @@
-<p>cadastro works!</p>
+<div class="stars-bg"></div>
+
+<div class="container fade-in">
+  
+  <div class="form-card">
+    <h2 class="form-title">Novo Projeto 🚀</h2>
+    <p style="color: var(--muted); text-align: center; margin-bottom: 30px;">
+      Adicione um novo item ao seu portfólio.
+    </p>
+
+    <form (ngSubmit)="salvar()">
+      
+      <div class="form-group">
+        <label>Título do Projeto</label>
+        <input type="text" [(ngModel)]="projeto.titulo" name="titulo" placeholder="Ex: E-commerce Nike" required>
+      </div>
+
+      <div class="form-group">
+        <label>Descrição</label>
+        <textarea [(ngModel)]="projeto.descricaoPT" name="descricao" rows="4" placeholder="Ex: Sistema desenvolvido com..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Tecnologias (Separadas por vírgula)</label>
+        <input type="text" [(ngModel)]="projeto.tecnologias" name="tecnologias" placeholder="Ex: C#, Angular, SQL Server">
+      </div>
+
+      <div class="form-group">
+        <label>URL da Imagem</label>
+        <input type="text" [(ngModel)]="projeto.urlImagem" name="urlImagem" placeholder="https://...">
+      </div>
+
+      <div class="row">
+        <div class="form-group half">
+          <label>URL GitHub</label>
+          <input type="text" [(ngModel)]="projeto.urlGithub" name="urlGithub" placeholder="https://github.com/...">
+        </div>
+        <div class="form-group half">
+          <label>URL Deploy (Demo)</label>
+          <input type="text" [(ngModel)]="projeto.urlDeploy" name="urlDeploy" placeholder="https://...">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-outline" (click)="voltar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar Projeto</button>
+      </div>
+
+    </form>
+  </div>
+</div>
