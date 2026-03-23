@@ -36,19 +36,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   experiencias = [
     {
-      empresa: 'Balta.io & Unicesumar',
-      cargo: 'Estudante de Engenharia de Software e .NET',
-      periodo: 'Atual',
-      descricao: 'Focando no aprofundamento em desenvolvimento Backend com .NET, C# e conceitos sólidos de Engenharia de Software.',
-      tecnologias: ['.NET 8', 'C#', 'Arquitetura Limpa']
+      empresa: 'Prefeitura Municipal de Pojuca — Ouvidoria',
+      cargo: 'Estagiário de TI',
+      periodo: 'Set 2025 – Dez 2025',
+      descricao: 'Contribuí com análise e automação de dados na Ouvidoria Municipal, apoiando a tomada de decisão da gestão pública.',
+      bullets: [
+        'Desenvolvi consultas SQL e relatórios no Excel para extração e análise de dados operacionais da secretaria.',
+        'Automatizei tratamentos de dados com scripts Python, reduzindo retrabalho manual em processos recorrentes.',
+        'Construí dashboards interativos no Power BI para monitoramento de indicadores internos.',
+        'Integrei sistemas internos via consumo de APIs REST, conectando fontes de dados distintas.'
+      ],
+      tecnologias: ['SQL Server', 'Python', 'Power BI', 'APIs REST', 'Excel']
     },
-    {
-      empresa: 'Udemy',
-      cargo: 'Formação C# e Programação Orientada a Objetos',
-      periodo: 'Concluído',
-      descricao: 'Construção de base sólida no ecossistema Microsoft com o curso completo de C# e POO.',
-      tecnologias: ['C#', 'POO', 'Lógica de Programação']
-    }
   ];
 
   skills = [
