@@ -106,7 +106,7 @@
 }
 
 /* ==========================================================================
-   4. HERO
+   4. Principal
    ========================================================================== */
 .hero {
     min-height: 85vh;
@@ -774,6 +774,186 @@
 .skill-tag:hover {
     border-color: rgba(59, 130, 246, 0.5);
     color: #e2e8f0;
+}
+
+/* ==========================================================================
+   FORMAÇÃO ACADÊMICA
+   ========================================================================== */
+.education-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6, #38d9a9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.education-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.education-card {
+    display: flex;
+    gap: 1.2rem;
+    background: rgba(10, 22, 40, 0.7);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 16px;
+    padding: 1.8rem;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+.education-card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.education-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.education-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.education-dot-active {
+    background: #3b82f6;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+.education-card-body {
+    flex: 1;
+}
+
+.education-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.education-institution {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin-bottom: 2px;
+}
+
+.education-degree {
+    font-size: 0.9rem;
+    color: #3b82f6;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.education-period {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: #475569;
+}
+
+.education-badge {
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.education-badge-active {
+    background: rgba(56, 217, 169, 0.1);
+    border: 1px solid rgba(56, 217, 169, 0.3);
+    color: #38d9a9;
+}
+
+.education-badge-done {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+}
+
+.education-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.education-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.education-tag {
+    padding: 4px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    color: #64748b;
+    background: rgba(255, 255, 255, 0.03);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.education-tag:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #94a3b8;
+}
+
+@media (max-width: 600px) {
+    .education-card {
+        flex-direction: column;
+    }
+
+    .education-card-left {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .education-card-header {
+        flex-direction: column;
+    }
 }
 
 /* ==========================================================================
