@@ -1,358 +1,647 @@
 /* ==========================================================================
-   1. VARIÁVEIS E BASE (INTACTOS)
+   1. VARIÁVEIS E BASE
    ========================================================================== */
 :root {
-  --bg-1: #0f172a; /* Azul muito escuro (quase preto) */
-  --bg-2: #000000;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --accent: #3b82f6; /* Azul Neon */
-  --accent-glow: rgba(59, 130, 246, 0.5);
-  --card-bg: rgba(30, 41, 59, 0.7);
+    --bg-1: #0f172a;
+    --bg-navy: #0b1120;
+    --text: #e2e8f0;
+    --text-silver: #cbd5e1;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-teal: #38d9a9;
+    --accent-glow: rgba(59, 130, 246, 0.5);
 }
 
 :host {
-  display: block;
-  min-height: 100vh;
-  background-color: var(--bg-1);
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  color: var(--text);
-  overflow-x: hidden;
-  position: relative;
+    display: block;
+    min-height: 100vh;
+    background-color: var(--bg-1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* ==========================================================================
-   2. FUNDO ANIMADO (INTACTO)
+   2. TYPEWRITER
+   ========================================================================== */
+
+/* ✅ display:block — cursor segue o texto em qualquer linha */
+.hexon-title {
+    display: block;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: #fff;
+    margin-bottom: 16px;
+    word-break: break-word;
+}
+
+.typing-text {
+    display: inline;
+}
+
+.typing-text::after {
+    content: '|';
+    display: inline;
+    margin-left: 2px;
+    color: var(--accent);
+    font-weight: 100;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   3. FUNDO ESTRELADO
    ========================================================================== */
 .stars-bg {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(ellipse at bottom, #1e293b 0%, var(--bg-1) 100%);
-  z-index: -2;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1e293b 0%, var(--bg-1) 100%);
+    z-index: -2;
+    pointer-events: none;
 }
 
 .stars-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: 
-      radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
-      radial-gradient(2px 2px at 40px 70px, #ffffff, transparent),
-      radial-gradient(1px 1px at 90px 40px, #ffffff, transparent);
-  background-size: 200px 200px;
-  animation: starsMove 100s linear infinite;
-  opacity: 0.3;
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #ffffff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+        radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+        radial-gradient(2px 2px at 160px 30px, #ffffff, transparent);
+    background-size: 200px 200px;
+    animation: starsMove 100s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 @keyframes starsMove {
-  from { background-position: 0 0; }
-  to { background-position: 0 1000px; }
-}
+    from {
+        background-position: 0 0;
+    }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ==========================================================================
-   3. NAVBAR
-   ========================================================================== */
-nav {
-  padding-top: 25px !important; 
-  padding-bottom: 20px;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  transition: all 0.3s;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+    to {
+        background-position: 0 1000px;
+    }
 }
 
 /* ==========================================================================
-   4. SECTION
+   4. HERO
    ========================================================================== */
 .hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  padding: 40px 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
 .greeting {
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #fff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-subtitle {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle-hl {
+    color: var(--accent);
 }
 
 .hero-desc {
-  color: var(--muted);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  max-width: 500px;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
 }
-
-/* --- ANIMAÇÃO DE ÓRBITA (Tamanhos Aumentados) --- */
-.orbit-container {
-  position: relative;
-  /* Aumentado de 450px para 550px para caber a foto maior */
-  width: 550px;
-  height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-/* A Foto Central (Aumentada para proporção original) */
-.profile-img {
-  /* Aumentado de 200px para 320px (bem próximo dos 350px originais) */
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 10;
-  border: 4px solid var(--bg-1); 
-  box-shadow: 0 0 60px var(--accent-glow);
-}
-
-/* O Anel que Gira */
-.orbit-ring {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  animation: spin 30s linear infinite; /* Um pouco mais lento pq está maior */
-}
-
-/* Os Ícones (Planetas) */
-.tech-icon {
-  position: absolute;
-  width: 55px; /* Ligeiramente maiores */
-  height: 55px;
-  background: var(--bg-1);
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 26px;
-  color: white;
-  box-shadow: 0 0 15px var(--accent-glow);
-  animation: counter-spin 30s linear infinite;
-}
-
-/* Posições Matemáticas dos Ícones */
-.tech-icon:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
-.tech-icon:nth-child(2) { top: 25%; right: 6.7%; transform: translate(50%, -50%); }
-.tech-icon:nth-child(3) { bottom: 25%; right: 6.7%; transform: translate(50%, 50%); }
-.tech-icon:nth-child(4) { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-.tech-icon:nth-child(5) { bottom: 25%; left: 6.7%; transform: translate(-50%, 50%); }
-.tech-icon:nth-child(6) { top: 25%; left: 6.7%; transform: translate(-50%, -50%); }
-
-@keyframes spin { 100% { transform: rotate(360deg); } }
-@keyframes counter-spin { 100% { transform: rotate(-360deg); } }
-
 
 /* ==========================================================================
-   5. BOTÕES (INTACTOS)
+   5. SISTEMA DE ÓRBITA ANIMADA
+   ========================================================================== */
+.orbit-stage {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.orbit-ring-deco {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.orbit-ring-outer {
+    width: 490px;
+    height: 490px;
+    border: 1px solid rgba(59, 130, 246, 0.13);
+}
+
+.orbit-ring-inner {
+    width: 345px;
+    height: 345px;
+    border: 1px solid rgba(59, 130, 246, 0.10);
+}
+
+.conn-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.profile-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    border: 3px solid rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.07), 0 0 60px rgba(37, 99, 235, 0.35);
+    animation: profile-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes profile-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 8px rgba(59, 130, 246, .07), 0 0 60px rgba(37, 99, 235, .35);
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px rgba(59, 130, 246, .04), 0 0 80px rgba(37, 99, 235, .2);
+    }
+}
+
+.pivot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: 0 0;
+}
+
+.p-out {
+    animation: spin-cw var(--dur, 26s) linear infinite;
+}
+
+.p-in {
+    animation: spin-ccw var(--dur, 19s) linear infinite;
+}
+
+@keyframes spin-cw {
+    from {
+        transform: rotate(var(--start, 0deg));
+    }
+
+    to {
+        transform: rotate(calc(var(--start, 0deg) + 360deg));
+    }
+}
+
+@keyframes spin-ccw {
+    from {
+        transform: rotate(var(--start, 0deg));
+    }
+
+    to {
+        transform: rotate(calc(var(--start, 0deg) - 360deg));
+    }
+}
+
+.tech-node {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(8, 18, 38, 0.96);
+    border: 1.5px solid rgba(59, 130, 246, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.25);
+    cursor: default;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.tech-node:hover {
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 32px rgba(59, 130, 246, 0.55);
+}
+
+.tech-node-text {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.35);
+}
+
+.p-out .tech-node {
+    transform: translateY(-245px) translate(-27.5px, -27.5px);
+    animation: counter-out var(--dur, 26s) linear infinite;
+}
+
+.p-in .tech-node {
+    transform: translateY(-172px) translate(-27.5px, -27.5px);
+    animation: counter-in var(--dur, 19s) linear infinite;
+}
+
+@keyframes counter-out {
+    from {
+        transform: translateY(-245px) translate(-27.5px, -27.5px) rotate(calc(0deg - var(--start, 0deg)));
+    }
+
+    to {
+        transform: translateY(-245px) translate(-27.5px, -27.5px) rotate(calc(-360deg - var(--start, 0deg)));
+    }
+}
+
+@keyframes counter-in {
+    from {
+        transform: translateY(-172px) translate(-27.5px, -27.5px) rotate(calc(0deg + var(--start, 0deg)));
+    }
+
+    to {
+        transform: translateY(-172px) translate(-27.5px, -27.5px) rotate(calc(360deg + var(--start, 0deg)));
+    }
+}
+
+.tech-node::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0b1120;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #e2e8f0;
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 30;
+}
+
+.tech-node:hover::after {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   6. SEÇÃO SOBRE MIM
+   ========================================================================== */
+.about-section {
+    background: var(--bg-navy);
+    padding: 80px 0;
+    color: var(--text-silver);
+}
+
+/* ✅ cor prata simples — webkit não funciona no Angular sem ng-deep */
+.about-title {
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.about-divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent));
+    margin: 0 auto 50px;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-frame {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.about-photo-bg {
+    position: absolute;
+    inset: 0;
+    background: #111827;
+    border-radius: 24px;
+    border: 1px solid rgba(56, 217, 169, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.about-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+}
+
+.about-label {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #cbd5e1;
+    z-index: 10;
+    background: rgba(11, 17, 32, 0.6);
+    padding: 4px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+}
+
+/* ✅ badge-float base — sem borda padrão (cada badge define a sua) */
+.badge-float {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+}
+
+.badge-code-blue {
+    top: -15px;
+    right: -15px;
+    width: 55px;
+    height: 55px;
+    background: var(--accent);
+    color: white;
+    border: 3px solid var(--bg-navy);
+    font-size: 0.9rem;
+}
+
+/* ✅ badge-aws-soon — versão única com SVG, escura com borda dourada */
+.badge-aws-soon {
+    bottom: -15px;
+    left: -15px;
+    width: 65px;
+    height: 65px;
+    background: #0d1117;
+    border: 2px solid #fbbf24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: none !important;
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.3);
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #fbbf24;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.badge-docker {
+    bottom: 20px;
+    right: -25px;
+    width: 48px;
+    height: 48px;
+    background: rgba(8, 18, 38, 0.95);
+    border: 1.5px solid rgba(56, 189, 248, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+.about-subtitle {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    color: #f8fafc;
+    margin-bottom: 25px;
+}
+
+.silver-text {
+    color: var(--text-silver);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.highlight-teal {
+    color: var(--accent-teal);
+    font-weight: 600;
+}
+
+.highlight-blue {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* ✅ highlight-gradient — cor sólida */
+.highlight-gradient {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.t-badge {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid;
+}
+
+.b-teal {
+    background: rgba(56, 217, 169, .05);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.b-blue {
+    background: rgba(59, 130, 246, .05);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.b-gold {
+    background: rgba(251, 191, 36, .05);
+    border-color: #fbbf24;
+    color: #fbbf24;
+}
+
+/* ==========================================================================
+   7. BOTÕES
    ========================================================================== */
 .btn {
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: none;
-  position: relative; /* Ajuda no z-index se precisar */
-  z-index: 1;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 0 20px var(--accent-glow);
-  border: 1px solid var(--accent);
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .btn-primary:hover {
-  background: transparent;
-  color: var(--accent);
-  box-shadow: 0 0 40px var(--accent-glow);
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 40px var(--accent-glow);
 }
 
 .btn-outline {
-  border: 1px solid var(--muted);
-  color: var(--text);
-  margin-left: 15px;
-  background: transparent;
+    border: 1px solid var(--muted);
+    color: var(--text);
+    margin-left: 15px;
 }
 
 .btn-outline:hover {
-  border-color: white;
-  color: white;
-  background: rgba(255,255,255,0.05);
+    border-color: white;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* ==========================================================================
-   6. SEÇÕES NOVAS (SOBRE & CONTATO)
-   ========================================================================== */
-.about-section {
-  padding: 100px 0;
-  background: rgba(0, 0, 0, 0.2); 
-}
-
-.skill-tag {
-  display: inline-block;
-  padding: 6px 14px;
-  border: 1px solid var(--muted);
-  border-radius: 20px;
-  margin: 5px;
-  font-size: 0.9rem;
-  color: var(--muted);
-  transition: 0.3s;
-}
-.skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-
-.contact-box {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 20px;
-  padding: 50px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   7. GRID DE PROJETOS (INTACTO)
-   ========================================================================== */
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 60px;
-  font-weight: 700;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  padding-bottom: 100px;
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  border-color: var(--accent);
-}
-
-.card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: 0.5s;
-}
-
-.card:hover .card-img { opacity: 1; }
-
-.card-body { padding: 25px; }
-
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.card-text {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.tech-tag {
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   9. MOBILE (ADAPTADO E CORRIGIDO! 🛠️)
+   8. RESPONSIVIDADE
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Ajustes gerais do Hero */
-  .hero-content { grid-template-columns: 1fr; text-align: center; }
-  .hero-title { font-size: 2.5rem; }
 
-  /* --- CORREÇÃO DOS BOTÕES NO MOBILE --- */
-  /* Antes estava .btn { width: 100% }, o que quebrava o menu. */
-  /* Agora aplicamos apenas aos botões dentro do conteúdo principal */
-  .hero-text .btn, 
-  .card-body .btn { 
-    width: 100%; 
-    margin: 25px 0 0 0; 
-    display: block; /* Garante que fiquem um embaixo do outro */
-  }
-  .btn-outline { margin-left: 0; }
+    .hero-content,
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-  /* Ajustes da Órbita para Mobile (Reduzida para caber na tela) */
-  .orbit-container { width: 340px; height: 340px; margin-top: 40px; }
-  .profile-img { width: 200px; height: 200px; } /* Tamanho bom para celular */
-  .tech-icon { width: 40px; height: 40px; font-size: 20px; }
+    .hexon-title,
+    .about-title {
+        font-size: 2.5rem;
+    }
 
-  /* Ajuste fino na navbar para não quebrar o logo */
-  nav { padding: 15px 0; }
-  .logo { font-size: 1.3rem; }
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .about-photo-side {
+        order: -1;
+        margin-bottom: 40px;
+    }
+
+    .tech-badges {
+        justify-content: center;
+    }
+
+    .orbit-stage {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   9. SCROLLBAR
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }

@@ -1,141 +1,307 @@
+<app-header></app-header>
+
+<!-- Fundo Estrelado -->
 <div class="stars-bg"></div>
 <div class="stars-overlay"></div>
 
-<nav class="container">
-  <div class="logo">Ruan<span style="color: var(--accent)">.dev</span></div>
-  
-  <div style="display: flex; gap: 15px; align-items: center;">
-    
-    <a href="assets/curriculo.pdf" download="Currículo_Ruan_Alexandre.pdf" class="btn btn-primary" style="padding: 8px 25px; font-size: 0.9rem; box-shadow: 0 0 15px var(--accent-glow);">
-      Download CV 📄
-    </a>
+<!-- HERO -->
+<section class="hero relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="hero-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
 
-    @if (modoEdicao) { 
-      <a routerLink="/cadastro" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
-        + Admin
-      </a> 
-    }
+      <!-- LADO ESQUERDO: TEXTO -->
+      <div class="hero-text z-10 text-left">
+        <p class="greeting text-blue-500 font-semibold tracking-widest uppercase mb-4">
+          {{ t.hero.saudacao }}
+        </p>
 
-  </div>
-</nav>
+        <!-- ✅ SEM nenhuma classe flex no h1 -->
+        <h1 class="hexon-title">
+          <span class="typing-text">{{ textoExibido }}</span>
+        </h1>
 
-<header class="hero">
-  <div class="container hero-content">
-    
-    <div>
-      <p class="greeting">OLÁ, EU SOU O RUAN</p>
-      <h1 class="hero-title">Construindo o futuro com <br>.NET & Angular</h1>
-      <p class="hero-desc">
-        Estudante de Engenharia de Software focado em criar soluções robustas, escaláveis e performáticas. 
-        Transformando café em código limpo. ☕
-      </p>
-      
-      <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px;">
-        <a href="#projects" class="btn btn-primary">
-          Ver Projetos
-        </a>
-        <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank" class="btn btn-outline">
-          LinkedIn
-        </a>
+        <h2 class="hero-subtitle">
+          .NET Backend Developer<br>
+          <span class="hero-subtitle-hl">em Formação</span>
+        </h2>
+
+        <p class="hero-desc text-gray-400 text-lg md:text-xl mb-8 max-w-lg">
+          {{ t.hero.desc }}
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <button (click)="scrollPara('projects')" class="btn btn-primary">
+            {{ t.hero.btnProjetos }}
+          </button>
+          <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">GitHub</a>
+          <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
       </div>
-    </div>
+      <!-- LADO DIREITO: ÓRBITA ANIMADA -->
+      <div class="hero-visual flex justify-center items-center">
+        <div class="orbit-stage">
 
-    <div class="orbit-container">
-      <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
-      
-      <div class="orbit-ring">
-        <div class="tech-icon" title="C#"><i class="devicon-csharp-plain"></i></div>
-        <div class="tech-icon" title="Angular"><i class="devicon-angular-plain"></i></div>
-        <div class="tech-icon" title=".NET"><i class="devicon-dotnetcore-plain"></i></div>
-        <div class="tech-icon" title="SQL Server"><i class="devicon-microsoftsqlserver-plain"></i></div>
-        <div class="tech-icon" title="TypeScript"><i class="devicon-typescript-plain"></i></div>
-        <div class="tech-icon" title="Git"><i class="devicon-git-plain"></i></div>
+          <!-- Anéis decorativos -->
+          <div class="orbit-ring-deco orbit-ring-outer"></div>
+          <div class="orbit-ring-deco orbit-ring-inner"></div>
+
+          <!-- Linhas pontilhadas do centro aos nós -->
+          <svg class="conn-svg" viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="rgba(59,130,246,0.13)" stroke-width="1" stroke-dasharray="5 5">
+              <line x1="275" y1="275" x2="275" y2="35" />
+              <line x1="275" y1="275" x2="483" y2="155" />
+              <line x1="275" y1="275" x2="483" y2="395" />
+              <line x1="275" y1="275" x2="275" y2="515" />
+              <line x1="275" y1="275" x2="67" y2="395" />
+              <line x1="275" y1="275" x2="67" y2="155" />
+            </g>
+          </svg>
+
+          <!-- ══ ORBIT EXTERNO — 6 nós, horário, 26s ══ -->
+
+          <!-- C# | 0° -->
+          <div class="pivot p-out" style="--dur:26s; --start:0deg;">
+            <div class="tech-node" title="C#">
+              <i class="devicon-csharp-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- Angular | 60° -->
+          <div class="pivot p-out" style="--dur:26s; --start:60deg;">
+            <div class="tech-node" title="Angular">
+              <i class="devicon-angular-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- .NET | 120° -->
+          <div class="pivot p-out" style="--dur:26s; --start:120deg;">
+            <div class="tech-node" title=".NET">
+              <i class="devicon-dotnetcore-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- SQL Server | 180° -->
+          <div class="pivot p-out" style="--dur:26s; --start:180deg;">
+            <div class="tech-node" title="SQL Server">
+              <i class="devicon-microsoftsqlserver-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- TypeScript | 240° -->
+          <div class="pivot p-out" style="--dur:26s; --start:240deg;">
+            <div class="tech-node" title="TypeScript">
+              <i class="devicon-typescript-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- Git | 300° -->
+          <div class="pivot p-out" style="--dur:26s; --start:300deg;">
+            <div class="tech-node" title="Git">
+              <i class="devicon-git-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- ══ ORBIT INTERNO — 3 nós, anti-horário, 19s ══ -->
+
+          <!-- Docker | 0° -->
+          <div class="pivot p-in" style="--dur:19s; --start:0deg;">
+            <div class="tech-node" title="Docker">
+              <i class="devicon-docker-plain colored"></i>
+            </div>
+          </div>
+
+          <!-- AWS | 120° -->
+          <div class="pivot p-in" style="--dur:19s; --start:120deg;">
+            <div class="tech-node tech-node-text" title="AWS">
+              <span>AWS</span>
+            </div>
+          </div>
+
+          <!-- GitHub | 240° -->
+          <div class="pivot p-in" style="--dur:19s; --start:240deg;">
+            <div class="tech-node" title="GitHub">
+              <i class="devicon-github-original"></i>
+            </div>
+          </div>
+
+          <!-- Foto central -->
+          <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
+
+        </div>
       </div>
-    </div>
 
-  </div>
-</header>
-
-<section id="about" class="about-section">
-  <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-    <div>
-      <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Sobre Mim</h2>
-      <p style="color: var(--muted); line-height: 1.8; margin-bottom: 20px;">
-        Minha jornada na programação começou com a curiosidade de entender como as coisas funcionam. 
-        Hoje, estou me especializando no ecossistema Microsoft (.NET), criando APIs RESTful e integrando 
-        com interfaces modernas em Angular.
-      </p>
-      <p style="color: var(--muted); line-height: 1.8;">
-        Busco sempre aplicar boas práticas como SOLID e Clean Code para entregar software de qualidade.
-      </p>
-    </div>
-    <div>
-      <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Tech Stack</h3>
-      <div>
-        <span class="skill-tag">C#</span>
-        <span class="skill-tag">.NET 8/9</span>
-        <span class="skill-tag">ASP.NET Core</span>
-        <span class="skill-tag">Entity Framework</span>
-        <span class="skill-tag">Angular</span>
-        <span class="skill-tag">SQL Server</span>
-        <span class="skill-tag">Git / GitHub</span>
-        <span class="skill-tag">Tailwind CSS</span>
-      </div>
     </div>
   </div>
 </section>
 
-<section id="projects" style="padding: 80px 0;">
-  <div class="container">
-    <h2 class="section-title">Meus Projetos</h2>
-    <p style="text-align: center; color: var(--muted); margin-bottom: 50px;">O que tenho construído recentemente</p>
+<!-- SEÇÃO: SOBRE MIM -->
+<main class="text-white relative z-10">
 
-    @if (projetos$ | async; as lista) {
-      <div class="projects-grid">
-        @for (projeto of lista; track projeto.id) {
-          <div class="card">
-            <img [src]="projeto.urlImagem" class="card-img" alt="Imagem do projeto">
-            <div class="card-body">
-              <h3 class="card-title">{{ projeto.titulo }}</h3>
-              <p class="card-text">
-                {{ projeto.descricaoPT }}
-              </p>
-              
-              <div style="margin-bottom: 20px;">
-                <span class="tech-tag">
-                  {{ projeto.tecnologias }}
-                </span>
-              </div>
+  <!-- SEÇÃO: SOBRE MIM -->
+  <section id="about" class="about-section py-20 border-y border-gray-800">
+    <div class="container mx-auto px-6">
+      <h1 class="about-title">Sobre Mim</h1>
+      <span class="about-divider"></span>
 
-              <div style="display: flex;">
-                <a [href]="projeto.urlGithub" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center; margin-left:0; margin-right: 10px; padding: 10px 0;">GitHub</a>
-                <a [href]="projeto.urlDeploy" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center; padding: 10px 0;">Deploy</a>
+      <!-- GRID começa aqui -->
+      <div class="about-grid grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- LADO ESQUERDO: FOTO -->
+        <div class="about-photo-side">
+          <div class="about-frame mx-auto">
+            <div class="about-photo-bg"></div>
+            <div class="about-placeholder">
+              <img src="assets/foto2.png" alt="Ruan Alexandre" class="about-photo-img" />
+            </div>
+            <div class="badge-float badge-code-blue">&lt;/&gt;</div>
+            <div class="badge-float badge-aws-soon">AWS</div>
+            <div class="badge-float badge-docker">
+              <i class="devicon-docker-plain colored"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- LADO DIREITO: TEXTO -->
+        <div class="about-text-side">
+          <h2 class="about-subtitle text-3xl font-bold mb-6">
+            Da Determinação ao Código:<br>Construindo o Futuro Backend
+          </h2>
+          <p class="silver-text mb-4 text-lg leading-relaxed">
+            Minha jornada na tecnologia nasceu de uma vontade genuína de criar soluções que realmente funcionam. Com
+            <span class="highlight-teal">+3 anos estudando programação</span>, hoje estou na reta final da transição
+            para minha primeira vaga como desenvolvedor, com foco total em
+            <span class="highlight-blue">.NET Backend</span>.
+          </p>
+          <p class="silver-text mb-4 text-lg leading-relaxed">
+            Sou estudante de <span class="highlight-teal">Engenharia de Software</span> na UniCesumar e sigo a trilha
+            .NET Backend Developer no Balta.io — enquanto trabalho de dia e codifico de noite. Disciplina é meu
+            diferencial.
+          </p>
+          <p class="silver-text mb-6 text-lg leading-relaxed">
+            Hoje estou construindo minha base sólida em
+            <span class="highlight-gradient font-bold">C#, ASP.NET, SQL</span>
+            e me preparando para a <span class="highlight-blue">certificação AWS</span>.
+          </p>
+          <div class="tech-badges flex flex-wrap gap-3">
+            <span class="t-badge b-teal">⚙ .NET Backend Developer</span>
+            <span class="t-badge b-blue">☁ AWS em Formação</span>
+            <span class="t-badge b-gold">◈ Full-Stack Junior</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: CARREIRA TIMELINE -->
+  <section id="career" class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+          {{ t.titulos.carreira }}</h2>
+        <p class="text-gray-400">{{ t.titulos.carreiraSub }}</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-8 relative">
+        <div
+          class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500/30 via-gray-700 to-green-500/30">
+        </div>
+
+        @for (exp of experiencias; track exp.empresa; let i = $index) {
+        <div class="relative flex flex-col md:flex-row items-center" [class.md:flex-row-reverse]="i % 2 !== 0">
+          <div
+            class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+          </div>
+          <div class="w-full md:w-1/2 pl-8 md:pl-0" [class.md:pr-12]="i % 2 === 0" [class.md:pl-12]="i % 2 !== 0">
+            <div
+              class="bg-gray-800/80 border border-gray-700 p-6 rounded-2xl hover:border-blue-500/50 transition-colors">
+              <span class="text-sm font-bold text-green-400 mb-2 block">{{ exp.periodo }}</span>
+              <h3 class="text-xl font-bold text-white">{{ exp.cargo }}</h3>
+              <h4 class="text-blue-400 mb-4">{{ exp.empresa }}</h4>
+              <p class="text-gray-400 text-sm mb-4">{{ exp.descricao }}</p>
+              <div class="flex flex-wrap gap-2">
+                @for (tech of exp.tecnologias; track tech) {
+                <span class="px-2 py-1 bg-gray-900 border border-gray-700 rounded-md text-xs text-gray-300">{{ tech
+                  }}</span>
+                }
               </div>
             </div>
           </div>
+        </div>
         }
       </div>
-    } @else {
-      <div style="text-align: center; padding: 50px;">
-        <p style="color: var(--muted);">Carregando projetos do banco de dados...</p>
-      </div>
-    }
-  </div>
-</section>
+    </div>
+  </section>
 
-<section id="contact" style="padding: 100px 0;">
-  <div class="container">
-    <div class="contact-box">
-      <h2 class="section-title" style="margin-bottom: 20px;">Vamos Conversar?</h2>
-      <p style="color: var(--muted); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Estou disponível para novas oportunidades. Se você tem uma vaga, um projeto ou apenas quer dar um "Oi", minha caixa de entrada está sempre aberta!
-      </p>
-      <a href="ruanalexandre625@gmail.com" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">
-        Mandar E-mail 📧
+  <!-- SEÇÃO: PROJETOS -->
+  <section id="projects" class="py-20 bg-gray-800/30 border-y border-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+          {{ t.titulos.projetos }}
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        @for (cat of categorias; track cat) {
+        <button (click)="filtrarPor(cat)" class="px-6 py-2 rounded-full font-medium transition-all"
+          [class]="categoriaAtiva === cat ? 'bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'">
+          {{ cat }}
+        </button>
+        }
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (projeto of projetosExibidos; track projeto.id) {
+        <div
+          class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all shadow-lg">
+          <div class="relative h-48 overflow-hidden">
+            <img [src]="projeto.urlImagem" alt="{{ projeto.titulo }}"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-gray-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+              <a [href]="projeto.urlDeploy" target="_blank"
+                class="p-3 bg-blue-500 rounded-full hover:bg-blue-400 text-white transition-colors">🔗</a>
+              <a [href]="projeto.urlGithub" target="_blank"
+                class="p-3 bg-gray-800 rounded-full hover:bg-gray-700 text-white transition-colors border border-gray-600">💻</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">{{ projeto.categoria }}</span>
+            <h3 class="text-xl font-bold mt-2 mb-3 group-hover:text-green-400 transition-colors">{{ projeto.titulo }}
+            </h3>
+            <p class="text-gray-400 text-sm mb-4">{{ projeto.descricao }}</p>
+            <div class="flex flex-wrap gap-2">
+              @for (tech of projeto.tecnologias; track tech) {
+              <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700">#{{ tech
+                }}</span>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contact" class="py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4">{{ t.titulos.contato }}</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-8">{{ t.titulos.contatoSub }}</p>
+      <a href="mailto:ruanalexandre625@gmail.com"
+        class="inline-block px-10 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold rounded-lg hover:scale-105 transition-transform shadow-lg shadow-blue-500/25 mb-16">
+        {{ t.titulos.btnContato }}
       </a>
     </div>
-  </div>
-</section>
+  </section>
+
+  <footer class="bg-gray-900 border-t border-gray-800 py-8 text-center">
+    <div class="container mx-auto px-6">
+      <p class="text-gray-500 text-sm">
+        {{ t.titulos.rodape }}<br>
+        © 2026 Ruan Alexandre. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+</main>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Definição das Cores Globais */
 :root {
   --bg-1: #0f172a;
