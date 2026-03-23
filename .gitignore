@@ -1,6 +1,2 @@
-﻿.vs/
-bin/
-obj/
-node_modules/
-.angular/
-*.user
+﻿Portfolio.Web/node_modules/
+Portfolio.Web/.angular/
