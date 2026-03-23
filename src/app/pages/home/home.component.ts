@@ -1,4 +1,4 @@
-
+import { HeroComponent } from './sections/hero/hero.component';
 import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -8,7 +8,7 @@ import { ProjetoService, Projeto } from '../../services/projeto.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, HeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

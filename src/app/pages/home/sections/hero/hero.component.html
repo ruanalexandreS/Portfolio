@@ -1,0 +1,75 @@
+<section class="hero relative overflow-hidden">
+    <div class="container mx-auto px-6">
+        <div class="hero-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+
+            <div class="hero-text z-10 text-left">
+                <p class="greeting text-blue-500 font-semibold tracking-widest uppercase mb-4">
+                    {{ t.hero.saudacao }}
+                </p>
+                <h1 class="hexon-title">
+                    <span class="typing-text">{{ textoExibido }}</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    .NET Backend Developer<br>
+                    <span class="hero-subtitle-hl">em Formação</span>
+                </h2>
+                <p class="hero-desc text-gray-400 text-lg md:text-xl mb-8 max-w-lg">
+                    {{ t.hero.desc }}
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button (click)="scrollPara('projects')" class="btn btn-primary">{{ t.hero.btnProjetos }}</button>
+                    <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank"
+                        class="btn btn-outline">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="hero-visual flex justify-center items-center">
+                <div class="orbit-stage">
+                    <div class="orbit-ring-deco orbit-ring-outer"></div>
+                    <div class="orbit-ring-deco orbit-ring-inner"></div>
+                    <svg class="conn-svg" viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="rgba(59,130,246,0.13)" stroke-width="1" stroke-dasharray="5 5">
+                            <line x1="275" y1="275" x2="275" y2="35" />
+                            <line x1="275" y1="275" x2="483" y2="155" />
+                            <line x1="275" y1="275" x2="483" y2="395" />
+                            <line x1="275" y1="275" x2="275" y2="515" />
+                            <line x1="275" y1="275" x2="67" y2="395" />
+                            <line x1="275" y1="275" x2="67" y2="155" />
+                        </g>
+                    </svg>
+                    <div class="pivot p-out" style="--dur:26s; --start:0deg;">
+                        <div class="tech-node" title="C#"><i class="devicon-csharp-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-out" style="--dur:26s; --start:60deg;">
+                        <div class="tech-node" title="Angular"><i class="devicon-angular-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-out" style="--dur:26s; --start:120deg;">
+                        <div class="tech-node" title=".NET"><i class="devicon-dotnetcore-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-out" style="--dur:26s; --start:180deg;">
+                        <div class="tech-node" title="SQL Server"><i
+                                class="devicon-microsoftsqlserver-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-out" style="--dur:26s; --start:240deg;">
+                        <div class="tech-node" title="TypeScript"><i class="devicon-typescript-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-out" style="--dur:26s; --start:300deg;">
+                        <div class="tech-node" title="Git"><i class="devicon-git-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-in" style="--dur:19s; --start:0deg;">
+                        <div class="tech-node" title="Docker"><i class="devicon-docker-plain colored"></i></div>
+                    </div>
+                    <div class="pivot p-in" style="--dur:19s; --start:120deg;">
+                        <div class="tech-node tech-node-text" title="AWS"><span>AWS</span></div>
+                    </div>
+                    <div class="pivot p-in" style="--dur:19s; --start:240deg;">
+                        <div class="tech-node" title="GitHub"><i class="devicon-github-original"></i></div>
+                    </div>
+                    <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
