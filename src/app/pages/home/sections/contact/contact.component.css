@@ -223,3 +223,82 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   ESTADOS DO FORMULÁRIO — adiciona ao contact.component.css existente
+   ========================================================================== */
+
+.contact-send-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, #3b82f6, #38d9a9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+    margin-top: 8px;
+}
+
+.contact-send-btn span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-send-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.55);
+}
+
+.contact-send-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Estado: enviado (verde) */
+.contact-send-btn:has(span > svg > polyline) {
+    background: linear-gradient(90deg, #16a34a, #38d9a9);
+}
+
+/* Estado: erro (vermelho) */
+.contact-send-btn:has(span > svg > line + line) {
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+}
+
+/* Input com erro */
+.contact-input-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Mensagem de erro */
+.contact-error-msg {
+    color: #f87171;
+    font-size: 0.78rem;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Ícone de loading girando */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-icon {
+    animation: spin 0.8s linear infinite;
+}

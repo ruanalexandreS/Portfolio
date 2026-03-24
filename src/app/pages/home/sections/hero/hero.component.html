@@ -1,35 +1,51 @@
-<section class="hero relative overflow-hidden">
-    <div class="container mx-auto px-6">
-        <div class="hero-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+<section class="hero-section relative overflow-hidden">
+    <div class="container mx-auto hero-wrapper">
 
-            <div class="hero-text z-10 text-left">
-                <p class="greeting text-blue-500 font-semibold tracking-widest uppercase mb-4">
-                    {{ t.hero.saudacao }}
-                </p>
-                <h1 class="hexon-title">
-                    <span class="typing-text">{{ textoExibido }}</span>
-                </h1>
-                <h2 class="hero-subtitle">
-                    .NET Backend Developer<br>
-                    <span class="hero-subtitle-hl">em Formação</span>
-                </h2>
-                <p class="hero-desc text-gray-400 text-lg md:text-xl mb-8 max-w-lg">
-                    {{ t.hero.desc }}
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <button (click)="scrollPara('projects')" class="btn btn-primary">{{ t.hero.btnProjetos }}</button>
-                    <a href="https://github.com/ruanalexandreS" target="_blank" class="btn btn-outline">GitHub</a>
+        <div class="hero-text-container z-10">
+            <p class="greeting text-blue-500 font-semibold tracking-widest uppercase mb-4">
+                {{ t.hero.saudacao }}
+            </p>
+
+            <h1 class="hexon-title text-white font-extrabold text-5xl md:text-7xl">
+                <span>{{ textoExibido }}</span>
+                <span class="cursor">|</span>
+            </h1>
+
+            <h2 class="hero-subtitle text-2xl md:text-3xl font-bold mt-4">
+                .NET Backend Developer<br>
+                <span class="hero-subtitle-hl text-blue-400">em Formação</span>
+            </h2>
+
+            <p class="hero-desc text-gray-400 text-lg md:text-xl mt-6 mb-8 max-w-lg">
+                {{ t.hero.desc }}
+            </p>
+
+            <div class="hero-btns">
+                <button (click)="scrollPara('projects')" class="btn-primary">
+                    {{ t.hero.btnProjetos }}
+                </button>
+                <div class="social-row">
+                    <a href="https://github.com/ruanalexandreS" target="_blank" class="btn-outline">GitHub</a>
                     <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank"
-                        class="btn btn-outline">LinkedIn</a>
+                        class="btn-outline">LinkedIn</a>
                 </div>
             </div>
+        </div>
 
-            <div class="hero-visual flex justify-center items-center">
+        <div class="hero-orbit-container">
+            <div class="orbit-visual">
                 <div class="orbit-stage">
                     <div class="orbit-ring-deco orbit-ring-outer"></div>
                     <div class="orbit-ring-deco orbit-ring-inner"></div>
+
                     <svg class="conn-svg" viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g stroke="rgba(59,130,246,0.13)" stroke-width="1" stroke-dasharray="5 5">
+                        <defs>
+                            <radialGradient id="lineGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(59,130,246,0.25)" />
+                                <stop offset="100%" stop-color="rgba(59,130,246,0)" />
+                            </radialGradient>
+                        </defs>
+                        <g stroke="url(#lineGrad)" stroke-width="1" stroke-dasharray="4 6">
                             <line x1="275" y1="275" x2="275" y2="35" />
                             <line x1="275" y1="275" x2="483" y2="155" />
                             <line x1="275" y1="275" x2="483" y2="395" />
@@ -38,6 +54,7 @@
                             <line x1="275" y1="275" x2="67" y2="155" />
                         </g>
                     </svg>
+
                     <div class="pivot p-out" style="--dur:26s; --start:0deg;">
                         <div class="tech-node" title="C#"><i class="devicon-csharp-plain colored"></i></div>
                     </div>
@@ -52,11 +69,13 @@
                                 class="devicon-microsoftsqlserver-plain colored"></i></div>
                     </div>
                     <div class="pivot p-out" style="--dur:26s; --start:240deg;">
-                        <div class="tech-node" title="TypeScript"><i class="devicon-typescript-plain colored"></i></div>
+                        <div class="tech-node" title="TypeScript"><i class="devicon-typescript-plain colored"></i>
+                        </div>
                     </div>
                     <div class="pivot p-out" style="--dur:26s; --start:300deg;">
                         <div class="tech-node" title="Git"><i class="devicon-git-plain colored"></i></div>
                     </div>
+
                     <div class="pivot p-in" style="--dur:19s; --start:0deg;">
                         <div class="tech-node" title="Docker"><i class="devicon-docker-plain colored"></i></div>
                     </div>
@@ -66,10 +85,11 @@
                     <div class="pivot p-in" style="--dur:19s; --start:240deg;">
                         <div class="tech-node" title="GitHub"><i class="devicon-github-original"></i></div>
                     </div>
+
                     <img src="assets/minhafoto.jpg" alt="Ruan Alexandre" class="profile-img">
                 </div>
             </div>
-
         </div>
+
     </div>
 </section>
