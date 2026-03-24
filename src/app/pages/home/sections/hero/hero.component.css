@@ -301,47 +301,81 @@
 /* tamanho de orbita no mobile */
 @media (max-width: 1024px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         text-align: center;
     }
 
     .hero-visual {
-        order: -1;
-        /* órbita aparece acima do texto no mobile */
-    }
-
-    /* ✅ órbita redimensiona proporcionalmente */
-    .orbit-stage {
-        transform: scale(0.7);
-        transform-origin: center center;
-        margin: -60px auto;
-        /* compensa o espaço do scale */
-    }
-}
-
-@media (max-width: 768px) {
-    .hexon-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-
-    .hero {
-        min-height: auto;
-        padding: 100px 0 3rem;
+        order: 2;
+        /* órbita ABAIXO do texto */
     }
 
     .hero-text {
+        order: 1;
         text-align: center;
     }
 
     .orbit-stage {
-        transform: scale(0.55);
-        margin: -100px auto;
+        transform: scale(0.65);
+        transform-origin: center center;
+        margin: -80px auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* ✅ impede overflow horizontal */
+    body {
+        overflow-x: hidden;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 80px 1.5rem 2rem;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-visual {
+        order: 2;
+    }
+
+    .hexon-title {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+
+    /* ✅ centraliza os botões */
+    .flex.flex-wrap.gap-4 {
+        justify-content: center;
+    }
+
+    .orbit-stage {
+        transform: scale(0.52);
+        transform-origin: center center;
+        margin: -100px auto;
+        overflow: visible;
+    }
+
+    /* SOBRE MIM */
     .about-grid {
         grid-template-columns: 1fr;
     }
@@ -359,6 +393,7 @@
         justify-content: center;
     }
 
+    /* DEMAIS */
     .skills-cards-grid {
         grid-template-columns: 1fr;
     }
@@ -397,11 +432,22 @@
 
 @media (max-width: 480px) {
     .orbit-stage {
-        transform: scale(0.42);
+        transform: scale(0.40);
         margin: -130px auto;
     }
 
     .hexon-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
+}
+
+/* Para garantir que nada vaze horizontalmente: */
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: var(--bg-1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
 }
