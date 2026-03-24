@@ -1,0 +1,225 @@
+/* ==========================================================================
+   8. CONTATO
+   ========================================================================== */
+.contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #38d9a9, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-subtitle {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 0.5rem;
+}
+
+.contact-divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    margin: 10px auto 40px;
+    border-radius: 2px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.contact-left-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.8rem;
+}
+
+.contact-left-desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(15, 32, 64, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    transition: border-color 0.2s;
+}
+
+.contact-info-card:hover {
+    border-color: rgba(59, 130, 246, 0.35);
+}
+
+.contact-info-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-info-label {
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+}
+
+.contact-info-value {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.contact-socials-label {
+    font-size: 0.82rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.8rem;
+}
+
+.contact-socials-icons {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.contact-social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(15, 32, 64, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.contact-social-btn:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #e2e8f0;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.contact-form-card {
+    background: rgba(10, 22, 40, 0.7);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.contact-form-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.contact-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-input::placeholder {
+    color: #334155;
+}
+
+.contact-input:focus {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.contact-textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-send-btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #2563eb, #38d9a9);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-top: 0.5rem;
+}
+
+.contact-send-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+}

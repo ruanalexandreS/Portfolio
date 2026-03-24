@@ -1,0 +1,207 @@
+/* ==========================================================================
+ *  2. SEÇÃO SOBRE MIM
+ *  ========================================================================== */
+.about-section {
+    background: #0b1120;
+    padding: 80px 0;
+    color: #cbd5e1;
+}
+
+.about-title {
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.about-divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    margin: 0 auto 50px;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-frame {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.about-photo-bg {
+    position: absolute;
+    inset: 0;
+    background: #111827;
+    border-radius: 24px;
+    border: 1px solid rgba(56, 217, 169, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+}
+
+.badge-float {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+}
+
+.badge-code-blue {
+    top: -15px;
+    right: -15px;
+    width: 55px;
+    height: 55px;
+    background: #3b82f6;
+    color: white;
+    border: 3px solid #0b1120;
+    font-size: 0.9rem;
+}
+
+.badge-aws-soon {
+    bottom: -15px;
+    left: -15px;
+    width: 65px;
+    height: 65px;
+    background: #0d1117;
+    border: 2px solid #fbbf24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.3);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #fbbf24;
+    text-transform: uppercase;
+}
+
+.badge-docker {
+    bottom: 20px;
+    right: -25px;
+    width: 48px;
+    height: 48px;
+    background: rgba(8, 18, 38, 0.95);
+    border: 1.5px solid rgba(56, 189, 248, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+.about-subtitle {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    color: #f8fafc;
+    margin-bottom: 25px;
+}
+
+.silver-text {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.highlight-teal {
+    color: #38d9a9;
+    font-weight: 600;
+}
+
+.highlight-blue {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.highlight-gradient {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.t-badge {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid;
+}
+
+.b-teal {
+    background: rgba(56, 217, 169, .05);
+    border-color: #38d9a9;
+    color: #38d9a9;
+}
+
+.b-blue {
+    background: rgba(59, 130, 246, .05);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.b-gold {
+    background: rgba(251, 191, 36, .05);
+    border-color: #fbbf24;
+    color: #fbbf24;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-photo-side {
+        order: -1;
+        margin-bottom: 40px;
+    }
+
+    .tech-badges {
+        justify-content: center;
+    }
+}

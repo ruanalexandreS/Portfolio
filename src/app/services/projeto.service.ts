@@ -4,11 +4,11 @@ import { Observable, of } from 'rxjs';
 export interface Projeto {
   id?: number;
   titulo: string;
-  descricao: string; // Mudamos de descricaoPT para descricao
+  descricao: string;
   urlImagem: string;
   urlGithub: string;
   urlDeploy: string;
-  tecnologias: string[]; // Mudamos para Array de strings []
+  tecnologias: string[];
   categoria: string;
 }
 
@@ -25,7 +25,7 @@ export class ProjetoService {
       urlImagem: 'https://via.placeholder.com/600x400',
       urlGithub: 'https://github.com/ruanalexandreS/seu-repo',
       urlDeploy: 'https://seusite.com',
-      tecnologias: ['Angular', 'ChartJS'], // Agora é uma lista []
+      tecnologias: ['Angular', 'ChartJS'],
       categoria: 'Frontend'
     },
     {
@@ -35,7 +35,7 @@ export class ProjetoService {
       urlImagem: 'assets/kajita.png',
       urlGithub: 'https://github.com/ruanalexandreS/kajita',
       urlDeploy: 'https://kajita-app.vercel.app/',
-      tecnologias: ['Angular', 'Node.js'], // Agora é uma lista []
+      tecnologias: ['Angular', 'Node.js'],
       categoria: 'Full Stack'
     }
   ];

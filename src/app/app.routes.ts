@@ -2,6 +2,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent }, // Isso diz: "No início, mostre a Home"
-  { path: '**', redirectTo: '' }          // Se digitar algo errado, volta pra Home
+  { path: '', component: HomeComponent },
+  { path: '**', redirectTo: '' }
 ];

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   4. HABILIDADES TÉCNICAS
+   ========================================================================== */
+.skills-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #38d9a9, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.skills-divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    margin: 10px auto 40px;
+    border-radius: 2px;
+}
+
+.skills-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.skill-card {
+    background: rgba(15, 32, 64, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 16px;
+    padding: 1.8rem 1.5rem;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.skill-card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-4px);
+}
+
+.skill-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.skill-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 4px 8px;
+}
+
+.skill-name {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.skill-pct {
+    font-size: 0.82rem;
+    font-weight: 700;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.skill-bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.skills-tags-section {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.skills-tags-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 1.2rem;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.skill-tag {
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.04);
+    transition: border-color 0.2s, color 0.2s;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #e2e8f0;
+}

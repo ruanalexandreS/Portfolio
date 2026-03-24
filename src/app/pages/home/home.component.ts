@@ -1,4 +1,12 @@
 import { HeroComponent } from './sections/hero/hero.component';
+import { AboutComponent } from './sections/about/about.component';
+import { ProjectsComponent } from './sections/projects/projects.component';
+import { SkillsComponent } from './sections/skills/skills.component';
+import { CareerComponent } from './sections/career/career.component';
+import { EducationComponent } from './sections/education/education.component';
+import { CertificatesComponent } from './sections/certificates/certificates.component';
+import { ContactComponent } from './sections/contact/contact.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -8,7 +16,7 @@ import { ProjetoService, Projeto } from '../../services/projeto.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, HeroComponent],
+  imports: [CommonModule, HeaderComponent, HeroComponent, AboutComponent, ProjectsComponent, SkillsComponent, CareerComponent, EducationComponent, CertificatesComponent, ContactComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,7 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   idiomaService = inject(IdiomaService);
   projetoService = inject(ProjetoService);
-  private cdr = inject(ChangeDetectorRef); // ✅ ADICIONADO
+  private cdr = inject(ChangeDetectorRef);
 
   get t() { return this.idiomaService.textos[this.idiomaService.getIdioma()]; }
 
@@ -64,10 +72,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.projetosExibidos = projs;
     });
 
-    // ✅ Inicia o typewriter direto — sem depender do subscribe para disparar
+    // Inicia o typewriter direto — sem depender do subscribe para disparar
     this.iniciarTypewriter();
 
-    // ✅ Quando o idioma muda, reinicia a animação
+    // Quando o idioma muda, reinicia a animação
     this.idiomaService.idioma$.subscribe(() => {
       this.fraseIndex = 0;
       this.textoExibido = '';
@@ -93,7 +101,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.textoExibido = fraseAtual.substring(0, this.textoExibido.length + 1);
     }
 
-    // ✅ Força o Angular a detectar a mudança no textoExibido
+    // Força o Angular a detectar a mudança no textoExibido
     this.cdr.detectChanges();
 
     let velocidade = this.isApagando ? this.velApagando : this.velDigitacao;
