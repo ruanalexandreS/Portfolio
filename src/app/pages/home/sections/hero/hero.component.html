@@ -12,22 +12,22 @@
             </h1>
 
             <h2 class="hero-subtitle text-2xl md:text-3xl font-bold mt-4">
-                .NET Backend Developer<br>
-                <span class="hero-subtitle-hl text-blue-400">em Formação</span>
+                {{ t.hero.subtitulo }}<br>
+                <span class="hero-subtitle-hl text-blue-400">{{ t.hero.subtituloStatus }}</span>
             </h2>
 
             <p class="hero-desc text-gray-400 text-lg md:text-xl mt-6 mb-8 max-w-lg">
-                {{ t.hero.desc }}
+                {{ t.hero.descricao }}
             </p>
 
             <div class="hero-btns">
                 <button (click)="scrollPara('projects')" class="btn-primary">
-                    {{ t.hero.btnProjetos }}
+                    {{ t.hero.botaoProjetos }}
                 </button>
                 <div class="social-row">
-                    <a href="https://github.com/ruanalexandreS" target="_blank" class="btn-outline">GitHub</a>
+                    <a href="https://github.com/ruanalexandreS" target="_blank" class="btn-outline">{{ t.hero.linkGithub }}</a>
                     <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank"
-                        class="btn-outline">LinkedIn</a>
+                        class="btn-outline">{{ t.hero.linkLinkedin }}</a>
                 </div>
             </div>
         </div>

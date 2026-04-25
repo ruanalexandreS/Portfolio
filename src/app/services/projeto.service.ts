@@ -1,58 +1,74 @@
-import { Injectable } from '@angular/core';
+import { Injectable, computed, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { IdiomaService } from './idioma.service';
 
 export interface Projeto {
-  id?: number;
+  id: number;
   titulo: string;
   descricao: string;
   urlImagem: string;
   urlGithub: string;
   urlDeploy: string;
-  tecnologias: string[];
+  tecnologias: readonly string[];
   categoria: string;
+}
+
+interface DadosTecnicosProjeto {
+  readonly id: number;
+  readonly urlImagem: string;
+  readonly urlGithub: string;
+  readonly urlDeploy: string;
+  readonly tecnologias: readonly string[];
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjetoService {
+  private idioma = inject(IdiomaService);
 
-  private projetosFixos: Projeto[] = [
+  private readonly dadosTecnicos: readonly DadosTecnicosProjeto[] = [
     {
       id: 1,
-      titulo: 'Portfólio Pessoal',
-      descricao: 'Portfólio desenvolvido com Angular standalone, animações CSS customizadas, sistema de i18n PT/EN/ES e formulário de contato com EmailJS.',
       urlImagem: 'assets/Portfolio.png',
       urlGithub: 'https://github.com/ruanalexandreS/Portfolio',
       urlDeploy: 'https://portfolio-ruan-alexandre-s.vercel.app/',
-      tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'EmailJS', 'Vercel'],
-      categoria: 'Frontend'
+      tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'EmailJS', 'Vercel']
     },
     {
       id: 2,
-      titulo: 'KajitA - E-commerce',
-      descricao: 'E-commerce full-stack desenvolvido para o mercado da Colômbia.',
       urlImagem: 'assets/kajita.png',
       urlGithub: 'https://github.com/ruanalexandreS/kajita-app',
       urlDeploy: 'https://kajita-app.vercel.app/',
-      tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'Node.js', 'SEO'],
-      categoria: 'Full Stack'
+      tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'Node.js', 'SEO']
     },
     {
       id: 3,
-      titulo: 'Korp — Sistema de Notas Fiscais',
-      descricao: 'Teste técnico com arquitetura de microsserviços em .NET 8. Dois serviços independentes com EF Core, IHttpClientFactory, middleware global de erros, paginação e frontend Angular com RxJS reativo.',
-      urlImagem: 'assets/NotaFiscal.jpeg',
-      urlGithub: 'https://github.com/ruanalexandreS/Korp_Teste_RuanAlexandre',
-      urlDeploy: '',
-      tecnologias: ['C#', '.NET 8', 'Angular', 'EF Core', 'SQL Server', 'Microsserviços'],
-      categoria: 'Full Stack'
-    },
+      urlImagem: 'assets/NotaFiscal.png',
+      urlGithub: 'https://github.com/ruanalexandreS/Korp_teste_RuanCampos',
+      urlDeploy: 'https://korp-teste-ruan-campos.vercel.app/products',
+      tecnologias: ['C#', '.NET 8', 'Angular', 'EF Core', 'SQL Server', 'Microsserviços']
+    }
   ];
 
-  constructor() { }
+  readonly projetos = computed<Projeto[]>(() => {
+    const lista = this.idioma.t().projetos.lista;
+    return this.dadosTecnicos.map(d => {
+      const i18n = lista.find(x => x.id === d.id);
+      return {
+        id: d.id,
+        urlImagem: d.urlImagem,
+        urlGithub: d.urlGithub,
+        urlDeploy: d.urlDeploy,
+        tecnologias: d.tecnologias,
+        titulo: i18n?.titulo ?? '',
+        descricao: i18n?.descricao ?? '',
+        categoria: i18n?.categoria ?? ''
+      };
+    });
+  });
 
   listarProjetos(): Observable<Projeto[]> {
-    return of(this.projetosFixos);
+    return of(this.projetos());
   }
 }

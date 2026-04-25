@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IdiomaService, ExperienciaCarreira } from '../../../../services/idioma.service';
 
 @Component({
   selector: 'app-career',
@@ -9,6 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './career.component.css'
 })
 export class CareerComponent {
-  @Input() t: any;
-  @Input() experiencias: any[] = [];
+  private idiomaService = inject(IdiomaService);
+  get t() { return this.idiomaService.t(); }
+
+  @Input() experiencias: readonly ExperienciaCarreira[] = [];
 }

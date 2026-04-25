@@ -10,14 +10,12 @@ import { IdiomaService } from '../../services/idioma.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  // Conectando com o nosso Serviço
-  idiomaService = inject(IdiomaService);
+  private idiomaService = inject(IdiomaService);
 
   isMenuOpen: boolean = false;
 
-  // Lendo o idioma e os textos direto do Serviço
   get idiomaAtual() { return this.idiomaService.getIdioma(); }
-  get t() { return this.idiomaService.textos[this.idiomaAtual].menu; }
+  get t() { return this.idiomaService.t(); }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
@@ -32,7 +30,6 @@ export class HeaderComponent {
   }
 
   toggleIdioma(): void {
-    // Serviço para girar entre os idiomas (PT -> EN -> ES)
     this.idiomaService.alternarIdioma();
   }
 

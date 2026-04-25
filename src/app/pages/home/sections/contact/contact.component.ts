@@ -13,8 +13,8 @@ import { IdiomaService } from '../../../../services/idioma.service';
 })
 export class ContactComponent {
 
-  idiomaService = inject(IdiomaService);
-  get t() { return this.idiomaService.textos[this.idiomaService.getIdioma()]; }
+  private idiomaService = inject(IdiomaService);
+  get t() { return this.idiomaService.t(); }
 
   contactForm: FormGroup;
   enviando = false;

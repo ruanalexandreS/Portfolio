@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IdiomaService } from '../../services/idioma.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,4 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-export class FooterComponent { }
+export class FooterComponent {
+  private idiomaService = inject(IdiomaService);
+  get t() { return this.idiomaService.t(); }
+}

@@ -17,19 +17,19 @@
                 <!-- Botões com Tradução (Desktop) -->
                 <button (click)="voltarAoTopo()"
                     class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
-                    t.inicio }}</button>
+                    t.menu.inicio }}</button>
                 <button (click)="scrollTo('about')"
                     class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
-                    t.sobre }}</button>
+                    t.menu.sobre }}</button>
                 <button (click)="scrollTo('career')"
                     class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
-                    t.carreira }}</button>
+                    t.menu.carreira }}</button>
                 <button (click)="scrollTo('projects')"
                     class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
-                    t.projetos }}</button>
+                    t.menu.projetos }}</button>
                 <button (click)="scrollTo('contact')"
                     class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
-                    t.contato }}</button>
+                    t.menu.contato }}</button>
 
                 <div class="w-px h-5 bg-gray-700 hidden md:block"></div>
 
@@ -77,19 +77,19 @@
             <!-- Botões com Tradução (Mobile - mantendo as classes block e text-left) -->
             <button (click)="scrollTo('home')"
                 class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
-                t.inicio }}</button>
+                t.menu.inicio }}</button>
             <button (click)="scrollTo('about')"
                 class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
-                t.sobre }}</button>
+                t.menu.sobre }}</button>
             <button (click)="scrollTo('career')"
                 class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
-                t.carreira }}</button>
+                t.menu.carreira }}</button>
             <button (click)="scrollTo('projects')"
                 class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
-                t.projetos }}</button>
+                t.menu.projetos }}</button>
             <button (click)="scrollTo('contact')"
                 class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
-                t.contato }}</button>
+                t.menu.contato }}</button>
 
             <div class="w-full h-px bg-gray-700 my-2"></div>
 
@@ -103,7 +103,7 @@
                         d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
                     </path>
                 </svg>
-                <span>Idioma: {{ idiomaAtual }}</span>
+                <span>{{ t.menu.labelIdioma }}: {{ idiomaAtual }}</span>
             </button>
         </div>
         }

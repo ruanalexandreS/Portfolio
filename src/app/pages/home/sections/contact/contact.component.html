@@ -11,12 +11,8 @@
 
             <!-- ESQUERDA -->
             <div class="contact-left">
-                <h3 class="contact-left-title">Vamos Conversar</h3>
-                <p class="contact-left-desc">
-                    Seja para uma vaga de desenvolvedor, um projeto freelance ou
-                    apenas para trocar ideias sobre tecnologia — estou aqui.
-                    Respondo em até 24 horas.
-                </p>
+                <h3 class="contact-left-title">{{ t.contato.tituloLeft }}</h3>
+                <p class="contact-left-desc">{{ t.contato.descricaoLeft }}</p>
 
                 <div class="contact-info-list">
                     <div class="contact-info-card">
@@ -28,8 +24,8 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="contact-info-label">EMAIL</p>
-                            <p class="contact-info-value">ruanalexandre625&#64;gmail.com</p>
+                            <p class="contact-info-label">{{ t.contato.labelEmail }}</p>
+                            <p class="contact-info-value">{{ t.contato.valorEmail }}</p>
                         </div>
                     </div>
 
@@ -43,8 +39,8 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="contact-info-label">LOCALIZAÇÃO</p>
-                            <p class="contact-info-value">BA — Disponível Remoto</p>
+                            <p class="contact-info-label">{{ t.contato.labelLocalizacao }}</p>
+                            <p class="contact-info-value">{{ t.contato.valorLocalizacao }}</p>
                         </div>
                     </div>
 
@@ -56,17 +52,17 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="contact-info-label">TEMPO DE RESPOSTA</p>
-                            <p class="contact-info-value">Dentro de 24 horas</p>
+                            <p class="contact-info-label">{{ t.contato.labelTempoResposta }}</p>
+                            <p class="contact-info-value">{{ t.contato.valorTempoResposta }}</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-socials">
-                    <p class="contact-socials-label">CONECTE-SE COMIGO</p>
+                    <p class="contact-socials-label">{{ t.contato.labelRedes }}</p>
                     <div class="contact-socials-icons">
                         <a href="https://github.com/ruanalexandreS" target="_blank" class="contact-social-btn"
-                            title="GitHub">
+                            [title]="t.contato.tituloGithub">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"
                                 height="20">
                                 <path
@@ -74,7 +70,7 @@
                             </svg>
                         </a>
                         <a href="https://www.linkedin.com/in/ruan-alexandre-/" target="_blank"
-                            class="contact-social-btn" title="LinkedIn">
+                            class="contact-social-btn" [title]="t.contato.tituloLinkedin">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"
                                 height="20">
                                 <path
@@ -82,7 +78,8 @@
                                 <circle cx="4" cy="4" r="2" />
                             </svg>
                         </a>
-                        <a href="mailto:ruanalexandre625@gmail.com" class="contact-social-btn" title="Email">
+                        <a href="mailto:ruanalexandre625@gmail.com" class="contact-social-btn"
+                            [title]="t.contato.tituloEmailBtn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"
                                 height="20">
                                 <path
@@ -95,51 +92,50 @@
 
             <!-- DIREITA: FORMULÁRIO FUNCIONAL -->
             <div class="contact-form-card">
-                <h3 class="contact-form-title">Envie uma Mensagem</h3>
+                <h3 class="contact-form-title">{{ t.contato.tituloForm }}</h3>
 
                 <form [formGroup]="contactForm" (ngSubmit)="enviarEmail()" novalidate>
 
                     <div class="contact-form-row">
                         <div class="contact-field">
-                            <label class="contact-label">Seu Nome</label>
-                            <input type="text" formControlName="nome" placeholder="Seu Nome" class="contact-input"
-                                [class.contact-input-error]="isInvalid('nome')" />
+                            <label class="contact-label">{{ t.contato.labelNome }}</label>
+                            <input type="text" formControlName="nome" [placeholder]="t.contato.placeholderNome"
+                                class="contact-input" [class.contact-input-error]="isInvalid('nome')" />
                             <span class="contact-error-msg" *ngIf="isInvalid('nome')">
-                                Nome é obrigatório
+                                {{ t.contato.erroNome }}
                             </span>
                         </div>
                         <div class="contact-field">
-                            <label class="contact-label">Seu Email</label>
-                            <input type="email" formControlName="email" placeholder="seu@email.com"
+                            <label class="contact-label">{{ t.contato.labelEmailForm }}</label>
+                            <input type="email" formControlName="email" [placeholder]="t.contato.placeholderEmail"
                                 class="contact-input" [class.contact-input-error]="isInvalid('email')" />
                             <span class="contact-error-msg"
                                 *ngIf="isInvalid('email') && contactForm.get('email')?.errors?.['required']">
-                                Email é obrigatório
+                                {{ t.contato.erroEmail }}
                             </span>
                             <span class="contact-error-msg"
                                 *ngIf="isInvalid('email') && contactForm.get('email')?.errors?.['email']">
-                                Email inválido
+                                {{ t.contato.erroEmailInvalido }}
                             </span>
                         </div>
                     </div>
 
                     <div class="contact-field">
-                        <label class="contact-label">Assunto</label>
-                        <input type="text" formControlName="assunto"
-                            placeholder="Oportunidade de trabalho / Projeto / etc." class="contact-input"
-                            [class.contact-input-error]="isInvalid('assunto')" />
+                        <label class="contact-label">{{ t.contato.labelAssunto }}</label>
+                        <input type="text" formControlName="assunto" [placeholder]="t.contato.placeholderAssunto"
+                            class="contact-input" [class.contact-input-error]="isInvalid('assunto')" />
                         <span class="contact-error-msg" *ngIf="isInvalid('assunto')">
-                            Assunto é obrigatório
+                            {{ t.contato.erroAssunto }}
                         </span>
                     </div>
 
                     <div class="contact-field">
-                        <label class="contact-label">Sua Mensagem</label>
-                        <textarea formControlName="mensagem" placeholder="Conte sobre a oportunidade ou projeto..."
+                        <label class="contact-label">{{ t.contato.labelMensagem }}</label>
+                        <textarea formControlName="mensagem" [placeholder]="t.contato.placeholderMensagem"
                             class="contact-input contact-textarea"
                             [class.contact-input-error]="isInvalid('mensagem')"></textarea>
                         <span class="contact-error-msg" *ngIf="isInvalid('mensagem')">
-                            Mensagem é obrigatória
+                            {{ t.contato.erroMensagem }}
                         </span>
                     </div>
 
@@ -151,7 +147,7 @@
                                 <line x1="22" y1="2" x2="11" y2="13" />
                                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
                             </svg>
-                            Enviar Mensagem
+                            {{ t.contato.botaoEnviar }}
                         </span>
 
                         <span *ngIf="enviando">
@@ -160,7 +156,7 @@
                                 <path
                                     d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                             </svg>
-                            Enviando...
+                            {{ t.contato.enviando }}
                         </span>
 
                         <span *ngIf="enviado">
@@ -168,7 +164,7 @@
                                 height="18">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Mensagem Enviada!
+                            {{ t.contato.enviado }}
                         </span>
 
                         <span *ngIf="erro">
@@ -177,7 +173,7 @@
                                 <line x1="18" y1="6" x2="6" y2="18" />
                                 <line x1="6" y1="6" x2="18" y2="18" />
                             </svg>
-                            Erro — Tente novamente
+                            {{ t.contato.erro }}
                         </span>
 
                     </button>

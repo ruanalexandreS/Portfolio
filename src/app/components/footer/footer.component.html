@@ -8,14 +8,14 @@
         </div>
 
         <p class="footer-copy">
-            Feito em 2025 · Todos os direitos reservados.
+            {{ t.footer.direitos }}
         </p>
 
         <nav class="footer-nav">
-            <a href="#about">Sobre Mim</a>
-            <a href="#projects">Projetos</a>
-            <a href="#career">Carreira</a>
-            <a href="#contact">Contato</a>
+            <a href="#about">{{ t.footer.navSobre }}</a>
+            <a href="#projects">{{ t.footer.navProjetos }}</a>
+            <a href="#career">{{ t.footer.navCarreira }}</a>
+            <a href="#contact">{{ t.footer.navContato }}</a>
         </nav>
 
     </div>
@@ -23,9 +23,9 @@
     <div class="footer-divider"></div>
 
     <div class="footer-tagline container mx-auto px-6">
-        Construindo soluções robustas •
-        Aprendendo todos os dias •
-        <span class="footer-tag-hl-blue">.NET Backend Development</span> •
-        <span class="footer-tag-hl-teal">AWS em Formação</span>
+        {{ t.footer.taglineLinha1 }} •
+        {{ t.footer.taglineLinha2 }} •
+        <span class="footer-tag-hl-blue">{{ t.footer.taglineHighlight1 }}</span> •
+        <span class="footer-tag-hl-teal">{{ t.footer.taglineHighlight2 }}</span>
     </div>
 </footer>

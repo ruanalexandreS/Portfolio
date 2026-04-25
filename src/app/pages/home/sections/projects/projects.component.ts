@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Projeto } from '../../../../services/projeto.service';
+import { IdiomaService } from '../../../../services/idioma.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,9 +11,11 @@ import { Projeto } from '../../../../services/projeto.service';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  @Input() t: any;
-  @Input() categorias: string[] = [];
-  @Input() categoriaAtiva: string = 'Todos';
+  private idiomaService = inject(IdiomaService);
+  get t() { return this.idiomaService.t(); }
+
+  @Input() categorias: readonly string[] = [];
+  @Input() categoriaAtiva: string = '';
   @Input() projetosExibidos: Projeto[] = [];
   @Input() filtrarPor!: (cat: string) => void;
 }

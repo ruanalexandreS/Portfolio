@@ -48,7 +48,7 @@
                         </ul>
                         }
                         @if (exp.tecnologias && exp.tecnologias.length > 0) {
-                        <div class="career-techs-label">TECNOLOGIAS USADAS</div>
+                        <div class="career-techs-label">{{ t.carreira.labelTecnologias }}</div>
                         <div class="flex flex-wrap gap-2">
                             @for (tech of exp.tecnologias; track tech) {
                             <span class="career-tech-tag">{{ tech }}</span>
