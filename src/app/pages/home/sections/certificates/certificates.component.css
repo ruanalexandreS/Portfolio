@@ -2,20 +2,24 @@
    7. CERTIFICADOS
    ========================================================================== */
 .cert-title {
+    text-align: center;
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
-    background: var(--gradient-brand);
+    background: var(--gradient-tertiary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .cert-divider {
     display: block;
     width: 60px;
     height: 3px;
-    background: var(--gradient-tertiary);
+    background: linear-gradient(90deg, var(--color-primary));
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -104,11 +108,15 @@
 }
 
 .cert-status-done {
-    color: var(--color-accent);
+    color: var(--color-primary);
 }
 
 .cert-status-progress {
     color: var(--color-accent);
+}
+
+.cert-status-preparation {
+    color: var(--color-tertiary);
 }
 
 .cert-skills-label {
@@ -128,11 +136,11 @@
 
 .cert-tag {
     padding: 3px 10px;
-    border: 1px solid rgba(59, 130, 246, 0.25);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     border-radius: 100px;
     font-size: 0.72rem;
-    color: #93c5fd;
-    background: rgba(59, 130, 246, 0.06);
+    color: var(--color-silver);
+    background: rgba(148, 163, 184, 0.06);
 }
 
 .cert-card-footer {
@@ -168,7 +176,7 @@
     align-items: center;
     gap: 5px;
     padding: 6px 14px;
-    background: #16a34a;
+    background: var(--color-primary);
     color: #fff;
     border-radius: 8px;
     font-size: 0.78rem;
@@ -179,13 +187,13 @@
 }
 
 .cert-verify-btn:hover {
-    background: #15803d;
+    background: var(--color-primary-hover);
     transform: translateY(-1px);
 }
 
 .cert-learning-box {
     background: rgba(15, 32, 64, 0.5);
-    border: 1px solid rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(188, 159, 241, 0.3);
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
@@ -220,7 +228,7 @@
     border-radius: 100px;
     font-size: 0.82rem;
     font-weight: 600;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    color: #93c5fd;
+    background: rgba(188, 159, 241, 0.1);
+    border: 1px solid rgba(188, 159, 241, 0.3);
+    color: var(--color-tertiary);
 }

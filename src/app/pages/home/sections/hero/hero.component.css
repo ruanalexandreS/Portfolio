@@ -93,13 +93,13 @@
 .hero-subtitle {
     font-size: clamp(1.3rem, 3vw, 2rem);
     font-weight: 700;
-    color: #fff;
+    color: var(--color-silver);
     line-height: 1.25;
     margin-bottom: 20px;
 }
 
 .hero-subtitle-hl {
-    color: var(--accent);
+    color: var(--color-primary);
 }
 
 .hero-desc {
@@ -128,6 +128,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    overflow: visible;
 }
 
 /* ANÉIS COM GLOW */
@@ -336,18 +337,18 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--color-primary);
+    background: var(--color-tertiary);
     color: white;
     border: none;
-    box-shadow: 0 0 18px rgba(14, 165, 233, 0.45),
-                0 0 36px rgba(14, 165, 233, 0.15);
+    box-shadow: 0 0 18px rgba(188, 159, 241, 0.45),
+        0 0 36px rgba(188, 159, 241, 0.15);
     transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: var(--color-primary-hover);
-    box-shadow: 0 0 28px rgba(14, 165, 233, 0.7),
-                0 0 56px rgba(14, 165, 233, 0.25);
+    background: var(--color-tertiary-hover);
+    box-shadow: 0 0 28px rgba(188, 159, 241, 0.7),
+        0 0 56px rgba(188, 159, 241, 0.25);
     transform: translateY(-2px);
 }
 
@@ -377,8 +378,8 @@
     border-color: #7c3aed;
     color: #bc9ff1;
     box-shadow: 0 0 16px rgba(124, 58, 237, 0.5),
-                0 0 32px rgba(124, 58, 237, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 0 32px rgba(124, 58, 237, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 

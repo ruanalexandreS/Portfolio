@@ -3,7 +3,7 @@
    ========================================================================== */
 .footer-custom {
     background: var(--bg-base);
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(14, 165, 233, 0.1);
     padding: 2rem 0 1.5rem;
 }
 
@@ -32,9 +32,22 @@
 
 .footer-icons {
     font-size: 0.8rem;
-    color: var(--color-accent);
     font-weight: 600;
     letter-spacing: 1px;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.footer-icon-cyan {
+    color: var(--color-primary);
+}
+
+.footer-icon-yellow {
+    color: var(--color-accent);
+}
+
+.footer-icon-purple {
+    color: var(--color-tertiary);
 }
 
 .footer-copy {
@@ -56,7 +69,7 @@
 }
 
 .footer-nav a:hover {
-    color: var(--text-primary);
+    color: var(--color-primary);
 }
 
 .footer-divider {
@@ -74,7 +87,7 @@
 }
 
 .footer-tag-hl-blue {
-    color: var(--color-primary);
+    color: var(--color-tertiary);
     font-weight: 600;
 }
 

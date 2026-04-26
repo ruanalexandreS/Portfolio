@@ -2,13 +2,17 @@
    8. CONTATO
    ========================================================================== */
 .contact-title {
+    text-align: center;
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
-    background: var(--gradient-brand);
+    background: var(--gradient-tertiary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .contact-subtitle {
@@ -22,7 +26,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: var(--gradient-tertiary);
+    background: var(--color-primary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -114,19 +118,19 @@
     height: 42px;
     border-radius: 10px;
     background: rgba(15, 32, 64, 0.6);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: var(--color-silver);
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
 .contact-social-btn:hover {
-    border-color: rgba(59, 130, 246, 0.6);
-    color: var(--text-primary);
-    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(14, 165, 233, 0.1);
 }
 
 .contact-form-card {
@@ -165,7 +169,7 @@
 
 .contact-input {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 0.9rem;
@@ -181,7 +185,7 @@
 }
 
 .contact-input:focus {
-    border-color: rgba(59, 130, 246, 0.5);
+    border-color: var(--color-primary);
 }
 
 .contact-textarea {
@@ -192,7 +196,7 @@
 .contact-send-btn {
     width: 100%;
     padding: 13px;
-    background: var(--gradient-brand);
+    background: var(--color-primary);
     border: none;
     border-radius: 12px;
     color: #fff;
@@ -203,13 +207,17 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 0 18px rgba(14, 165, 233, 0.45),
+        0 0 36px rgba(14, 165, 233, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
     margin-top: 0.5rem;
 }
 
 .contact-send-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    background: var(--color-primary-hover);
+    box-shadow: 0 0 28px rgba(14, 165, 233, 0.7),
+        0 0 56px rgba(14, 165, 233, 0.25);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

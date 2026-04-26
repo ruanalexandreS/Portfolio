@@ -15,6 +15,6 @@ export class CertificatesComponent {
   get t() { return this.idiomaService.t(); }
 
   readonly badgeClasses = ['cert-badge-blue', 'cert-badge-teal', 'cert-badge-yellow'];
-  readonly statusClasses = ['cert-status-done', 'cert-status-progress', 'cert-status-progress'];
+  readonly statusClasses = ['cert-status-done', 'cert-status-progress', 'cert-status-preparation'];
   readonly verifyLinks = ['#', 'https://balta.io', 'https://aws.amazon.com/certification/'];
 }

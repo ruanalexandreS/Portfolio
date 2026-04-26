@@ -15,6 +15,8 @@
   --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-silver));
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-silver));
   --gradient-tertiary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
+  --gradient-title-primary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
+  --gradient-title-accent: linear-gradient(135deg, var(--color-accent), var(--color-tertiary));
 
   /* Dark mode (default) */
   --bg-base: #0B1120;
@@ -79,6 +81,14 @@
   border-radius: 2px;
   margin: 0.75rem auto 0;
   background: linear-gradient(90deg, var(--color-primary), var(--color-tertiary));
+}
+
+.section-divider--yellow {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-tertiary));
+}
+
+.section-divider--cyan {
+  background: var(--color-primary);
 }
 
 /* Reset Global */

@@ -2,20 +2,24 @@
    4. HABILIDADES TÉCNICAS
    ========================================================================== */
 .skills-title {
+    text-align: center;
+    font-family: 'Syne', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
-    background: var(--gradient-brand);
+    background: var(--gradient-tertiary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-align: center;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .skills-divider {
     display: block;
     width: 60px;
     height: 3px;
-    background: var(--gradient-tertiary);
+    background: var(--color-primary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }

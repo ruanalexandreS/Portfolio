@@ -4,13 +4,13 @@
         <div class="text-center mb-12">
             <h2 class="projects-title section-title">{{ t.titulos.projetos }}</h2>
             <p class="text-text-secondary section-subtitle mt-2">{{ t.titulos.projetosSub }}</p>
-            <div class="section-divider"></div>
+            <div class="section-divider section-divider--cyan"></div>
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 mb-12">
             @for (cat of categorias; track cat) {
-            <button (click)="filtrarPor(cat)" class="px-6 py-2 rounded-full font-medium transition-all"
-                [class]="categoriaAtiva === cat ? 'bg-gradient-to-r from-[var(--color-tertiary)] to-[var(--color-primary)] text-white shadow-lg' : 'bg-bg-elevated text-text-secondary hover:bg-bg-base'">
+            <button (click)="filtrarPor(cat)" class="px-6 py-2 rounded-full font-medium transition-all border"
+                [class]="categoriaAtiva === cat ? 'bg-primary text-white border-primary shadow-lg' : 'bg-bg-elevated text-text-secondary border-[var(--color-silver)] hover:border-[var(--color-tertiary)] hover:text-[var(--color-tertiary)]'">
                 {{ cat }}
             </button>
             }
@@ -25,20 +25,19 @@
                 class="project-card bg-bg-elevated border border-border-base rounded-xl overflow-hidden group hover:border-primary/50 shadow-lg">
 
                 <div class="project-image relative overflow-hidden">
-                    <img [src]="projeto.urlImagem" [alt]="projeto.titulo"
-                        class="w-full h-full object-cover">
+                    <img [src]="projeto.urlImagem" [alt]="projeto.titulo" class="w-full h-full object-cover">
 
                     <div
                         class="absolute inset-0 bg-bg-base/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
 
                         @if (projeto.urlDeploy) {
                         <a [href]="projeto.urlDeploy" target="_blank"
-                            class="p-3 bg-primary rounded-full hover:bg-primary-hover text-white transition-colors"
+                            class="p-3 bg-accent rounded-full hover:bg-accent-hover text-bg-base transition-colors"
                             [title]="t.projetos.verDeploy">🔗</a>
                         }
 
                         <a [href]="projeto.urlGithub" target="_blank"
-                            class="p-3 bg-bg-elevated rounded-full hover:bg-bg-base text-text-primary transition-colors border border-border-base"
+                            class="p-3 bg-primary rounded-full hover:bg-primary-hover text-white transition-colors"
                             [title]="t.projetos.verGithub">💻</a>
 
                     </div>
@@ -46,11 +45,14 @@
 
                 <div class="project-body p-6">
                     <span class="text-xs font-bold text-primary uppercase tracking-wider">{{ projeto.categoria }}</span>
-                    <h3 class="text-xl font-bold mt-2 mb-3 text-[var(--color-silver-light)] hover:text-[var(--color-silver)] transition-colors">{{ projeto.titulo }}</h3>
+                    <h3 class="text-xl font-bold mt-2 mb-3 text-text-primary hover:text-primary transition-colors">{{
+                        projeto.titulo }}</h3>
                     <p class="text-text-secondary text-sm mb-4">{{ projeto.descricao }}</p>
                     <div class="project-tags flex flex-wrap gap-2">
                         @for (tech of projeto.tecnologias; track tech) {
-                        <span class="text-xs px-2 py-1 bg-bg-base text-text-secondary rounded-md border border-border-base">#{{ tech }}</span>
+                        <span
+                            class="text-xs px-2 py-1 bg-bg-base text-text-secondary rounded-md border border-border-base">#{{
+                            tech }}</span>
                         }
                     </div>
                 </div>
