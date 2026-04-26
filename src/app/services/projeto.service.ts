@@ -1,5 +1,4 @@
 import { Injectable, computed, inject } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { IdiomaService } from './idioma.service';
 
 export interface Projeto {
@@ -67,8 +66,4 @@ export class ProjetoService {
       };
     });
   });
-
-  listarProjetos(): Observable<Projeto[]> {
-    return of(this.projetos());
-  }
 }

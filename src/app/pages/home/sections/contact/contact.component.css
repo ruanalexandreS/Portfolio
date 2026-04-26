@@ -5,14 +5,14 @@
     font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #38d9a9, #3b82f6);
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .contact-subtitle {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.7;
     margin-top: 0.5rem;
@@ -22,7 +22,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    background: var(--gradient-tertiary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -39,13 +39,13 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #f1f5f9;
+    color: var(--text-primary);
     margin-bottom: 0.8rem;
 }
 
 .contact-left-desc {
     font-size: 0.95rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 1.8rem;
 }
@@ -84,7 +84,7 @@
 
 .contact-info-label {
     font-size: 0.72rem;
-    color: #64748b;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 2px;
@@ -92,13 +92,13 @@
 
 .contact-info-value {
     font-size: 0.88rem;
-    color: #cbd5e1;
+    color: var(--text-primary);
     font-weight: 500;
 }
 
 .contact-socials-label {
     font-size: 0.82rem;
-    color: #64748b;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 0.8rem;
@@ -118,14 +118,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #94a3b8;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
 .contact-social-btn:hover {
     border-color: rgba(59, 130, 246, 0.6);
-    color: #e2e8f0;
+    color: var(--text-primary);
     background: rgba(59, 130, 246, 0.1);
 }
 
@@ -140,7 +140,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #f1f5f9;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
@@ -159,7 +159,7 @@
 
 .contact-label {
     font-size: 0.8rem;
-    color: #64748b;
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -169,7 +169,7 @@
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 0.9rem;
-    color: #e2e8f0;
+    color: var(--text-primary);
     outline: none;
     transition: border-color 0.2s;
     width: 100%;
@@ -177,7 +177,7 @@
 }
 
 .contact-input::placeholder {
-    color: #334155;
+    color: var(--text-secondary);
 }
 
 .contact-input:focus {
@@ -192,7 +192,7 @@
 .contact-send-btn {
     width: 100%;
     padding: 13px;
-    background: linear-gradient(135deg, #2563eb, #38d9a9);
+    background: var(--gradient-brand);
     border: none;
     border-radius: 12px;
     color: #fff;
@@ -236,7 +236,7 @@
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    background: linear-gradient(90deg, #3b82f6, #38d9a9);
+    background: var(--gradient-brand);
     color: white;
     display: flex;
     align-items: center;
@@ -266,7 +266,7 @@
 
 /* Estado: enviado (verde) */
 .contact-send-btn:has(span > svg > polyline) {
-    background: linear-gradient(90deg, #16a34a, #38d9a9);
+    background: linear-gradient(90deg, #16a34a, var(--color-accent));
 }
 
 /* Estado: erro (vermelho) */

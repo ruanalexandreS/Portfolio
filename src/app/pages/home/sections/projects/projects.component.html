@@ -1,55 +1,55 @@
 <!-- 3. PROJETOS DESTACADOS -->
-<section id="projects" class="py-20 bg-gray-800/30 border-y border-gray-800">
+<section id="projects" class="py-20 bg-bg-section-alt border-y border-border-base">
     <div class="container mx-auto px-6">
         <div class="text-center mb-12">
             <h2 class="projects-title">{{ t.titulos.projetos }}</h2>
-            <p class="text-gray-400 mt-2">{{ t.titulos.projetosSub }}</p>
+            <p class="text-text-secondary mt-2">{{ t.titulos.projetosSub }}</p>
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 mb-12">
             @for (cat of categorias; track cat) {
             <button (click)="filtrarPor(cat)" class="px-6 py-2 rounded-full font-medium transition-all"
-                [class]="categoriaAtiva === cat ? 'bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'">
+                [class]="categoriaAtiva === cat ? 'bg-gradient-to-r from-[var(--color-tertiary)] to-[var(--color-primary)] text-white shadow-lg' : 'bg-bg-elevated text-text-secondary hover:bg-bg-base'">
                 {{ cat }}
             </button>
             }
         </div>
 
         @if (projetosExibidos.length === 0) {
-        <p class="text-center text-gray-400">{{ t.projetos.semProjetos }}</p>
+        <p class="text-center text-text-secondary">{{ t.projetos.semProjetos }}</p>
         } @else {
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             @for (projeto of projetosExibidos; track projeto.id) {
             <div
-                class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all shadow-lg">
+                class="bg-bg-elevated border border-border-base rounded-xl overflow-hidden group hover:border-primary/50 transition-all shadow-lg">
 
                 <div class="relative h-48 overflow-hidden">
                     <img [src]="projeto.urlImagem" [alt]="projeto.titulo"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
 
                     <div
-                        class="absolute inset-0 bg-gray-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        class="absolute inset-0 bg-bg-base/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
 
                         @if (projeto.urlDeploy) {
                         <a [href]="projeto.urlDeploy" target="_blank"
-                            class="p-3 bg-blue-500 rounded-full hover:bg-blue-400 text-white transition-colors"
+                            class="p-3 bg-primary rounded-full hover:bg-primary-hover text-white transition-colors"
                             [title]="t.projetos.verDeploy">🔗</a>
                         }
 
                         <a [href]="projeto.urlGithub" target="_blank"
-                            class="p-3 bg-gray-800 rounded-full hover:bg-gray-700 text-white transition-colors border border-gray-600"
+                            class="p-3 bg-bg-elevated rounded-full hover:bg-bg-base text-text-primary transition-colors border border-border-base"
                             [title]="t.projetos.verGithub">💻</a>
 
                     </div>
                 </div>
 
                 <div class="p-6">
-                    <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">{{ projeto.categoria }}</span>
-                    <h3 class="text-xl font-bold mt-2 mb-3 group-hover:text-green-400 transition-colors">{{ projeto.titulo }}</h3>
-                    <p class="text-gray-400 text-sm mb-4">{{ projeto.descricao }}</p>
+                    <span class="text-xs font-bold text-primary uppercase tracking-wider">{{ projeto.categoria }}</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3 text-[var(--color-silver-light)] hover:text-[var(--color-silver)] transition-colors">{{ projeto.titulo }}</h3>
+                    <p class="text-text-secondary text-sm mb-4">{{ projeto.descricao }}</p>
                     <div class="flex flex-wrap gap-2">
                         @for (tech of projeto.tecnologias; track tech) {
-                        <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700">#{{ tech }}</span>
+                        <span class="text-xs px-2 py-1 bg-bg-base text-text-secondary rounded-md border border-border-base">#{{ tech }}</span>
                         }
                     </div>
                 </div>

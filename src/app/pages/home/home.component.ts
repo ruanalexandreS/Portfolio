@@ -7,7 +7,7 @@ import { EducationComponent } from './sections/education/education.component';
 import { CertificatesComponent } from './sections/certificates/certificates.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, inject, effect, signal, untracked } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { IdiomaService } from '../../services/idioma.service';
@@ -18,19 +18,19 @@ import { ProjetoService, Projeto } from '../../services/projeto.service';
   standalone: true,
   imports: [CommonModule, HeaderComponent, HeroComponent, AboutComponent, ProjectsComponent, SkillsComponent, CareerComponent, EducationComponent, CertificatesComponent, ContactComponent, FooterComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnDestroy {
 
   private idiomaService = inject(IdiomaService);
   private projetoService = inject(ProjetoService);
-  private cdr = inject(ChangeDetectorRef);
 
   get t() { return this.idiomaService.t(); }
 
-  textoExibido = '';
-  fraseIndex = 0;
-  isApagando = false;
+  textoExibido = signal('');
+  fraseIndex = signal(0);
+  isApagando = signal(false);
   timeoutId: any;
 
   velDigitacao = 100;
@@ -57,19 +57,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  ngOnInit() {
-    this.categoriaAtiva = this.t.projetos.filtros[0];
-    this.iniciarTypewriter();
-
-    this.idiomaService.idioma$.subscribe(() => {
+  private idiomaEffect = effect(() => {
+    this.idiomaService.idioma();
+    untracked(() => {
       this.categoriaAtiva = this.t.projetos.filtros[0];
-      this.fraseIndex = 0;
-      this.textoExibido = '';
-      this.isApagando = false;
+      this.fraseIndex.set(0);
+      this.textoExibido.set('');
+      this.isApagando.set(false);
       if (this.timeoutId) clearTimeout(this.timeoutId);
       this.iniciarTypewriter();
     });
-  }
+  });
 
   ngOnDestroy() {
     if (this.timeoutId) clearTimeout(this.timeoutId);
@@ -79,24 +77,25 @@ export class HomeComponent implements OnInit, OnDestroy {
     const frases = this.t?.hero?.frases;
     if (!frases || frases.length === 0) return;
 
-    const fraseAtual = frases[this.fraseIndex];
+    const fraseAtual = frases[this.fraseIndex()];
+    const textoAtual = this.textoExibido();
+    const apagando = this.isApagando();
 
-    if (this.isApagando) {
-      this.textoExibido = fraseAtual.substring(0, this.textoExibido.length - 1);
+    if (apagando) {
+      this.textoExibido.set(fraseAtual.substring(0, textoAtual.length - 1));
     } else {
-      this.textoExibido = fraseAtual.substring(0, this.textoExibido.length + 1);
+      this.textoExibido.set(fraseAtual.substring(0, textoAtual.length + 1));
     }
 
-    this.cdr.detectChanges();
+    let velocidade = apagando ? this.velApagando : this.velDigitacao;
+    const novoTexto = this.textoExibido();
 
-    let velocidade = this.isApagando ? this.velApagando : this.velDigitacao;
-
-    if (!this.isApagando && this.textoExibido === fraseAtual) {
+    if (!apagando && novoTexto === fraseAtual) {
       velocidade = this.pausaEntreFrases;
-      this.isApagando = true;
-    } else if (this.isApagando && this.textoExibido === '') {
-      this.isApagando = false;
-      this.fraseIndex = (this.fraseIndex + 1) % frases.length;
+      this.isApagando.set(true);
+    } else if (apagando && novoTexto === '') {
+      this.isApagando.set(false);
+      this.fraseIndex.set((this.fraseIndex() + 1) % frases.length);
       velocidade = 500;
     }
 

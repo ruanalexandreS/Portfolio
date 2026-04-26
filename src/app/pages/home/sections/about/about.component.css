@@ -2,9 +2,9 @@
  *  2. SEÇÃO SOBRE MIM
  *  ========================================================================== */
 .about-section {
-    background: #0b1120;
+    background: var(--bg-base);
     padding: 80px 0;
-    color: #cbd5e1;
+    color: var(--text-primary);
 }
 
 .about-title {
@@ -12,7 +12,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 3rem;
     font-weight: 800;
-    color: #cbd5e1;
+    color: var(--text-primary);
     margin-bottom: 10px;
     display: block;
 }
@@ -21,7 +21,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    background: var(--gradient-tertiary);
     margin: 0 auto 50px;
     border-radius: 2px;
 }
@@ -43,9 +43,9 @@
 .about-photo-bg {
     position: absolute;
     inset: 0;
-    background: #111827;
+    background: var(--bg-elevated);
     border-radius: 24px;
-    border: 1px solid rgba(56, 217, 169, 0.2);
+    border: 1px solid rgba(250, 204, 21, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -82,9 +82,9 @@
     right: -15px;
     width: 55px;
     height: 55px;
-    background: #3b82f6;
-    color: white;
-    border: 3px solid #0b1120;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: 3px solid var(--bg-base);
     font-size: 0.9rem;
 }
 
@@ -93,18 +93,18 @@
     left: -15px;
     width: 65px;
     height: 65px;
-    background: #0d1117;
-    border: 2px solid #fbbf24;
+    background: var(--bg-base);
+    border: 2px solid var(--color-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    box-shadow: 0 0 14px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 14px rgba(250, 204, 21, 0.3);
     font-weight: 900;
     font-size: 14px;
     letter-spacing: 1.5px;
-    color: #fbbf24;
+    color: var(--color-accent);
     text-transform: uppercase;
 }
 
@@ -127,29 +127,29 @@
 .about-subtitle {
     font-family: 'Syne', sans-serif;
     font-size: 2rem;
-    color: #f8fafc;
+    color: var(--text-primary);
     margin-bottom: 25px;
 }
 
 .silver-text {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
 .highlight-teal {
-    color: #38d9a9;
+    color: var(--color-accent);
     font-weight: 600;
 }
 
 .highlight-blue {
-    color: #60a5fa;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
 .highlight-gradient {
-    color: #3b82f6;
+    color: var(--color-primary);
     font-weight: 700;
 }
 
@@ -165,25 +165,48 @@
     border-radius: 100px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid;
+    border: 1px solid var(--color-silver);
+    background: rgba(148, 163, 184, 0.08);
+    color: var(--color-silver-light);
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.t-badge:hover {
+    border-color: var(--color-silver-light);
+    background: rgba(148, 163, 184, 0.15);
 }
 
 .b-teal {
-    background: rgba(56, 217, 169, .05);
-    border-color: #38d9a9;
-    color: #38d9a9;
+    border-color: var(--color-tertiary);
+    color: var(--color-tertiary);
+    background: rgba(188, 159, 241, 0.08);
+}
+
+.b-teal:hover {
+    border-color: var(--color-tertiary-hover);
+    background: rgba(188, 159, 241, 0.15);
 }
 
 .b-blue {
-    background: rgba(59, 130, 246, .05);
-    border-color: #3b82f6;
-    color: #3b82f6;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: #0ea5e914;
+}
+
+.b-blue:hover {
+    border-color: var(--color-primary);
+    background: rgba(14, 165, 233, 0.15);
 }
 
 .b-gold {
-    background: rgba(251, 191, 36, .05);
-    border-color: #fbbf24;
-    color: #fbbf24;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(250, 204, 21, 0.08);
+}
+
+.b-gold:hover {
+    border-color: var(--color-accent);
+    background: #facc1526;
 }
 
 @media (max-width: 768px) {

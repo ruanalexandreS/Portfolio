@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IdiomaService } from '../../../../services/idioma.service';
 
@@ -7,7 +7,8 @@ import { IdiomaService } from '../../../../services/idioma.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './certificates.component.html',
-  styleUrl: './certificates.component.css'
+  styleUrl: './certificates.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CertificatesComponent {
   private idiomaService = inject(IdiomaService);

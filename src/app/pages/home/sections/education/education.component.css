@@ -5,7 +5,7 @@
     font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #3b82f6, #38d9a9);
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -16,7 +16,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    background: var(--gradient-tertiary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -71,7 +71,7 @@
 }
 
 .education-dot-active {
-    background: #3b82f6;
+    background: var(--color-primary);
 }
 
 @keyframes pulse-dot {
@@ -105,13 +105,13 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
-    color: #f1f5f9;
+    color: var(--text-primary);
     margin-bottom: 2px;
 }
 
 .education-degree {
     font-size: 0.9rem;
-    color: #3b82f6;
+    color: var(--color-primary);
     font-weight: 500;
     margin-bottom: 4px;
 }
@@ -121,7 +121,7 @@
     align-items: center;
     gap: 5px;
     font-size: 0.78rem;
-    color: #475569;
+    color: var(--text-secondary);
 }
 
 .education-badge {
@@ -133,14 +133,14 @@
 }
 
 .education-badge-active {
-    background: rgba(56, 217, 169, 0.1);
-    border: 1px solid rgba(56, 217, 169, 0.3);
-    color: #38d9a9;
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    color: var(--color-accent);
 }
 
 .education-desc {
     font-size: 0.88rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 1rem;
 }
@@ -156,14 +156,14 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     font-size: 0.75rem;
-    color: #64748b;
+    color: var(--text-secondary);
     background: rgba(255, 255, 255, 0.03);
     transition: border-color 0.2s, color 0.2s;
 }
 
 .education-tag:hover {
     border-color: rgba(59, 130, 246, 0.4);
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 @media (max-width: 600px) {

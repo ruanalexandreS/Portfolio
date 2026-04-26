@@ -5,7 +5,7 @@
     font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #38d9a9, #3b82f6);
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -15,7 +15,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #38d9a9, #3b82f6);
+    background: var(--gradient-tertiary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -64,11 +64,11 @@
 }
 
 .cert-badge-teal {
-    background: linear-gradient(135deg, #0f766e, #38d9a9);
+    background: var(--gradient-accent);
 }
 
 .cert-badge-yellow {
-    background: linear-gradient(135deg, #b45309, #fbbf24);
+    background: var(--gradient-accent);
 }
 
 .cert-info {
@@ -79,7 +79,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #f1f5f9;
+    color: var(--text-primary);
     margin-bottom: 6px;
     line-height: 1.3;
 }
@@ -90,12 +90,12 @@
     flex-wrap: wrap;
     gap: 5px;
     font-size: 0.78rem;
-    color: #64748b;
+    color: var(--text-secondary);
     margin-bottom: 10px;
 }
 
 .cert-dot {
-    color: #334155;
+    color: var(--text-secondary);
 }
 
 .cert-status {
@@ -104,17 +104,17 @@
 }
 
 .cert-status-done {
-    color: #38d9a9;
+    color: var(--color-accent);
 }
 
 .cert-status-progress {
-    color: #fbbf24;
+    color: var(--color-accent);
 }
 
 .cert-skills-label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #475569;
+    color: var(--text-secondary);
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -153,13 +153,13 @@
 
 .cert-credential-label {
     font-size: 0.72rem;
-    color: #475569;
+    color: var(--text-secondary);
 }
 
 .cert-credential-id {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #cbd5e1;
+    color: var(--text-primary);
     font-family: monospace;
 }
 
@@ -196,13 +196,13 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #f1f5f9;
+    color: var(--text-primary);
     margin-bottom: 0.6rem;
 }
 
 .cert-learning-desc {
     font-size: 0.9rem;
-    color: #64748b;
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto 1.2rem;
     line-height: 1.6;

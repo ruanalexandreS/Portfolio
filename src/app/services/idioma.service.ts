@@ -1,5 +1,4 @@
 import { Injectable, computed, signal } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 export type Idioma = 'PT' | 'EN' | 'ES';
 
@@ -209,14 +208,14 @@ const TEXTOS = {
         },
         hero: {
             saudacao: 'OLÁ, EU SOU O RUAN',
-            subtitulo: '.NET Backend Developer',
-            subtituloStatus: 'em Formação',
+            subtitulo: '.NET Backend Developer ·',
+            subtituloStatus: 'C# · ASP.NET Core · SQL Server',
             frases: [
                 'Transformando ideias em Software Real.',
                 'Construindo o futuro com .NET & Angular',
                 'Transformando café em código limpo.'
             ],
-            descricao: 'Estudante de Engenharia de Software focado em criar soluções robustas, escaláveis e performáticas. Transformando café em código limpo. ☕',
+            descricao: 'Estudante de Engenharia de Software, com +2 anos construindo soluções reais em .NET 8, EF Core e Angular. Focado em backend robusto, performático, limpo e escalável.',
             botaoProjetos: 'Ver Projetos',
             botaoContato: 'Entrar em Contato',
             linkGithub: 'GitHub',
@@ -226,7 +225,7 @@ const TEXTOS = {
             titulo: 'Sobre Mim',
             subtituloLinha1: 'Da Determinação ao Código:',
             subtituloLinha2: 'Construindo o Futuro Backend',
-            paragrafo1: 'Minha jornada na tecnologia nasceu de uma vontade genuína de criar soluções que realmente funcionam. Com +3 anos estudando programação, hoje estou na reta final da transição para minha primeira vaga como desenvolvedor, com foco total em .NET Backend.',
+            paragrafo1: 'Minha jornada na tecnologia nasceu de uma vontade genuína de criar soluções que realmente funcionam. Com +2 anos estudando programação, hoje estou na reta final da transição para minha primeira vaga como desenvolvedor, com foco total em .NET Backend.',
             paragrafo2: 'Sou estudante de Engenharia de Software na UniCesumar e sigo a trilha .NET Backend Developer no Balta.io — enquanto trabalho de dia e codifico de noite. Disciplina é meu diferencial.',
             paragrafo3: 'Hoje estou construindo minha base sólida em C#, ASP.NET, SQL e me preparando para a certificação AWS.',
             botaoCV: 'Baixar Currículo',
@@ -274,7 +273,7 @@ const TEXTOS = {
                 {
                     cargo: 'Estagiário de TI',
                     empresa: 'Prefeitura Municipal de Pojuca — Ouvidoria',
-                    periodo: 'Set 2025 – Dez 2025',
+                    periodo: 'jun 2025 – Dez 2025',
                     descricao: 'Contribuí com análise e automação de dados na Ouvidoria Municipal, apoiando a tomada de decisão da gestão pública.',
                     bullets: [
                         'Desenvolvi consultas SQL e relatórios no Excel para extração e análise de dados operacionais da secretaria.',
@@ -377,14 +376,14 @@ const TEXTOS = {
         },
         hero: {
             saudacao: "HI, I'M RUAN",
-            subtitulo: '.NET Backend Developer',
-            subtituloStatus: 'in Training',
+            subtitulo: '.NET Backend Developer ·',
+            subtituloStatus: 'C# · ASP.NET Core · SQL Server',
             frases: [
                 'Transforming ideas into Real Software.',
                 'Building the future with .NET & Angular',
                 'Turning coffee into clean code.'
             ],
-            descricao: 'Software Engineering student focused on creating robust, scalable, and high-performance solutions. Turning coffee into clean code. ☕',
+            descricao: 'Software Engineering student with 2+ years building real-world .NET 8, EF Core and Angular solutions. Focused on clean, high-performance, robust and scalable backend systems.',
             botaoProjetos: 'View Projects',
             botaoContato: 'Get in Touch',
             linkGithub: 'GitHub',
@@ -394,7 +393,7 @@ const TEXTOS = {
             titulo: 'About Me',
             subtituloLinha1: 'From Determination to Code:',
             subtituloLinha2: 'Building the Backend Future',
-            paragrafo1: 'My tech journey was born from a genuine desire to build solutions that actually work. With 3+ years studying programming, I am now in the final stretch of transitioning to my first developer role, with a total focus on .NET Backend.',
+            paragrafo1: 'My tech journey was born from a genuine desire to build solutions that actually work. With 2+ years studying programming, I am now in the final stretch of transitioning to my first developer role, with a total focus on .NET Backend.',
             paragrafo2: "I'm a Software Engineering student at UniCesumar and I follow the .NET Backend Developer track at Balta.io — working by day and coding by night. Discipline is my differentiator.",
             paragrafo3: "Today I'm building a solid foundation in C#, ASP.NET, SQL and preparing for the AWS certification.",
             botaoCV: 'Download Resume',
@@ -442,7 +441,7 @@ const TEXTOS = {
                 {
                     cargo: 'IT Intern',
                     empresa: 'Pojuca City Hall — Ombudsman Office',
-                    periodo: 'Sep 2025 – Dec 2025',
+                    periodo: 'Jun 2025 – Dec 2025',
                     descricao: 'Contributed to data analysis and automation at the Municipal Ombudsman Office, supporting decision-making for public management.',
                     bullets: [
                         'Developed SQL queries and Excel reports to extract and analyze operational data from the department.',
@@ -545,14 +544,14 @@ const TEXTOS = {
         },
         hero: {
             saudacao: 'HOLA, SOY RUAN',
-            subtitulo: '.NET Backend Developer',
-            subtituloStatus: 'en Formación',
+            subtitulo: '.NET Backend Developer ·',
+            subtituloStatus: 'C# · ASP.NET Core · SQL Server',
             frases: [
                 'Transformando ideas en Software Real.',
                 'Construyendo el futuro con .NET & Angular',
                 'Transformando café en código limpio.'
             ],
-            descricao: 'Estudiante de Ingeniería de Software enfocado en crear soluciones robustas, escalables y de alto rendimiento. Transformando café en código limpio. ☕',
+            descricao: 'Estudiante de Ingeniería de Software con +2 años creando soluciones reales con .NET 8, EF Core y Angular. Enfocado en backend robusto, alto rendimiendo, limpio y escalable.',
             botaoProjetos: 'Ver Proyectos',
             botaoContato: 'Entrar en Contacto',
             linkGithub: 'GitHub',
@@ -562,7 +561,7 @@ const TEXTOS = {
             titulo: 'Sobre Mí',
             subtituloLinha1: 'De la Determinación al Código:',
             subtituloLinha2: 'Construyendo el Futuro Backend',
-            paragrafo1: 'Mi viaje en la tecnología nació de un deseo genuino de crear soluciones que realmente funcionan. Con +3 años estudiando programación, hoy estoy en la recta final de la transición hacia mi primera vacante como desarrollador, con foco total en .NET Backend.',
+            paragrafo1: 'Mi viaje en la tecnología nació de un deseo genuino de crear soluciones que realmente funcionan. Con +2 años estudiando programación, hoy estoy en la recta final de la transición hacia mi primera vacante como desarrollador, con foco total en .NET Backend.',
             paragrafo2: 'Soy estudiante de Ingeniería de Software en UniCesumar y sigo la ruta .NET Backend Developer en Balta.io — mientras trabajo de día y programo de noche. La disciplina es mi diferencial.',
             paragrafo3: 'Hoy estoy construyendo mi base sólida en C#, ASP.NET, SQL y preparándome para la certificación AWS.',
             botaoCV: 'Descargar CV',
@@ -610,7 +609,7 @@ const TEXTOS = {
                 {
                     cargo: 'Pasante de TI',
                     empresa: 'Ayuntamiento de Pojuca — Oficina del Defensor del Pueblo',
-                    periodo: 'Sep 2025 – Dic 2025',
+                    periodo: 'Jun 2025 – Dic 2025',
                     descricao: 'Contribuí al análisis y automatización de datos en la Defensoría Municipal, apoyando la toma de decisiones de la gestión pública.',
                     bullets: [
                         'Desarrollé consultas SQL e informes en Excel para la extracción y análisis de datos operativos de la secretaría.',
@@ -705,24 +704,13 @@ const TEXTOS = {
     providedIn: 'root'
 })
 export class IdiomaService {
-    private idiomaAtual = new BehaviorSubject<Idioma>('PT');
-    idioma$ = this.idiomaAtual.asObservable();
+    private readonly _idioma = signal<Idioma>('PT');
 
-    private readonly idiomaSignal = signal<Idioma>('PT');
-
-    readonly textos: Readonly<Record<Idioma, Textos>> = TEXTOS;
-    readonly t = computed<Textos>(() => TEXTOS[this.idiomaSignal()]);
+    readonly idioma = this._idioma.asReadonly();
+    readonly t = computed<Textos>(() => TEXTOS[this._idioma()]);
 
     alternarIdioma() {
-        const atual = this.idiomaAtual.value;
-        const proximo: Idioma = atual === 'PT' ? 'EN' : atual === 'EN' ? 'ES' : 'PT';
-        // Atualiza signal antes do BehaviorSubject para que subscribers de idioma$
-        // já encontrem t() com o idioma novo ao serem notificados.
-        this.idiomaSignal.set(proximo);
-        this.idiomaAtual.next(proximo);
-    }
-
-    getIdioma(): Idioma {
-        return this.idiomaAtual.value;
+        const map: Record<Idioma, Idioma> = { PT: 'EN', EN: 'ES', ES: 'PT' };
+        this._idioma.set(map[this._idioma()]);
     }
 }

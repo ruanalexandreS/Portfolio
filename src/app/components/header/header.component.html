@@ -1,5 +1,5 @@
 <header
-    class="fixed top-0 w-full z-50 bg-[#111827]/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    class="fixed top-0 w-full z-50 bg-bg-elevated/95 backdrop-blur-md border-b border-border-base transition-all duration-300">
     <nav class="container mx-auto px-6 py-4">
 
         <!-- BARRA SUPERIOR (Logo + Ícone Hamburguer) -->
@@ -7,8 +7,8 @@
 
             <!-- LOGO -->
             <button (click)="voltarAoTopo()"
-                class="flex items-center leading-none text-2xl font-bold tracking-tight hover:scale-105 transition-transform duration-200 focus:outline-none cursor-pointer text-gray-100">
-                Ruan<span class="text-blue-500">.dev</span>
+                class="flex items-center leading-none text-2xl font-bold tracking-tight hover:scale-105 transition-transform duration-200 focus:outline-none cursor-pointer text-text-primary">
+                Ruan<span class="text-primary">.dev</span>
             </button>
 
             <!-- MENU DESKTOP (Escondido no celular) -->
@@ -16,26 +16,36 @@
 
                 <!-- Botões com Tradução (Desktop) -->
                 <button (click)="voltarAoTopo()"
-                    class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.inicio }}</button>
                 <button (click)="scrollTo('about')"
-                    class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.sobre }}</button>
                 <button (click)="scrollTo('career')"
-                    class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.carreira }}</button>
                 <button (click)="scrollTo('projects')"
-                    class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.projetos }}</button>
                 <button (click)="scrollTo('contact')"
-                    class="flex items-center text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.contato }}</button>
 
-                <div class="w-px h-5 bg-gray-700 hidden md:block"></div>
+                <div class="w-px h-5 bg-border-base hidden md:block"></div>
+
+                <!-- Botão de Tema -->
+                <button (click)="toggleTema()" aria-label="Alternar tema"
+                    class="flex items-center text-text-secondary hover:text-text-primary transition-colors duration-200 text-base mt-1">
+                    @if (tema === 'dark') {
+                    <span aria-hidden="true">🌙</span>
+                    } @else {
+                    <span aria-hidden="true">☀️</span>
+                    }
+                </button>
 
                 <!-- Botão de Idioma -->
                 <button (click)="toggleIdioma()"
-                    class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base font-medium mt-1">
+                    class="flex items-center space-x-2 text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm md:text-base font-medium mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -49,7 +59,7 @@
             </div>
 
             <!-- BOTÃO HAMBÚRGUER MOBILE (Aparece só no celular) -->
-            <button (click)="toggleMenu()" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+            <button (click)="toggleMenu()" class="md:hidden text-text-secondary hover:text-text-primary focus:outline-none p-2" aria-label="Abrir menu">
 
                 <!-- Mostra as 3 barras se estiver fechado -->
                 @if (!isMenuOpen) {
@@ -72,29 +82,29 @@
         <!-- PAINEL DO MENU MOBILE (Abre quando isMenuOpen é true) -->
         @if (isMenuOpen) {
         <div
-            class="md:hidden mt-4 py-4 bg-gray-800/95 backdrop-blur-md rounded-lg border border-gray-700 shadow-xl flex flex-col">
+            class="md:hidden mt-4 py-4 bg-bg-elevated/95 backdrop-blur-md rounded-lg border border-border-base shadow-xl flex flex-col">
 
             <!-- Botões com Tradução (Mobile - mantendo as classes block e text-left) -->
             <button (click)="scrollTo('home')"
-                class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
+                class="block w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.inicio }}</button>
             <button (click)="scrollTo('about')"
-                class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
+                class="block w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.sobre }}</button>
             <button (click)="scrollTo('career')"
-                class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
+                class="block w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.carreira }}</button>
             <button (click)="scrollTo('projects')"
-                class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
+                class="block w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.projetos }}</button>
             <button (click)="scrollTo('contact')"
-                class="block w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">{{
+                class="block w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.contato }}</button>
 
-            <div class="w-full h-px bg-gray-700 my-2"></div>
+            <div class="w-full h-px bg-border-base my-2"></div>
 
             <button (click)="toggleIdioma()"
-                class="flex items-center space-x-3 w-full text-left px-6 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700/50 transition-colors duration-200 font-medium">
+                class="flex items-center space-x-3 w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -104,6 +114,17 @@
                     </path>
                 </svg>
                 <span>{{ t.menu.labelIdioma }}: {{ idiomaAtual }}</span>
+            </button>
+
+            <button (click)="toggleTema()" aria-label="Alternar tema"
+                class="flex items-center space-x-3 w-full text-left px-6 py-3 text-text-secondary hover:text-primary hover:bg-bg-section-alt transition-colors duration-200 font-medium">
+                @if (tema === 'dark') {
+                <span aria-hidden="true">🌙</span>
+                <span>Modo claro</span>
+                } @else {
+                <span aria-hidden="true">☀️</span>
+                <span>Modo escuro</span>
+                }
             </button>
         </div>
         }

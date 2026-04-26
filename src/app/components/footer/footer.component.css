@@ -2,8 +2,8 @@
    9. FOOTER
    ========================================================================== */
 .footer-custom {
-    background: #070f1d;
-    border-top: 1px solid rgba(59, 130, 246, 0.12);
+    background: var(--bg-base);
+    border-top: 1px solid var(--border);
     padding: 2rem 0 1.5rem;
 }
 
@@ -20,26 +20,26 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.2rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .footer-logo span:first-of-type {
-    color: #3b82f6;
+    color: var(--color-primary);
 }
 
 .footer-icons {
     font-size: 0.8rem;
-    color: #38d9a9;
+    color: var(--color-accent);
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 .footer-copy {
     font-size: 0.85rem;
-    color: #475569;
+    color: var(--text-secondary);
     text-align: center;
 }
 
@@ -50,13 +50,13 @@
 
 .footer-nav a {
     font-size: 0.85rem;
-    color: #475569;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-    color: #e2e8f0;
+    color: var(--text-primary);
 }
 
 .footer-divider {
@@ -67,19 +67,19 @@
 
 .footer-tagline {
     font-size: 0.8rem;
-    color: #334155;
+    color: var(--text-secondary);
     text-align: center;
     padding-top: 1.2rem;
     letter-spacing: 0.3px;
 }
 
 .footer-tag-hl-blue {
-    color: #3b82f6;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
 .footer-tag-hl-teal {
-    color: #38d9a9;
+    color: var(--color-accent);
     font-weight: 600;
 }
 

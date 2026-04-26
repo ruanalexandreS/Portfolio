@@ -1,10 +1,10 @@
 <!-- 6. FORMAÇÃO ACADÊMICA -->
-<section id="education" class="py-20 border-y border-gray-800">
+<section id="education" class="py-20 border-y border-border-base">
     <div class="container mx-auto px-6">
 
         <div class="text-center mb-4">
             <h2 class="education-title">{{ t.titulos.educacao }}</h2>
-            <p class="text-gray-400 mt-2">{{ t.titulos.educacaoSub }}</p>
+            <p class="text-text-secondary mt-2">{{ t.titulos.educacaoSub }}</p>
             <span class="about-divider"></span>
         </div>
 
@@ -13,22 +13,22 @@
             <div class="education-card">
                 <div class="education-card-left">
                     <div class="education-icon"
-                        [style.background]="i === 0 ? 'rgba(59,130,246,0.1)' : 'rgba(56,217,169,0.1)'"
-                        [style.borderColor]="i === 0 ? 'rgba(59,130,246,0.3)' : 'rgba(56,217,169,0.3)'">
+                        [style.background]="i === 0 ? 'rgba(14,165,233,0.1)' : 'rgba(188,159,241,0.1)'"
+                        [style.borderColor]="i === 0 ? 'rgba(14,165,233,0.3)' : 'rgba(188,159,241,0.3)'">
                         @if (i === 0) {
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" width="28" height="28">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" width="28" height="28">
                             <path d="M12 14l9-5-9-5-9 5 9 5z" />
                             <path
                                 d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                         </svg>
                         } @else {
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#38d9a9" stroke-width="1.5" width="28" height="28">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-tertiary)" stroke-width="1.5" width="28" height="28">
                             <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                         }
                     </div>
                     <div class="education-status-dot education-dot-active"
-                        [style.background]="i === 0 ? '' : '#38d9a9'"></div>
+                        [style.background]="i === 0 ? '' : 'var(--color-tertiary)'"></div>
                 </div>
                 <div class="education-card-body">
                     <div class="education-card-header">

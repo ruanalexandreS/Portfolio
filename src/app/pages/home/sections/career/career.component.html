@@ -1,18 +1,18 @@
 <!-- 5. CARREIRA PROFISSIONAL -->
-<section id="career" class="py-20 bg-gray-800/30 border-y border-gray-800">
+<section id="career" class="py-20 bg-bg-section-alt border-y border-border-base">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="career-title">{{ t.titulos.carreira }}</h2>
-            <p class="text-gray-400">{{ t.titulos.carreiraSub }}</p>
+            <p class="text-text-secondary">{{ t.titulos.carreiraSub }}</p>
         </div>
         <div class="max-w-4xl mx-auto space-y-8 relative">
             <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500/30 via-gray-700 to-green-500/30">
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-tertiary)] to-[var(--color-accent)]">
             </div>
             @for (exp of experiencias; track exp.empresa; let i = $index) {
             <div class="relative flex flex-col md:flex-row items-center" [class.md:flex-row-reverse]="i % 2 !== 0">
                 <div
-                    class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+                    class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-[var(--color-tertiary)] border-4 border-bg-base z-10">
                 </div>
                 <div class="w-full md:w-1/2 pl-8 md:pl-0" [class.md:pr-12]="i % 2 === 0" [class.md:pl-12]="i % 2 !== 0">
                     <div class="career-card">

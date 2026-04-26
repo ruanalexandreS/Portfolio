@@ -2,15 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definição das Cores Globais */
 :root {
-  --bg-1: #0f172a;
-  --bg-2: #000000;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --accent: #3b82f6;
-  --accent-glow: rgba(59, 130, 246, 0.5);
-  --card-bg: rgba(30, 41, 59, 0.7);
+  /* Brand */
+  --color-primary: #0EA5E9;
+  --color-primary-hover: #0284C7;
+  --color-accent: #FACC15;
+  --color-accent-hover: #EAB308;
+  --color-silver: #94A3B8;
+  --color-silver-light: #CBD5E1;
+  --color-tertiary: #bc9ff1;
+  --color-tertiary-hover: #a78bfa;
+  --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-silver));
+  --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-silver));
+  --gradient-tertiary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
+
+  /* Dark mode (default) */
+  --bg-base: #0B1120;
+  --bg-elevated: #0F172A;
+  --bg-section-alt: #111827;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --border: #1E293B;
+}
+
+:root.light {
+  --color-primary: #0369A1;
+  --color-primary-hover: #075985;
+  --color-silver: #64748B;
+  --color-silver-light: #475569;
+  --color-tertiary: #7c3aed;
+  --color-tertiary-hover: #6d28d9;
+  --bg-base: #FFFFFF;
+  --bg-elevated: #F8FAFC;
+  --bg-section-alt: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --border: #E2E8F0;
+}
+
+/* Tokens legados — preservados para backward compat até TASK 6 migrar todos os usos */
+:root {
+  --bg-1: var(--bg-base);
+  --bg-2: var(--bg-base);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--color-primary);
+  --accent-glow: rgba(14, 165, 233, 0.5);
+  --card-bg: var(--bg-elevated);
 }
 
 /* Reset Global */
@@ -21,8 +59,9 @@
 }
 
 body {
-  background-color: var(--bg-1);
-  color: var(--text);
+  background: var(--bg-base);
+  color: var(--text-primary);
   font-family: 'Segoe UI', system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

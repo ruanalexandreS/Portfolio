@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
@@ -9,14 +9,21 @@ import { IdiomaService } from '../../../../services/idioma.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
 
   private idiomaService = inject(IdiomaService);
+  private fb = inject(FormBuilder);
   get t() { return this.idiomaService.t(); }
 
-  contactForm: FormGroup;
+  contactForm: FormGroup = this.fb.group({
+    nome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(80)]],
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
+    assunto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
+    mensagem: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(2000)]]
+  });
   enviando = false;
   enviado = false;
   erro = false;
@@ -25,15 +32,6 @@ export class ContactComponent {
   private SERVICE_ID = 'service_fxlphvd';
   private TEMPLATE_ID = 'template_y5f6tcm';
   private PUBLIC_KEY = 'M1DGtIboV8PVNNXVQ';
-
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      nome: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
-      assunto: ['', [Validators.required, Validators.minLength(3)]],
-      mensagem: ['', [Validators.required, Validators.minLength(10)]]
-    });
-  }
 
   isInvalid(campo: string): boolean {
     const control = this.contactForm.get(campo);

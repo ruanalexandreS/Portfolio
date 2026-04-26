@@ -1,25 +1,18 @@
 /* ==========================================================================
    1. VARIÁVEIS E BASE
    ========================================================================== */
-:root {
-    --bg-1: #0f172a;
-    --bg-navy: #0b1120;
-    --text: #e2e8f0;
-    --text-silver: #cbd5e1;
-    --muted: #94a3b8;
-    --accent: #3b82f6;
-    --accent-teal: #38d9a9;
-    --accent-glow: rgba(59, 130, 246, 0.5);
-}
-
 :host {
     display: block;
     min-height: 100vh;
-    background-color: var(--bg-1);
+    background-color: var(--bg-base);
     font-family: 'Segoe UI', system-ui, sans-serif;
-    color: var(--text);
+    color: var(--text-primary);
     overflow-x: hidden;
     position: relative;
+    --bg-navy: var(--bg-base);
+    --text-silver: var(--text-primary);
+    --accent-teal: var(--color-accent);
+    --accent-glow: rgba(14, 165, 233, 0.5);
 }
 
 /* ==========================================================================
@@ -29,7 +22,13 @@
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding: 40px 0;
+    padding: 7rem 0 40px;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding-top: 8rem;
+    }
 }
 
 .hero-wrapper {
