@@ -64,7 +64,7 @@
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -2px;
-    color: #fff;
+    color: var(--hero-title-color);
     margin-bottom: 16px;
     word-break: break-word;
 }
@@ -324,8 +324,21 @@
 .hero-btns {
     display: flex;
     flex-direction: column;
+    gap: 14px;
+}
+
+.hero-btns-group {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    align-self: flex-start;
+}
+
+.hero-btns-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -340,21 +353,23 @@
     background: var(--color-tertiary);
     color: white;
     border: none;
-    box-shadow: 0 0 18px rgba(188, 159, 241, 0.45),
-        0 0 36px rgba(188, 159, 241, 0.15);
+    box-shadow: 0 0 18px var(--btn-primary-glow),
+        0 0 36px var(--btn-primary-glow-spread);
     transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
 }
 
 .btn-primary:hover {
     background: var(--color-tertiary-hover);
-    box-shadow: 0 0 28px rgba(188, 159, 241, 0.7),
-        0 0 56px rgba(188, 159, 241, 0.25);
+    box-shadow: 0 0 28px var(--btn-primary-glow-hover),
+        0 0 56px var(--btn-primary-glow-spread-hover);
     transform: translateY(-2px);
 }
 
 .social-row {
     display: flex;
     gap: 12px;
+    width: 100%;
+    justify-content: center;
 }
 
 .btn-outline {
@@ -494,7 +509,20 @@
     }
 
     .hero-btns {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .hero-btns-group {
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-btns-row {
+        justify-content: center;
         width: 100%;
     }
 

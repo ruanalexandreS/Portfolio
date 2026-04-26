@@ -65,15 +65,21 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(15, 32, 64, 0.5);
-    border: 1px solid rgba(59, 130, 246, 0.12);
+    background: var(--card-bg-elevated);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--card-blur);
+    -webkit-backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-shadow);
     border-radius: 12px;
     padding: 0.9rem 1.1rem;
-    transition: border-color 0.2s;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-info-card:hover {
-    border-color: rgba(59, 130, 246, 0.35);
+    border-color: var(--card-border-hover);
+    box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
+                0 0 40px rgba(188, 159, 241, 0.08);
+    transform: translateY(-1px);
 }
 
 .contact-info-icon {
@@ -117,25 +123,30 @@
     width: 42px;
     height: 42px;
     border-radius: 10px;
-    background: rgba(15, 32, 64, 0.6);
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: var(--card-bg-elevated);
+    border: 1px solid var(--input-border);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-silver);
     text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .contact-social-btn:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    background: rgba(14, 165, 233, 0.1);
+    border-color: var(--color-tertiary);
+    color: var(--color-tertiary);
+    background: rgba(188, 159, 241, 0.1);
+    box-shadow: 0 0 12px rgba(188, 159, 241, 0.3),
+                0 0 24px rgba(188, 159, 241, 0.1);
 }
 
 .contact-form-card {
-    background: rgba(10, 22, 40, 0.7);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--card-blur);
+    -webkit-backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-shadow);
     border-radius: 20px;
     padding: 2rem;
 }
@@ -168,8 +179,8 @@
 }
 
 .contact-input {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 0.9rem;
@@ -185,7 +196,7 @@
 }
 
 .contact-input:focus {
-    border-color: var(--color-primary);
+    border-color: var(--input-border-focus);
 }
 
 .contact-textarea {

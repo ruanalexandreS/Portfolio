@@ -32,8 +32,11 @@
 }
 
 .cert-card {
-    background: rgba(10, 22, 40, 0.7);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--card-blur);
+    -webkit-backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-shadow);
     border-radius: 16px;
     padding: 1.5rem;
     display: flex;
@@ -43,8 +46,10 @@
 }
 
 .cert-card:hover {
-    border-color: rgba(59, 130, 246, 0.4);
-    transform: translateY(-3px);
+    border-color: var(--card-border-hover);
+    box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
+        0 0 40px rgba(188, 159, 241, 0.08);
+    transform: translateY(-1px);
 }
 
 .cert-card-top {
@@ -63,16 +68,19 @@
     flex-shrink: 0;
 }
 
+/* C# — azul Microsoft */
 .cert-badge-blue {
     background: linear-gradient(135deg, #1d4ed8, #3b82f6);
 }
 
+/* .NET Backend Developer */
 .cert-badge-teal {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, #7c3aed, #2110b4);
 }
 
+/* AWS Cloud Practitioner */
 .cert-badge-yellow {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, #e3ab28e5, #cf8e15d1);
 }
 
 .cert-info {
@@ -112,11 +120,11 @@
 }
 
 .cert-status-progress {
-    color: var(--color-accent);
+    color: var(--color-tertiary);
 }
 
 .cert-status-preparation {
-    color: var(--color-tertiary);
+    color: var(--color-accent);
 }
 
 .cert-skills-label {
@@ -192,8 +200,11 @@
 }
 
 .cert-learning-box {
-    background: rgba(15, 32, 64, 0.5);
+    background: var(--card-bg-elevated);
     border: 1px solid rgba(188, 159, 241, 0.3);
+    backdrop-filter: var(--card-blur);
+    -webkit-backdrop-filter: var(--card-blur);
+    box-shadow: var(--card-shadow);
     border-radius: 16px;
     padding: 2rem;
     text-align: center;

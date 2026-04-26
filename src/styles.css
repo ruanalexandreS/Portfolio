@@ -25,6 +25,33 @@
   --text-primary: #F1F5F9;
   --text-secondary: #94A3B8;
   --border: #1E293B;
+
+  /* Semantic card tokens */
+  --card-bg: rgba(10, 22, 40, 0.75);
+  --card-bg-elevated: rgba(15, 32, 64, 0.6);
+  --card-border: rgba(59, 130, 246, 0.15);
+  --card-border-hover: rgba(188, 159, 241, 0.5);
+  --card-shadow: none;
+  --card-blur: none;
+
+  /* Semantic overlay tokens */
+  --overlay-bg: rgba(15, 32, 64, 0.5);
+  --overlay-hover: rgba(11, 17, 32, 0.6);
+
+  /* Semantic input tokens */
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(148, 163, 184, 0.3);
+  --input-border-focus: var(--color-primary);
+
+  /* Semantic button glow tokens */
+  --btn-primary-glow: rgba(188, 159, 241, 0.45);
+  --btn-primary-glow-hover: rgba(188, 159, 241, 0.7);
+  --btn-primary-glow-spread: rgba(188, 159, 241, 0.15);
+  --btn-primary-glow-spread-hover: rgba(188, 159, 241, 0.25);
+
+  /* Semantic section tokens */
+  --section-alt-bg: var(--bg-section-alt);
+  --hero-title-color: #ffffff;
 }
 
 :root.light {
@@ -40,6 +67,33 @@
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --border: #E2E8F0;
+
+  /* Semantic card tokens — light */
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-bg-elevated: rgba(248, 250, 252, 0.8);
+  --card-border: rgba(148, 163, 184, 0.2);
+  --card-border-hover: rgba(124, 58, 237, 0.35);
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --card-blur: blur(12px);
+
+  /* Semantic overlay tokens — light */
+  --overlay-bg: rgba(241, 245, 249, 0.7);
+  --overlay-hover: rgba(255, 255, 255, 0.85);
+
+  /* Semantic input tokens — light */
+  --input-bg: rgba(0, 0, 0, 0.02);
+  --input-border: rgba(148, 163, 184, 0.4);
+  --input-border-focus: var(--color-primary);
+
+  /* Semantic button glow tokens — light (30% of dark intensity) */
+  --btn-primary-glow: rgba(188, 159, 241, 0.2);
+  --btn-primary-glow-hover: rgba(188, 159, 241, 0.4);
+  --btn-primary-glow-spread: rgba(188, 159, 241, 0.08);
+  --btn-primary-glow-spread-hover: rgba(188, 159, 241, 0.15);
+
+  /* Semantic section tokens — light */
+  --section-alt-bg: #F1F5F9;
+  --hero-title-color: #0F172A;
 }
 
 /* Tokens legados — preservados para backward compat até TASK 6 migrar todos os usos */
@@ -50,7 +104,6 @@
   --muted: var(--text-secondary);
   --accent: var(--color-primary);
   --accent-glow: rgba(14, 165, 233, 0.5);
-  --card-bg: var(--bg-elevated);
 }
 
 /* Typography scale */
@@ -104,4 +157,82 @@ body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* ==========================================================================
+   Light mode overrides
+   ========================================================================== */
+:root.light .orbit-ring-outer {
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.35),
+    0 0 40px rgba(124, 58, 237, 0.1);
+}
+
+:root.light .orbit-ring-inner {
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.25),
+    0 0 30px rgba(124, 58, 237, 0.08);
+}
+
+:root.light .profile-img {
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow:
+    0 0 0 4px rgba(124, 58, 237, 0.1),
+    0 0 40px rgba(124, 58, 237, 0.2);
+  animation: none;
+}
+
+:root.light .header-fixed,
+:root.light header {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: rgba(148, 163, 184, 0.2);
+}
+
+:root.light #about,
+:root.light #skills,
+:root.light #education,
+:root.light #contact {
+  background: var(--bg-base);
+}
+
+:root.light #projects,
+:root.light #career,
+:root.light #certificates {
+  background: var(--section-alt-bg);
+}
+
+:root.light .tech-node {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow:
+    0 0 15px rgba(124, 58, 237, 0.15),
+    0 0 40px rgba(124, 58, 237, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+:root.light .tech-node:hover {
+  box-shadow:
+    0 0 25px rgba(124, 58, 237, 0.3),
+    0 0 60px rgba(124, 58, 237, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-color: rgba(124, 58, 237, 0.6);
+}
+
+:root.light .btn-outline {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-color: rgba(124, 58, 237, 0.45);
+  color: var(--text-primary);
+}
+
+:root.light .btn-outline:hover {
+  border-color: var(--color-tertiary);
+  color: var(--color-tertiary);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.2),
+    0 0 32px rgba(124, 58, 237, 0.08);
+}
+
+:root.light app-hero,
+:root.light .hero-section {
+  background: var(--bg-section-alt);
 }
