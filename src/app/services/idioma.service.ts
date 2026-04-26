@@ -265,7 +265,7 @@ const TEXTOS = {
             banco: { titulo: 'Banco de Dados', itens: ['SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper'] },
             outros: { titulo: 'Soft Skills & Outros', itens: ['SOLID / Clean Code', 'Inglês', 'Espanhol', 'Resolução de Problemas'] },
             tituloTagsAdicionais: 'Tecnologias & Ferramentas Adicionais',
-            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux']
+            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux', 'Redis', 'RabbitMQ', 'MediatR', 'FluentValidation', 'Hangfire', 'SignalR', 'GitHub Actions', 'Vercel']
         },
         carreira: {
             labelTecnologias: 'TECNOLOGIAS USADAS',
@@ -433,7 +433,7 @@ const TEXTOS = {
             banco: { titulo: 'Databases', itens: ['SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper'] },
             outros: { titulo: 'Soft Skills & Others', itens: ['SOLID / Clean Code', 'English', 'Spanish', 'Problem Solving'] },
             tituloTagsAdicionais: 'Additional Technologies & Tools',
-            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux']
+            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux', 'Redis', 'RabbitMQ', 'MediatR', 'FluentValidation', 'Hangfire', 'SignalR', 'GitHub Actions', 'Vercel']
         },
         carreira: {
             labelTecnologias: 'TECHNOLOGIES USED',
@@ -601,7 +601,7 @@ const TEXTOS = {
             banco: { titulo: 'Bases de Datos', itens: ['SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper'] },
             outros: { titulo: 'Soft Skills & Otros', itens: ['SOLID / Clean Code', 'Inglés', 'Español', 'Resolución de Problemas'] },
             tituloTagsAdicionais: 'Tecnologías y Herramientas Adicionales',
-            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux']
+            tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux', 'Redis', 'RabbitMQ', 'MediatR', 'FluentValidation', 'Hangfire', 'SignalR', 'GitHub Actions', 'Vercel']
         },
         carreira: {
             labelTecnologias: 'TECNOLOGÍAS USADAS',
