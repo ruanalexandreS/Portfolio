@@ -1,59 +1,116 @@
-# PortfolioWeb
+<h1 align="center">Portfolio — Ruan Alexandre</h1>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+<p align="center">
+  <a href="https://portfolio-ruan-alexandre-s.vercel.app/">
+    <img src="https://img.shields.io/badge/live-demo-7c3aed?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+  <a href="https://vercel.com">
+    <img src="https://img.shields.io/badge/deploy-passing-22c55e?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy" />
+  </a>
+  <img src="https://img.shields.io/badge/Angular-21-dd0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License" />
+</p>
 
-## Development server
+## 🖼️ Preview
 
-To start a local development server, run:
+![Preview](./src/assets/Portfolio.png)
+
+> Live: **[portfolio-ruan-alexandre-s.vercel.app](https://portfolio-ruan-alexandre-s.vercel.app/)**
+
+## 📖 About
+
+A modern, performance-oriented developer portfolio built with **Angular 21** and **standalone components**.
+Showcases career, education, certificates and projects with smooth animations, multi-language support and a fully responsive UI.
+
+## 🛠️ Tech Stack
+
+| Layer            | Technology                              |
+| ---------------- | --------------------------------------- |
+| Framework        | Angular 21                              |
+| Language         | TypeScript 5.9                          |
+| Styling          | TailwindCSS 3.4                         |
+| Reactivity       | Angular Signals + RxJS 7.8              |
+| Email            | EmailJS 4.4.1                           |
+| Build / Deploy   | Angular CLI · Vercel                    |
+| Testing          | Vitest                                  |
+
+## ✨ Features
+
+- 🌗 Dark / Light mode toggle with persistent theme
+- 🌐 Multi-language support (🇧🇷 PT · 🇺🇸 EN · 🇪🇸 ES)
+- ⌨️ Typewriter animation on hero section
+- 🪐 Orbital tech-stack animation
+- 📨 Contact form integrated with **EmailJS**
+- 📱 Fully responsive (mobile-first)
+- ⚡ Lazy-loaded sections via `@defer`
+- ♿ Accessible color tokens & semantic markup
+
+## 🏗️ Architecture
+
+The project follows modern Angular 21 best practices:
+
+- **Standalone components** — no `NgModule`, simpler tree-shaking
+- **Signals** — fine-grained reactivity for state and theming
+- **OnPush change detection** — minimized re-renders
+- **`@defer` blocks** — viewport-aware lazy loading
+- **Lazy routing** — feature chunks loaded on demand
+- **Service-driven** — `IdiomaService`, `ThemeService` for global state
+
+## 🌐 Internationalization (i18n)
+
+A custom **`IdiomaService`** powered by Angular Signals delivers reactive language switching across the app:
+
+- 🇧🇷 Portuguese (default)
+- 🇺🇸 English
+- 🇪🇸 Spanish
+
+Translations live in typed dictionaries and update synchronously when the user toggles the language — no page reload required.
+
+## 🚀 Performance
+
+| Metric                 | Value                                  |
+| ---------------------- | -------------------------------------- |
+| Initial bundle         | **273 kB** (down from 396 kB · **-31%**) |
+| Lazy chunks            | 6 (home, career, education, certificates, projects, framework) |
+| Change detection       | OnPush everywhere                      |
+| Rendering              | Signals + `@defer` viewport triggers   |
+
+## 🏁 Getting Started
 
 ```bash
-ng serve
+# Clone
+git clone https://github.com/RuanAlexandre/portfolio.git
+cd portfolio
+
+# Install
+npm install
+
+# Run dev server → http://localhost:4200
+npm start
+
+# Production build
+npm run build
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📜 Scripts
 
-## Code scaffolding
+| Script          | Description                            |
+| --------------- | -------------------------------------- |
+| `npm start`     | Run dev server on `localhost:4200`     |
+| `npm run build` | Production build into `dist/`          |
+| `npm run watch` | Dev build in watch mode                |
+| `npm test`      | Run unit tests with Vitest             |
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ☁️ Deploy
 
-```bash
-ng generate component component-name
-```
+Continuously deployed to **Vercel** — every push to `main` triggers a new production build.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🔗 **[portfolio-ruan-alexandre-s.vercel.app](https://portfolio-ruan-alexandre-s.vercel.app/)**
 
-```bash
-ng generate --help
-```
+## 📄 License
 
-## Building
+Released under the **MIT License**.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<p align="center">Made with ❤️ and Angular by <a href="https://github.com/RuanAlexandre">Ruan Alexandre</a></p>
