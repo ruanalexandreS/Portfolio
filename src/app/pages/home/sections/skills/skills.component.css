@@ -45,7 +45,7 @@
 .skill-card:hover {
     border-color: var(--card-border-hover);
     box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
-                0 0 40px rgba(188, 159, 241, 0.08);
+        0 0 40px rgba(188, 159, 241, 0.08);
     transform: translateY(-1px);
 }
 
@@ -98,7 +98,7 @@
 .skill-bar {
     flex: 1;
     height: 5px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--input-border);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -179,5 +179,5 @@
     border-color: var(--color-tertiary);
     color: var(--color-tertiary);
     box-shadow: 0 0 10px rgba(188, 159, 241, 0.2),
-                0 0 20px rgba(188, 159, 241, 0.08);
+        0 0 20px rgba(188, 159, 241, 0.08);
 }

@@ -19,7 +19,7 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-primary));
+    background: var(--color-primary);
     margin: 10px auto 40px;
     border-radius: 2px;
 }
@@ -152,13 +152,13 @@
 }
 
 .cert-card-footer {
+    background: var(--overlay-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
-    padding: 10px 14px;
 }
 
 .cert-credential {

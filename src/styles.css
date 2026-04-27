@@ -6,8 +6,8 @@
   /* Brand */
   --color-primary: #0EA5E9;
   --color-primary-hover: #0284C7;
-  --color-accent: #FACC15;
-  --color-accent-hover: #EAB308;
+  --color-accent: #D97706;
+  --color-accent-hover: #B45309;
   --color-silver: #94A3B8;
   --color-silver-light: #CBD5E1;
   --color-tertiary: #bc9ff1;
@@ -61,9 +61,9 @@
   --color-silver-light: #475569;
   --color-tertiary: #7c3aed;
   --color-tertiary-hover: #6d28d9;
-  --bg-base: #FFFFFF;
-  --bg-elevated: #F8FAFC;
-  --bg-section-alt: #F1F5F9;
+  --bg-base: #e0e8f5b5;
+  --bg-elevated: #9ebedc;
+  --bg-section-alt: #EDF2F7;
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --border: #E2E8F0;
@@ -158,9 +158,20 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 /* ==========================================================================
    Light mode overrides
    ========================================================================== */
+:root.light #skills,
+:root.light #education,
+:root.light #certificates,
+:root.light #career {
+  background: linear-gradient(135deg,
+      rgba(14, 165, 233, 0.03) 0%,
+      rgba(188, 159, 241, 0.05) 50%,
+      rgba(250, 204, 21, 0.03) 100%);
+}
+
 :root.light .orbit-ring-outer {
   box-shadow:
     0 0 0 1px rgba(124, 58, 237, 0.35),

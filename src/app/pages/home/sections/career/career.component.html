@@ -6,9 +6,9 @@
             <p class="text-text-secondary section-subtitle">{{ t.titulos.carreiraSub }}</p>
             <div class="section-divider section-divider--cyan"></div>
         </div>
-        <div class="max-w-4xl mx-auto space-y-8 relative">
+        <div class="max-w-4xl mx-auto space-y-8 relative overflow-hidden">
             <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-tertiary)]">
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-tertiary)]">
             </div>
             @for (exp of experiencias; track exp.empresa; let i = $index) {
             <div class="relative flex flex-col md:flex-row items-center" [class.md:flex-row-reverse]="i % 2 !== 0">

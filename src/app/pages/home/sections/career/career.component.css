@@ -32,7 +32,7 @@
 .career-card:hover {
     border-color: var(--card-border-hover);
     box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
-                0 0 40px rgba(188, 159, 241, 0.08);
+        0 0 40px rgba(188, 159, 241, 0.08);
     transform: translateY(-1px);
 }
 
@@ -123,5 +123,5 @@
     border-radius: 100px;
     font-size: 0.75rem;
     color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--input-bg);
 }

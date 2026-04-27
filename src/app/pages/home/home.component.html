@@ -3,30 +3,32 @@
 <app-about></app-about>
 
 @defer (on viewport) {
-  <app-projects [categorias]="categorias" [categoriaAtiva]="categoriaAtiva" [projetosExibidos]="projetosExibidos"
-    [filtrarPor]="filtrarPor"></app-projects>
+<app-projects [categorias]="categorias" [categoriaAtiva]="categoriaAtiva" [projetosExibidos]="projetosExibidos"
+  [filtrarPor]="filtrarPor"></app-projects>
 } @placeholder {
-  <div class="min-h-[400px]"></div>
+<div class="min-h-[400px]"></div>
 }
 
 <app-skills></app-skills>
 
-@defer (on viewport) {
+<div style="position: relative; overflow: hidden;">
+  @defer (on viewport) {
   <app-career [experiencias]="experiencias"></app-career>
-} @placeholder {
+  } @placeholder {
   <div class="min-h-[400px]"></div>
+  }
+</div>
+
+@defer (on viewport) {
+<app-education></app-education>
+} @placeholder {
+<div class="min-h-[400px]"></div>
 }
 
 @defer (on viewport) {
-  <app-education></app-education>
+<app-certificates></app-certificates>
 } @placeholder {
-  <div class="min-h-[400px]"></div>
-}
-
-@defer (on viewport) {
-  <app-certificates></app-certificates>
-} @placeholder {
-  <div class="min-h-[400px]"></div>
+<div class="min-h-[400px]"></div>
 }
 
 <app-contact></app-contact>

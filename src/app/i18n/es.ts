@@ -121,7 +121,7 @@ export const ES_TEXTOS: Textos = {
         itens: [
             { nome: 'C# Completo y Orientado a Objetos', emissor: 'Udemy', ano: '2024', status: 'Concluido', habilidades: ['C#', 'POO', 'SOLID', 'Collections'], credencial: 'UC-XXXXXXXX', botaoAcao: 'Verificar' },
             { nome: '.NET Backend Developer', emissor: 'Balta.io', ano: 'En curso', status: 'En Progreso', habilidades: ['ASP.NET Core', 'EF Core', 'SQL Server', 'Clean Architecture'], credencial: 'En curso', botaoAcao: 'Ver Curso' },
-            { nome: 'AWS Cloud Practitioner', emissor: 'Amazon Web Services', ano: 'Previsto 2025', status: 'En Preparación', habilidades: ['EC2', 'S3', 'Lambda', 'Cloud Architecture'], credencial: 'En preparación', botaoAcao: 'Ver Más' }
+            { nome: 'AWS Cloud Practitioner', emissor: 'Amazon Web Services', ano: 'Previsto 2026', status: 'En Preparación', habilidades: ['EC2', 'S3', 'Lambda', 'Cloud Architecture'], credencial: 'En preparación', botaoAcao: 'Ver Más' }
         ]
     },
     contato: {
