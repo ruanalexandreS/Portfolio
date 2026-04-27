@@ -32,7 +32,7 @@ export class ProjetoService {
       urlImagem: 'assets/Portfolio.png',
       urlGithub: 'https://github.com/ruanalexandreS/Portfolio',
       urlDeploy: 'https://portfolio-ruan-alexandre-s.vercel.app/',
-      tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'EmailJS', 'Vercel']
+      tecnologias: ['Angular 21', 'TypeScript', 'TailwindCSS', 'RxJS', 'Signals', 'EmailJS', 'Vercel']
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ export class ProjetoService {
       urlImagem: 'assets/NotaFiscal.png',
       urlGithub: 'https://github.com/ruanalexandreS/Korp_teste_RuanCampos',
       urlDeploy: 'https://korp-teste-ruan-campos.vercel.app/products',
-      tecnologias: ['C#', '.NET 8', 'Angular', 'EF Core', 'SQL Server', 'Microsserviços']
+      tecnologias: ['C#', '.NET 8', 'ASP.NET Core', 'Angular', 'EF Core', 'SQL Server', 'IHttpClientFactory', 'Microsserviços']
     }
   ];
 
