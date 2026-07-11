@@ -10,10 +10,10 @@
         <div class="flex flex-wrap justify-center gap-4 mb-12">
             @for (cat of categorias; track cat) {
             <button (click)="filtrarPor(cat)" class="px-6 py-2 rounded-full font-medium transition-all border"
-                [class]="categoriaAtiva === cat ? 
-                'bg-[var(--color-tertiary)] text-white border-[var(--color-tertiary)] shadow-[0_0_16px_rgba(188,159,241,0.5)]' 
-                : 
-                'bg-bg-elevated text-text-secondary border-[var(--color-silver)] hover:border-[var(--color-tertiary)] hover:text-[var(--color-tertiary)]'">
+                [class]="categoriaAtiva === cat ?
+                'bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[0_0_16px_var(--btn-primary-glow)]'
+                :
+                'bg-bg-elevated text-text-secondary border-[var(--color-silver)] hover:border-[var(--color-secondary)] hover:text-[var(--color-secondary)]'">
                 {{ cat }}
             </button>
             }
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="project-body p-6">
-                    <span class="text-xs font-bold text-primary uppercase tracking-wider">{{ projeto.categoria }}</span>
+                    <span class="text-xs font-bold text-secondary uppercase tracking-wider">{{ projeto.categoria }}</span>
                     <h3
                         class="text-xl font-bold mt-2 mb-3 text-text-primary hover:text-[var(--color-tertiary)] transition-colors">
                         {{

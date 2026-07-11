@@ -3,7 +3,7 @@
    ========================================================================== */
 .education-title {
     text-align: center;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
     background: var(--gradient-tertiary);
@@ -47,8 +47,8 @@
 
 .education-card:hover {
     border-color: var(--card-border-hover);
-    box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
-                0 0 40px rgba(188, 159, 241, 0.08);
+    box-shadow: 0 0 20px var(--card-glow),
+                0 0 40px var(--card-glow-spread);
     transform: translateY(-1px);
 }
 
@@ -110,7 +110,7 @@
 }
 
 .education-institution {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -141,8 +141,8 @@
 }
 
 .education-badge-active {
-    background: rgba(250, 204, 21, 0.1);
-    border: 1px solid rgba(250, 204, 21, 0.3);
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
     color: var(--color-accent);
 }
 
@@ -173,8 +173,8 @@
 .education-tag:hover {
     border-color: var(--color-tertiary);
     color: var(--color-tertiary);
-    box-shadow: 0 0 10px rgba(188, 159, 241, 0.2),
-                0 0 20px rgba(188, 159, 241, 0.08);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2),
+                0 0 20px rgba(56, 189, 248, 0.08);
 }
 
 @media (max-width: 600px) {

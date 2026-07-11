@@ -3,7 +3,7 @@
    ========================================================================== */
 .footer-custom {
     background: var(--bg-base);
-    border-top: 1px solid rgba(14, 165, 233, 0.1);
+    border-top: 1px solid rgba(56, 189, 248, 0.1);
     padding: 2rem 0 1.5rem;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .footer-logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 1.2rem;
     font-weight: 800;
     color: var(--text-primary);

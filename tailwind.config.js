@@ -11,6 +11,10 @@ module.exports = {
           DEFAULT: 'var(--color-primary)',
           hover: 'var(--color-primary-hover)',
         },
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+          hover: 'var(--color-secondary-hover)',
+        },
         accent: {
           DEFAULT: 'var(--color-accent)',
           hover: 'var(--color-accent-hover)',

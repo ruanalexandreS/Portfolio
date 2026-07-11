@@ -3,7 +3,7 @@
    ========================================================================== */
 .skills-title {
     text-align: center;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
     background: var(--gradient-tertiary);
@@ -44,8 +44,8 @@
 
 .skill-card:hover {
     border-color: var(--card-border-hover);
-    box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
-        0 0 40px rgba(188, 159, 241, 0.08);
+    box-shadow: 0 0 20px var(--card-glow),
+        0 0 40px var(--card-glow-spread);
     transform: translateY(-1px);
 }
 
@@ -122,15 +122,15 @@
 }
 
 .level-advanced {
-    background: rgba(14, 165, 233, 0.12);
+    background: rgba(124, 92, 255, 0.12);
     color: var(--color-primary);
-    border: 1px solid rgba(14, 165, 233, 0.3);
+    border: 1px solid rgba(124, 92, 255, 0.3);
 }
 
 .level-intermediate {
-    background: rgba(250, 204, 21, 0.10);
+    background: rgba(251, 191, 36, 0.10);
     color: var(--color-accent);
-    border: 1px solid rgba(250, 204, 21, 0.3);
+    border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
 .level-beginner {
@@ -178,6 +178,25 @@
 .skill-tag:hover {
     border-color: var(--color-tertiary);
     color: var(--color-tertiary);
-    box-shadow: 0 0 10px rgba(188, 159, 241, 0.2),
-        0 0 20px rgba(188, 159, 241, 0.08);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2),
+        0 0 20px rgba(56, 189, 248, 0.08);
+}
+
+@media (max-width: 768px) {
+
+    /* Cards empilhados em coluna única */
+    .skills-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* Padding interno adequado */
+    .skill-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    /* Tags centralizadas com respiro lateral */
+    .skills-tags {
+        padding: 0 4px;
+    }
 }

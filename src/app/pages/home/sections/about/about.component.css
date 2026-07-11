@@ -9,7 +9,7 @@
 
 .about-title {
     text-align: center;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
     background: var(--gradient-tertiary);
@@ -51,7 +51,7 @@
     backdrop-filter: var(--card-blur);
     -webkit-backdrop-filter: var(--card-blur);
     border-radius: 24px;
-    border: 1px solid rgba(250, 204, 21, 0.2);
+    border: 1px solid rgba(251, 191, 36, 0.2);
     box-shadow: var(--card-shadow), 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -100,17 +100,17 @@
     width: 65px;
     height: 65px;
     background: var(--bg-base);
-    border: 2px solid var(--color-accent);
+    border: 2px solid #0078D4;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    box-shadow: 0 0 14px rgba(250, 204, 21, 0.3);
+    box-shadow: 0 0 14px rgba(0, 120, 212, 0.3);
     font-weight: 900;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    color: var(--color-accent);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #38BDF8;
     text-transform: uppercase;
 }
 
@@ -133,7 +133,7 @@
 }
 
 .about-subtitle {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 2rem;
     color: var(--text-primary);
     margin-bottom: 25px;
@@ -184,37 +184,40 @@
     background: rgba(148, 163, 184, 0.15);
 }
 
+/* .NET Backend → primary (roxo .NET) */
 .b-teal {
-    border-color: var(--color-tertiary);
-    color: var(--color-tertiary);
-    background: rgba(188, 159, 241, 0.08);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(124, 92, 255, 0.08);
 }
 
 .b-teal:hover {
-    border-color: var(--color-tertiary-hover);
-    background: rgba(188, 159, 241, 0.15);
+    border-color: var(--color-primary-hover);
+    background: rgba(124, 92, 255, 0.15);
 }
 
+/* Azure → azul Microsoft Azure */
 .b-blue {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    background: rgba(14, 165, 233, 0.08);
+    border-color: #0078D4;
+    color: #0078D4;
+    background: rgba(0, 120, 212, 0.08);
 }
 
 .b-blue:hover {
-    border-color: var(--color-primary-hover);
-    background: rgba(14, 165, 233, 0.15);
+    border-color: #0078D4;
+    background: rgba(0, 120, 212, 0.15);
 }
 
+/* Junior/Full-Stack → secondary (azul Azure) */
 .b-gold {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    background: rgba(250, 204, 21, 0.08);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    background: rgba(56, 189, 248, 0.08);
 }
 
 .b-gold:hover {
-    border-color: var(--color-accent-hover);
-    background: rgba(250, 204, 21, 0.15);
+    border-color: var(--color-secondary-hover);
+    background: rgba(56, 189, 248, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -230,6 +233,11 @@
     .about-photo-side {
         order: -1;
         margin-bottom: 40px;
+    }
+
+    .about-frame {
+        width: min(320px, 85vw);
+        max-width: 100%;
     }
 
     .tech-badges {

@@ -3,20 +3,32 @@
 @tailwind utilities;
 
 :root {
-  /* Brand */
-  --color-primary: #0EA5E9;
-  --color-primary-hover: #0284C7;
-  --color-accent: #D97706;
-  --color-accent-hover: #B45309;
+  /* Brand — .NET purple primary */
+  --color-primary: #7C5CFF;
+  --color-primary-hover: #6D42E8;
+
+  /* Azure blue secondary */
+  --color-secondary: #38BDF8;
+  --color-secondary-hover: #0EA5E9;
+
+  /* Amber accent */
+  --color-accent: #FBBF24;
+  --color-accent-hover: #F59E0B;
+
+  /* Slate silver */
   --color-silver: #94A3B8;
   --color-silver-light: #CBD5E1;
-  --color-tertiary: #bc9ff1;
-  --color-tertiary-hover: #a78bfa;
-  --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-silver));
-  --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-silver));
-  --gradient-tertiary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
-  --gradient-title-primary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
-  --gradient-title-accent: linear-gradient(135deg, var(--color-accent), var(--color-tertiary));
+
+  /* Legacy tertiary alias → maps to secondary for backward compat */
+  --color-tertiary: var(--color-secondary);
+  --color-tertiary-hover: var(--color-secondary-hover);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  --gradient-tertiary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-title-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-title-accent: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
   --gradient-hero-dark: linear-gradient(135deg, #0d1b35 0%, #0a1628 60%, #071020 100%);
 
   /* Dark mode (default) */
@@ -31,7 +43,9 @@
   --card-bg: rgba(10, 22, 40, 0.75);
   --card-bg-elevated: rgba(15, 32, 64, 0.6);
   --card-border: rgba(59, 130, 246, 0.15);
-  --card-border-hover: rgba(188, 159, 241, 0.5);
+  --card-border-hover: rgba(124, 92, 255, 0.5);
+  --card-glow: rgba(124, 92, 255, 0.15);
+  --card-glow-spread: rgba(124, 92, 255, 0.08);
   --card-shadow: none;
   --card-blur: none;
 
@@ -45,10 +59,10 @@
   --input-border-focus: var(--color-primary);
 
   /* Semantic button glow tokens */
-  --btn-primary-glow: rgba(188, 159, 241, 0.45);
-  --btn-primary-glow-hover: rgba(188, 159, 241, 0.7);
-  --btn-primary-glow-spread: rgba(188, 159, 241, 0.15);
-  --btn-primary-glow-spread-hover: rgba(188, 159, 241, 0.25);
+  --btn-primary-glow: rgba(124, 92, 255, 0.45);
+  --btn-primary-glow-hover: rgba(124, 92, 255, 0.7);
+  --btn-primary-glow-spread: rgba(124, 92, 255, 0.15);
+  --btn-primary-glow-spread-hover: rgba(124, 92, 255, 0.25);
 
   /* Semantic section tokens */
   --section-alt-bg: var(--bg-section-alt);
@@ -56,12 +70,17 @@
 }
 
 :root.light {
-  --color-primary: #0369A1;
-  --color-primary-hover: #075985;
+  --color-primary: #6D28D9;
+  --color-primary-hover: #5B21B6;
+  --color-secondary: #0369A1;
+  --color-secondary-hover: #075985;
+  /* Amber accent — escurecido p/ AA sobre fundo claro (D97706 dava 2.6:1) */
+  --color-accent: #92400E;
+  --color-accent-hover: #78350F;
   --color-silver: #64748B;
   --color-silver-light: #475569;
-  --color-tertiary: #7c3aed;
-  --color-tertiary-hover: #6d28d9;
+  --color-tertiary: var(--color-secondary);
+  --color-tertiary-hover: var(--color-secondary-hover);
   --bg-base: #e0e8f5b5;
   --bg-elevated: #9ebedc;
   --bg-section-alt: #EDF2F7;
@@ -73,7 +92,9 @@
   --card-bg: rgba(255, 255, 255, 0.75);
   --card-bg-elevated: rgba(248, 250, 252, 0.8);
   --card-border: rgba(148, 163, 184, 0.2);
-  --card-border-hover: rgba(124, 58, 237, 0.35);
+  --card-border-hover: rgba(109, 40, 217, 0.35);
+  --card-glow: rgba(109, 40, 217, 0.12);
+  --card-glow-spread: rgba(109, 40, 217, 0.06);
   --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
   --card-blur: blur(12px);
 
@@ -87,10 +108,10 @@
   --input-border-focus: var(--color-primary);
 
   /* Semantic button glow tokens — light (30% of dark intensity) */
-  --btn-primary-glow: rgba(188, 159, 241, 0.2);
-  --btn-primary-glow-hover: rgba(188, 159, 241, 0.4);
-  --btn-primary-glow-spread: rgba(188, 159, 241, 0.08);
-  --btn-primary-glow-spread-hover: rgba(188, 159, 241, 0.15);
+  --btn-primary-glow: rgba(109, 40, 217, 0.2);
+  --btn-primary-glow-hover: rgba(109, 40, 217, 0.4);
+  --btn-primary-glow-spread: rgba(109, 40, 217, 0.08);
+  --btn-primary-glow-spread-hover: rgba(109, 40, 217, 0.15);
 
   /* Semantic section tokens — light */
   --section-alt-bg: #F1F5F9;
@@ -104,7 +125,7 @@
   --text: var(--text-primary);
   --muted: var(--text-secondary);
   --accent: var(--color-primary);
-  --accent-glow: rgba(14, 165, 233, 0.5);
+  --accent-glow: rgba(124, 92, 255, 0.5);
 }
 
 /* Typography scale */
@@ -155,9 +176,13 @@
 body {
   background: var(--bg-base);
   color: var(--text-primary);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-title, .card-title, h1, h2, h3 {
+  font-family: 'Sora', 'Inter', sans-serif;
 }
 
 /* ==========================================================================
@@ -168,28 +193,28 @@ body {
 :root.light #certificates,
 :root.light #career {
   background: linear-gradient(135deg,
-      rgba(14, 165, 233, 0.03) 0%,
-      rgba(188, 159, 241, 0.05) 50%,
-      rgba(250, 204, 21, 0.03) 100%);
+      rgba(3, 105, 161, 0.03) 0%,
+      rgba(109, 40, 217, 0.05) 50%,
+      rgba(217, 119, 6, 0.03) 100%);
 }
 
 :root.light .orbit-ring-outer {
   box-shadow:
-    0 0 0 1px rgba(124, 58, 237, 0.35),
-    0 0 40px rgba(124, 58, 237, 0.1);
+    0 0 0 1px rgba(109, 40, 217, 0.35),
+    0 0 40px rgba(109, 40, 217, 0.1);
 }
 
 :root.light .orbit-ring-inner {
   box-shadow:
-    0 0 0 1px rgba(124, 58, 237, 0.25),
-    0 0 30px rgba(124, 58, 237, 0.08);
+    0 0 0 1px rgba(109, 40, 217, 0.25),
+    0 0 30px rgba(109, 40, 217, 0.08);
 }
 
 :root.light .profile-img {
-  border-color: rgba(124, 58, 237, 0.6);
+  border-color: rgba(109, 40, 217, 0.6);
   box-shadow:
-    0 0 0 4px rgba(124, 58, 237, 0.1),
-    0 0 40px rgba(124, 58, 237, 0.2);
+    0 0 0 4px rgba(109, 40, 217, 0.1),
+    0 0 40px rgba(109, 40, 217, 0.2);
   animation: none;
 }
 
@@ -216,32 +241,32 @@ body {
 
 :root.light .tech-node {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
-  border-color: rgba(124, 58, 237, 0.35);
+  border-color: rgba(109, 40, 217, 0.35);
   box-shadow:
-    0 0 15px rgba(124, 58, 237, 0.15),
-    0 0 40px rgba(124, 58, 237, 0.06),
+    0 0 15px rgba(109, 40, 217, 0.15),
+    0 0 40px rgba(109, 40, 217, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 :root.light .tech-node:hover {
   box-shadow:
-    0 0 25px rgba(124, 58, 237, 0.3),
-    0 0 60px rgba(124, 58, 237, 0.1),
+    0 0 25px rgba(109, 40, 217, 0.3),
+    0 0 60px rgba(109, 40, 217, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border-color: rgba(124, 58, 237, 0.6);
+  border-color: rgba(109, 40, 217, 0.6);
 }
 
 :root.light .btn-outline {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-color: rgba(124, 58, 237, 0.45);
+  border-color: rgba(109, 40, 217, 0.45);
   color: var(--text-primary);
 }
 
 :root.light .btn-outline:hover {
   border-color: var(--color-tertiary);
   color: var(--color-tertiary);
-  box-shadow: 0 0 16px rgba(124, 58, 237, 0.2),
-    0 0 32px rgba(124, 58, 237, 0.08);
+  box-shadow: 0 0 16px rgba(109, 40, 217, 0.2),
+    0 0 32px rgba(109, 40, 217, 0.08);
 }
 
 :root.light app-hero,
@@ -262,5 +287,14 @@ body {
 @media (max-width: 768px) {
   .p-out, .p-in {
     animation-play-state: running;
+  }
+}
+
+/* Mobile: garante padding lateral em qualquer container sem px-* —
+   nenhum conteúdo deve encostar na borda da tela */
+@media (max-width: 768px) {
+  .container:not([class*="px-"]) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }

@@ -5,14 +5,14 @@
     display: block;
     min-height: 100vh;
     background-color: var(--bg-base);
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--text-primary);
     overflow-x: hidden;
     position: relative;
     --bg-navy: var(--bg-base);
     --text-silver: var(--text-primary);
     --accent-teal: var(--color-accent);
-    --accent-glow: rgba(14, 165, 233, 0.5);
+    --accent-glow: rgba(124, 92, 255, 0.5);
 }
 
 /* ==========================================================================
@@ -284,8 +284,8 @@
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.5px;
-    color: #f59e0b;
-    text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+    color: #FF9900;
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.6);
 }
 
 .p-out .tech-node {
@@ -350,7 +350,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--color-tertiary);
+    background: var(--color-primary);
     color: white;
     border: none;
     box-shadow: 0 0 18px var(--btn-primary-glow),
@@ -359,7 +359,7 @@
 }
 
 .btn-primary:hover {
-    background: var(--color-tertiary-hover);
+    background: var(--color-primary-hover);
     box-shadow: 0 0 28px var(--btn-primary-glow-hover),
         0 0 56px var(--btn-primary-glow-spread-hover);
     transform: translateY(-2px);
@@ -383,17 +383,17 @@
     gap: 8px;
     text-decoration: none;
     background: var(--gradient-hero-dark);
-    border: 1.5px solid rgba(124, 58, 237, 0.5);
+    border: 1.5px solid rgba(56, 189, 248, 0.5);
     color: var(--color-silver-light);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    border-color: #7c3aed;
-    color: #bc9ff1;
-    box-shadow: 0 0 16px rgba(124, 58, 237, 0.5),
-        0 0 32px rgba(124, 58, 237, 0.15),
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.5),
+        0 0 32px rgba(56, 189, 248, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
@@ -403,7 +403,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 60px;
+        padding: 60px 20px 0;
         gap: 0;
     }
 
@@ -441,71 +441,24 @@
         overflow: visible;
     }
 
-    .orbit-stage {
-        width: 380px;
-        height: 380px;
-        transform: none;
-        margin: 0 auto;
+    /* Órbita unificada: geometria desktop (550px) escalada por breakpoint.
+       .orbit-visual define o box de layout no tamanho visual; o flex
+       "unsafe center" mantém o stage centralizado mesmo transbordando. */
+    .orbit-visual {
+        width: 468px;   /* 550 × 0.85 */
+        height: 468px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: visible;
     }
 
-    .orbit-ring-outer {
-        width: 350px;
-        height: 350px;
-    }
-
-    .orbit-ring-inner {
-        width: 235px;
-        height: 235px;
-    }
-
-    .profile-img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .tech-node {
-        width: 36px;
-        height: 36px;
-        font-size: 20px;
-    }
-
-    .tech-node img,
-    .tech-node i {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-    }
-
-    /* raio = metade do anel (350/2=175, 235/2=117) */
-    .p-out .tech-node {
-        transform: translateY(-175px) translate(-29px, -29px);
-        animation: counter-out-sm var(--dur, 26s) linear infinite;
-    }
-
-    .p-in .tech-node {
-        transform: translateY(-117px) translate(-29px, -29px);
-        animation: counter-in-sm var(--dur, 19s) linear infinite;
-    }
-
-    @keyframes counter-out-sm {
-        from {
-            transform: translateY(-175px) translate(-29px, -29px) rotate(calc(0deg - var(--start, 0deg)));
-        }
-
-        to {
-            transform: translateY(-175px) translate(-29px, -29px) rotate(calc(-360deg - var(--start, 0deg)));
-        }
-    }
-
-    @keyframes counter-in-sm {
-        from {
-            transform: translateY(-117px) translate(-29px, -29px) rotate(calc(0deg + var(--start, 0deg)));
-        }
-
-        to {
-            transform: translateY(-117px) translate(-29px, -29px) rotate(calc(360deg + var(--start, 0deg)));
-        }
+    .orbit-stage {
+        flex-shrink: 0;
+        margin: 0;
+        transform: scale(0.85);
+        transform-origin: center center;
+        overflow: visible;
     }
 
     .hero-btns {
@@ -527,7 +480,8 @@
     }
 
     .btn-primary {
-        width: 100%;
+        width: auto;
+        min-width: 150px;
         justify-content: center;
     }
 
@@ -537,8 +491,20 @@
     }
 
     .btn-outline {
-        flex: 1;
+        flex: 0 1 auto;
+        min-width: 130px;
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-visual {
+        width: 358px;   /* 550 × 0.65 */
+        height: 358px;
+    }
+
+    .orbit-stage {
+        transform: scale(0.65);
     }
 }
 
@@ -546,55 +512,15 @@
     .hexon-title {
         font-size: 1.7rem !important;
     }
+}
+
+@media (max-width: 360px) {
+    .orbit-visual {
+        width: 303px;   /* 550 × 0.55 */
+        height: 303px;
+    }
 
     .orbit-stage {
-        width: 320px;
-        height: 320px;
-    }
-
-    .orbit-ring-outer {
-        width: 295px;
-        height: 295px;
-    }
-
-    .orbit-ring-inner {
-        width: 195px;
-        height: 195px;
-    }
-
-    .profile-img {
-        width: 115px;
-        height: 115px;
-    }
-
-    /* raio = metade do anel (295/2=147, 195/2=97) */
-    .p-out .tech-node {
-        transform: translateY(-147px) translate(-29px, -29px);
-        animation: counter-out-xs var(--dur, 26s) linear infinite;
-    }
-
-    .p-in .tech-node {
-        transform: translateY(-97px) translate(-29px, -29px);
-        animation: counter-in-xs var(--dur, 19s) linear infinite;
-    }
-
-    @keyframes counter-out-xs {
-        from {
-            transform: translateY(-147px) translate(-29px, -29px) rotate(calc(0deg - var(--start, 0deg)));
-        }
-
-        to {
-            transform: translateY(-147px) translate(-29px, -29px) rotate(calc(-360deg - var(--start, 0deg)));
-        }
-    }
-
-    @keyframes counter-in-xs {
-        from {
-            transform: translateY(-97px) translate(-29px, -29px) rotate(calc(0deg + var(--start, 0deg)));
-        }
-
-        to {
-            transform: translateY(-97px) translate(-29px, -29px) rotate(calc(360deg + var(--start, 0deg)));
-        }
+        transform: scale(0.55);
     }
 }

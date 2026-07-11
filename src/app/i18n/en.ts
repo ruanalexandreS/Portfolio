@@ -34,10 +34,10 @@ export const EN_TEXTOS: Textos = {
         subtituloLinha2: 'Building the Backend Future',
         paragrafo1: 'My tech journey was born from a genuine desire to build solutions that actually work. With 2+ years studying programming, I am now in the final stretch of transitioning to my first developer role, with a total focus on .NET Backend.',
         paragrafo2: "I'm a Software Engineering student at UniCesumar and I follow the .NET Backend Developer track at Balta.io — working by day and coding by night. Discipline is my differentiator.",
-        paragrafo3: "Today I'm building a solid foundation in C#, ASP.NET, SQL and preparing for the AWS certification.",
+        paragrafo3: "Today I'm building a solid foundation in C#, ASP.NET, SQL and preparing for the AZ-900 Azure certification.",
         botaoCV: 'Download Resume',
         badgeBackend: '⚙ .NET Backend Developer',
-        badgeAws: '☁ AWS in Training',
+        badgeAws: '☁ Azure in Training',
         badgeJunior: '◈ Full-Stack Junior'
     },
     titulos: {
@@ -68,11 +68,11 @@ export const EN_TEXTOS: Textos = {
     habilidades: {
         backend: { titulo: 'Backend Development', itens: ['C#', 'ASP.NET Core', 'SQL Server', 'REST APIs'] },
         frontend: { titulo: 'Frontend Development', itens: ['Angular', 'TypeScript', 'HTML / CSS', 'TailwindCSS'] },
-        devops: { titulo: 'Cloud & DevOps', itens: ['AWS (in training)', 'Docker', 'Git / GitHub', 'CI/CD'] },
+        devops: { titulo: 'Cloud & DevOps', itens: ['Azure (in training)', 'Docker', 'Git / GitHub', 'CI/CD'] },
         banco: { titulo: 'Databases', itens: ['SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper'] },
         outros: { titulo: 'Soft Skills & Others', itens: ['SOLID / Clean Code', 'English', 'Spanish', 'Problem Solving'] },
         tituloTagsAdicionais: 'Additional Technologies & Tools',
-        tagsAdicionais: ['Git', 'Docker', 'AWS', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux', 'Redis', 'RabbitMQ', 'MediatR', 'FluentValidation', 'Hangfire', 'SignalR', 'GitHub Actions', 'Vercel']
+        tagsAdicionais: ['Git', 'Docker', 'Azure', 'SQL Server', 'PostgreSQL', 'Entity Framework', 'Dapper', 'Swagger', 'JWT', 'OAuth', 'xUnit', 'Linux', 'Redis', 'RabbitMQ', 'MediatR', 'FluentValidation', 'Hangfire', 'SignalR', 'GitHub Actions', 'Vercel']
     },
     carreira: {
         labelTecnologias: 'TECHNOLOGIES USED',
@@ -116,12 +116,12 @@ export const EN_TEXTOS: Textos = {
         labelHabilidades: 'Skills Covered:',
         labelCredencial: 'Credential ID:',
         aprendizadoTitulo: 'Continuous Learning',
-        aprendizadoDescricao: "I'm currently preparing for certifications and deepening my knowledge in .NET, AWS, and software engineering best practices.",
-        aprendizadoTags: ['AWS Cloud Practitioner', 'AZ-900 Azure', 'Docker Certified'],
+        aprendizadoDescricao: "I'm currently preparing for certifications and deepening my knowledge in .NET, Azure, and software engineering best practices.",
+        aprendizadoTags: ['AZ-900 Azure', 'Docker Certified'],
         itens: [
             { nome: 'Complete C# and Object-Oriented Programming', emissor: 'Udemy', ano: '2024', status: 'Completed', habilidades: ['C#', 'OOP', 'SOLID', 'Collections'], credencial: 'UC-XXXXXXXX', botaoAcao: 'Verify' },
             { nome: '.NET Backend Developer', emissor: 'Balta.io', ano: 'In progress', status: 'In Progress', habilidades: ['ASP.NET Core', 'EF Core', 'SQL Server', 'Clean Architecture'], credencial: 'In progress', botaoAcao: 'View Course' },
-            { nome: 'AWS Cloud Practitioner', emissor: 'Amazon Web Services', ano: 'Expected 2026', status: 'In Preparation', habilidades: ['EC2', 'S3', 'Lambda', 'Cloud Architecture'], credencial: 'In preparation', botaoAcao: 'Learn More' }
+            { nome: 'AZ-900: Microsoft Azure Fundamentals', emissor: 'Microsoft', ano: 'Expected 2026', status: 'In Preparation', habilidades: ['IaaS', 'PaaS', 'SaaS', 'Cloud Architecture'], credencial: 'In preparation', botaoAcao: 'Learn More' }
         ]
     },
     contato: {
@@ -166,6 +166,6 @@ export const EN_TEXTOS: Textos = {
         taglineLinha1: 'Building robust solutions',
         taglineLinha2: 'Learning every day',
         taglineHighlight1: '.NET Backend Development',
-        taglineHighlight2: 'AWS in Training'
+        taglineHighlight2: 'Azure in Training'
     }
 };

@@ -3,7 +3,7 @@
    ========================================================================== */
 .contact-title {
     text-align: center;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
     background: var(--gradient-tertiary);
@@ -40,7 +40,7 @@
 }
 
 .contact-left-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -77,8 +77,8 @@
 
 .contact-info-card:hover {
     border-color: var(--card-border-hover);
-    box-shadow: 0 0 20px rgba(188, 159, 241, 0.15),
-                0 0 40px rgba(188, 159, 241, 0.08);
+    box-shadow: 0 0 20px var(--card-glow),
+                0 0 40px var(--card-glow-spread);
     transform: translateY(-1px);
 }
 
@@ -134,11 +134,11 @@
 }
 
 .contact-social-btn:hover {
-    border-color: var(--color-tertiary);
-    color: var(--color-tertiary);
-    background: rgba(188, 159, 241, 0.1);
-    box-shadow: 0 0 12px rgba(188, 159, 241, 0.3),
-                0 0 24px rgba(188, 159, 241, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(124, 92, 255, 0.1);
+    box-shadow: 0 0 12px rgba(124, 92, 255, 0.3),
+                0 0 24px rgba(124, 92, 255, 0.1);
 }
 
 .contact-form-card {
@@ -152,7 +152,7 @@
 }
 
 .contact-form-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -188,7 +188,7 @@
     outline: none;
     transition: border-color 0.2s;
     width: 100%;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .contact-input::placeholder {
@@ -218,16 +218,16 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 0 18px rgba(14, 165, 233, 0.45),
-        0 0 36px rgba(14, 165, 233, 0.15);
+    box-shadow: 0 0 18px var(--btn-primary-glow),
+        0 0 36px var(--btn-primary-glow-spread);
     transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
     margin-top: 0.5rem;
 }
 
 .contact-send-btn:hover {
     background: var(--color-primary-hover);
-    box-shadow: 0 0 28px rgba(14, 165, 233, 0.7),
-        0 0 56px rgba(14, 165, 233, 0.25);
+    box-shadow: 0 0 28px var(--btn-primary-glow-hover),
+        0 0 56px var(--btn-primary-glow-spread-hover);
     transform: translateY(-2px);
 }
 
@@ -262,7 +262,7 @@
     justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.35);
     margin-top: 8px;
 }
 
@@ -274,7 +274,7 @@
 
 .contact-send-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 0 35px rgba(59, 130, 246, 0.55);
+    box-shadow: 0 0 35px rgba(124, 92, 255, 0.55);
 }
 
 .contact-send-btn:disabled {
