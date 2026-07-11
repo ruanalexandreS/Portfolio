@@ -29,21 +29,21 @@ export class ProjetoService {
   private readonly dadosTecnicos: readonly DadosTecnicosProjeto[] = [
     {
       id: 1,
-      urlImagem: 'assets/Portfolio.png',
+      urlImagem: 'assets/Portfolio.webp',
       urlGithub: 'https://github.com/ruanalexandreS/Portfolio',
       urlDeploy: 'https://portfolio-ruan-alexandre-s.vercel.app/',
       tecnologias: ['Angular 21', 'TypeScript', 'TailwindCSS', 'RxJS', 'Signals', 'EmailJS', 'Vercel']
     },
     {
       id: 2,
-      urlImagem: 'assets/kajita.png',
+      urlImagem: 'assets/kajita.webp',
       urlGithub: 'https://github.com/ruanalexandreS/kajita-app',
       urlDeploy: 'https://kajita-app.vercel.app/',
       tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'Node.js', 'SEO']
     },
     {
       id: 3,
-      urlImagem: 'assets/NotaFiscal.png',
+      urlImagem: 'assets/NotaFiscal.webp',
       urlGithub: 'https://github.com/ruanalexandreS/Korp_teste_RuanCampos',
       urlDeploy: 'https://korp-teste-ruan-campos.vercel.app/products',
       tecnologias: ['C#', '.NET 8', 'ASP.NET Core', 'Angular', 'EF Core', 'SQL Server', 'IHttpClientFactory', 'Microsserviços']

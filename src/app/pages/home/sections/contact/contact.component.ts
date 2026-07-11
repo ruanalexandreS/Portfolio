@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
 import { IdiomaService } from '../../../../services/idioma.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -29,9 +30,9 @@ export class ContactComponent {
   erro = false;
 
   // IDs do EmailJS
-  private SERVICE_ID = 'service_fxlphvd';
-  private TEMPLATE_ID = 'template_y5f6tcm';
-  private PUBLIC_KEY = 'M1DGtIboV8PVNNXVQ';
+  private SERVICE_ID = environment.emailjs.serviceId;
+  private TEMPLATE_ID = environment.emailjs.templateId;
+  private PUBLIC_KEY = environment.emailjs.publicKey;
 
   isInvalid(campo: string): boolean {
     const control = this.contactForm.get(campo);
@@ -62,8 +63,7 @@ export class ContactComponent {
       this.contactForm.reset();
       setTimeout(() => this.enviado = false, 4000);
 
-    } catch (err) {
-      console.error('Erro ao enviar:', err);
+    } catch {
       this.erro = true;
       setTimeout(() => this.erro = false, 4000);
 

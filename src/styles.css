@@ -17,6 +17,7 @@
   --gradient-tertiary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
   --gradient-title-primary: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
   --gradient-title-accent: linear-gradient(135deg, var(--color-accent), var(--color-tertiary));
+  --gradient-hero-dark: linear-gradient(135deg, #0d1b35 0%, #0a1628 60%, #071020 100%);
 
   /* Dark mode (default) */
   --bg-base: #0B1120;
@@ -246,4 +247,20 @@ body {
 :root.light app-hero,
 :root.light .hero-section {
   background: var(--bg-section-alt);
+}
+
+/* Reduce motion on low-end mobile */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Pause orbit animation when not visible */
+@media (max-width: 768px) {
+  .p-out, .p-in {
+    animation-play-state: running;
+  }
 }
