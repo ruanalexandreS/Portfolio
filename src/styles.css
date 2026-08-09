@@ -304,11 +304,10 @@ body {
   border-color: rgba(109, 40, 217, 0.6);
 }
 
-/* AWS: #FF9900 é calibrado p/ node escuro (2.14:1 no branco). O âmbar
-   escuro rende 4.58:1 sobre a parada mais clara do node (#F1F5F9);
-   text-shadow laranja vira mancha no claro — removido. */
+/* AZURE: #0089D6 do dark rende 3.9x:1 sobre o node claro — escurecido
+   p/ 4.93:1 na pior parada (#F1F5F9). Glow azul vira mancha no claro. */
 :root.light .tech-node-text span {
-  color: #B45309;
+  color: #006CBE;
   text-shadow: none;
 }
 

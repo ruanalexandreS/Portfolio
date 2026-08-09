@@ -286,12 +286,16 @@
     border-color: rgba(96, 165, 250, 0.7);
 }
 
+/* Node de texto (AZURE). #0078D4 oficial rende só 3.78:1 sobre a parada
+   mais clara do node (#0d1b35) — texto 11px exige 4.5:1. #0089D6 (azul
+   Azure que o próprio Devicon usa) fecha 4.53:1. Variante light em
+   styles.css, junto aos demais overrides do tech-node. */
 .tech-node-text span {
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.5px;
-    color: #FF9900;
-    text-shadow: 0 0 10px rgba(255, 153, 0, 0.6);
+    color: #0089D6;
+    text-shadow: 0 0 10px rgba(0, 137, 214, 0.6);
 }
 
 .p-out .tech-node {
