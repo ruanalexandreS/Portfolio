@@ -6,17 +6,15 @@ import { CareerComponent } from './sections/career/career.component';
 import { EducationComponent } from './sections/education/education.component';
 import { CertificatesComponent } from './sections/certificates/certificates.component';
 import { ContactComponent } from './sections/contact/contact.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { ChangeDetectionStrategy, Component, OnDestroy, inject, effect, signal, untracked } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../../components/header/header.component';
 import { IdiomaService } from '../../services/idioma.service';
 import { ProjetoService, Projeto } from '../../services/projeto.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, HeroComponent, AboutComponent, ProjectsComponent, SkillsComponent, CareerComponent, EducationComponent, CertificatesComponent, ContactComponent, FooterComponent],
+  imports: [CommonModule, HeroComponent, AboutComponent, ProjectsComponent, SkillsComponent, CareerComponent, EducationComponent, CertificatesComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

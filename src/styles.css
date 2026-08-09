@@ -24,7 +24,12 @@
   --color-tertiary-hover: var(--color-secondary-hover);
 
   /* Gradients */
-  --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  /* Paradas do --gradient-brand, escurecidas no escuro p/ WCAG AA:
+     texto branco exige >=4.5:1 e o par vibrante dava 4.35:1 / 2.14:1.
+     Aqui: #6D42E8 = 5.84:1 e #0369A1 = 5.93:1. */
+  --cta-stop-start: var(--color-primary-hover);
+  --cta-stop-end: #0369A1;
+  --gradient-brand: linear-gradient(135deg, var(--cta-stop-start), var(--cta-stop-end));
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-primary));
   --gradient-tertiary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   --gradient-title-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
@@ -63,6 +68,10 @@
   --btn-primary-glow-hover: rgba(124, 92, 255, 0.7);
   --btn-primary-glow-spread: rgba(124, 92, 255, 0.15);
   --btn-primary-glow-spread-hover: rgba(124, 92, 255, 0.25);
+
+  /* Texto sobre CTA de marca (fundo --gradient-brand).
+     Token semântico: permite ajustar contraste por tema sem hardcode. */
+  --btn-primary-text: #FFFFFF;
 
   /* Semantic section tokens */
   --section-alt-bg: var(--bg-section-alt);
@@ -112,6 +121,11 @@
   --btn-primary-glow-hover: rgba(109, 40, 217, 0.4);
   --btn-primary-glow-spread: rgba(109, 40, 217, 0.08);
   --btn-primary-glow-spread-hover: rgba(109, 40, 217, 0.15);
+
+  /* No tema claro a paleta padrão já passa AA (7.10:1 e 5.93:1):
+     mantém o gradiente original, sem escurecer. */
+  --cta-stop-start: var(--color-primary);
+  --cta-stop-end: var(--color-secondary);
 
   /* Semantic section tokens — light */
   --section-alt-bg: #F1F5F9;

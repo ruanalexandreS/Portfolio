@@ -6,7 +6,7 @@
         <div class="flex items-center justify-between">
 
             <!-- LOGO -->
-            <button (click)="voltarAoTopo()"
+            <button routerLink="/" (click)="voltarAoTopo()"
                 class="flex items-center leading-none text-2xl font-bold tracking-tight hover:scale-105 transition-transform duration-200 focus:outline-none cursor-pointer text-text-primary">
                 Ruan<span class="text-primary">.dev</span>
             </button>
@@ -15,19 +15,24 @@
             <div class="hidden md:flex items-center space-x-6 md:space-x-10">
 
                 <!-- Botões com Tradução (Desktop) -->
-                <button (click)="voltarAoTopo()"
+                <button routerLink="/" (click)="voltarAoTopo()"
+                    routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                     class="flex items-center text-text-secondary hover:text-[var(--color-tertiary)] transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.inicio }}</button>
-                <button (click)="scrollTo('about')"
+                <button [routerLink]="['/']" fragment="about" (click)="fecharMenu()"
+                    routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                     class="flex items-center text-text-secondary hover:text-[var(--color-tertiary)] transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.sobre }}</button>
-                <button (click)="scrollTo('career')"
+                <button [routerLink]="['/']" fragment="career" (click)="fecharMenu()"
+                    routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                     class="flex items-center text-text-secondary hover:text-[var(--color-tertiary)] transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.carreira }}</button>
-                <button (click)="scrollTo('projects')"
+                <button routerLink="/projetos" (click)="fecharMenu()"
+                    routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                     class="flex items-center text-text-secondary hover:text-[var(--color-tertiary)] transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.projetos }}</button>
-                <button (click)="scrollTo('contact')"
+                <button [routerLink]="['/']" fragment="contact" (click)="fecharMenu()"
+                    routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                     class="flex items-center text-text-secondary hover:text-[var(--color-tertiary)] transition-colors duration-200 text-sm md:text-base tracking-wide font-medium mt-1">{{
                     t.menu.contato }}</button>
 
@@ -85,19 +90,24 @@
             class="md:hidden mt-4 py-4 bg-bg-elevated/95 backdrop-blur-md rounded-lg border border-border-base shadow-xl flex flex-col">
 
             <!-- Botões com Tradução (Mobile - mantendo as classes block e text-left) -->
-            <button (click)="scrollTo('home')"
+            <button routerLink="/" (click)="voltarAoTopo()"
+                routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                 class="block w-full text-left px-6 py-3 text-text-secondary hover:text-[var(--color-tertiary)] hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.inicio }}</button>
-            <button (click)="scrollTo('about')"
+            <button [routerLink]="['/']" fragment="about" (click)="fecharMenu()"
+                routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                 class="block w-full text-left px-6 py-3 text-text-secondary hover:text-[var(--color-tertiary)] hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.sobre }}</button>
-            <button (click)="scrollTo('career')"
+            <button [routerLink]="['/']" fragment="career" (click)="fecharMenu()"
+                routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                 class="block w-full text-left px-6 py-3 text-text-secondary hover:text-[var(--color-tertiary)] hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.carreira }}</button>
-            <button (click)="scrollTo('projects')"
+            <button routerLink="/projetos" (click)="fecharMenu()"
+                routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                 class="block w-full text-left px-6 py-3 text-text-secondary hover:text-[var(--color-tertiary)] hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.projetos }}</button>
-            <button (click)="scrollTo('contact')"
+            <button [routerLink]="['/']" fragment="contact" (click)="fecharMenu()"
+                routerLinkActive="!text-[var(--color-tertiary)]" [routerLinkActiveOptions]="matchExato"
                 class="block w-full text-left px-6 py-3 text-text-secondary hover:text-[var(--color-tertiary)] hover:bg-bg-section-alt transition-colors duration-200 font-medium">{{
                 t.menu.contato }}</button>
 

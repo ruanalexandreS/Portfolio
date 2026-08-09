@@ -1,4 +1,3 @@
-<app-header></app-header>
 <app-hero [t]="t" [textoExibido]="textoExibido()" [scrollPara]="scrollPara"></app-hero>
 <app-about></app-about>
 
@@ -15,7 +14,9 @@
   @defer (on viewport) {
   <app-career [experiencias]="experiencias"></app-career>
   } @placeholder {
-  <div class="min-h-[400px]"></div>
+  <!-- id="career" no placeholder: sem ele o fragment /#career não encontra
+       alvo no DOM enquanto o @defer não é disparado. -->
+  <div id="career" class="min-h-[400px]"></div>
   }
 </div>
 
@@ -32,4 +33,3 @@
 }
 
 <app-contact></app-contact>
-<app-footer></app-footer>

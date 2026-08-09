@@ -16,10 +16,10 @@
         </p>
 
         <nav class="footer-nav">
-            <a href="#about">{{ t.footer.navSobre }}</a>
-            <a href="#projects">{{ t.footer.navProjetos }}</a>
-            <a href="#career">{{ t.footer.navCarreira }}</a>
-            <a href="#contact">{{ t.footer.navContato }}</a>
+            <a [routerLink]="['/']" fragment="about">{{ t.footer.navSobre }}</a>
+            <a routerLink="/projetos">{{ t.footer.navProjetos }}</a>
+            <a [routerLink]="['/']" fragment="career">{{ t.footer.navCarreira }}</a>
+            <a [routerLink]="['/']" fragment="contact">{{ t.footer.navContato }}</a>
         </nav>
 
     </div>

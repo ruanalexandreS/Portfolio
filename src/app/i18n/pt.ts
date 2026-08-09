@@ -59,10 +59,12 @@ export const PT_TEXTOS: Textos = {
         verGithub: 'Ver Código',
         verDeploy: 'Ver Demo',
         semProjetos: 'Nenhum projeto nesta categoria.',
+        verMais: 'Ver mais projetos',
         lista: [
             { id: 1, titulo: 'Portfólio Pessoal', descricao: 'Portfólio desenvolvido com Angular standalone, animações CSS customizadas, sistema de i18n PT/EN/ES e formulário de contato com EmailJS.', categoria: 'Frontend' },
             { id: 2, titulo: 'KajitA - E-commerce', descricao: 'E-commerce full-stack desenvolvido para o mercado da Colômbia.', categoria: 'Full Stack' },
-            { id: 3, titulo: 'Korp — Sistema de Notas Fiscais', descricao: 'Teste técnico com arquitetura de microsserviços em .NET 8. Dois serviços independentes com EF Core, IHttpClientFactory, middleware global de erros, paginação e frontend Angular com RxJS reativo.', categoria: 'Full Stack' }
+            { id: 3, titulo: 'Korp — Sistema de Notas Fiscais', descricao: 'Teste técnico com arquitetura de microsserviços em .NET 8. Dois serviços independentes com EF Core, IHttpClientFactory, middleware global de erros, paginação e frontend Angular com RxJS reativo.', categoria: 'Full Stack' },
+            { id: 4, titulo: 'Latam Explorer', descricao: 'Plataforma de descoberta de destinos turísticos na América Latina, com conversor de moedas em tempo real, busca e filtro de 22 destinos, tema claro/escuro persistido e formulário validado. Vanilla JS puro, sem frameworks: arquitetura em camadas controllers/services com ES6 Modules nativos.', categoria: 'Frontend' }
         ]
     },
     habilidades: {

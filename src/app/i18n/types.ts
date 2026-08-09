@@ -65,6 +65,7 @@ export interface ProjetosTextos {
     readonly verGithub: string;
     readonly verDeploy: string;
     readonly semProjetos: string;
+    readonly verMais: string;
     readonly lista: readonly ItemProjetoI18n[];
 }
 

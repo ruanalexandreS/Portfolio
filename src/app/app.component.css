@@ -1,0 +1,5 @@
+/* app-root é inline por padrão; blockifica p/ o wrapper flex do template
+   medir contra a viewport sem caixa anônima no meio. */
+:host {
+    display: block;
+}

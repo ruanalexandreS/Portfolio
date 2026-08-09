@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
 import { IdiomaService } from '../../services/idioma.service';
 import { TemaService } from '../../services/tema.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -17,6 +18,15 @@ export class HeaderComponent {
 
   isMenuOpen: boolean = false;
 
+  // O fragment precisa entrar na comparação: todos os links de seção apontam
+  // para '/', então sem isso o RouterLinkActive marcaria todos ao mesmo tempo.
+  readonly matchExato: IsActiveMatchOptions = {
+    paths: 'exact',
+    queryParams: 'exact',
+    fragment: 'exact',
+    matrixParams: 'ignored'
+  };
+
   get idiomaAtual() { return this.idiomaService.idioma(); }
   get t() { return this.idiomaService.t(); }
   get tema() { return this.temaService.tema(); }
@@ -25,11 +35,7 @@ export class HeaderComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  scrollTo(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  fecharMenu(): void {
     this.isMenuOpen = false;
   }
 

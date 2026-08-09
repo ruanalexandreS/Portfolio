@@ -55,6 +55,24 @@
     margin-top: auto;
 }
 
+/* CTA "Ver mais projetos".
+   Reaproveita os mesmos tokens do .contact-send-btn (--gradient-brand +
+   --btn-primary-glow*) para os dois CTAs do site ficarem coerentes.
+   Anima só transform e box-shadow — nada que dispare reflow. */
+.projects-cta {
+    background: var(--gradient-brand);
+    color: var(--btn-primary-text);
+    box-shadow: 0 0 20px var(--btn-primary-glow),
+                0 0 40px var(--btn-primary-glow-spread);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px var(--btn-primary-glow-hover),
+                0 0 70px var(--btn-primary-glow-spread-hover);
+}
+
 @media (max-width: 768px) {
 
     /* Filtros: quebram em linhas centralizadas, sem overflow */
