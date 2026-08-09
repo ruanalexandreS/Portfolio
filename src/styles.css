@@ -73,9 +73,18 @@
      Token semântico: permite ajustar contraste por tema sem hardcode. */
   --btn-primary-text: #FFFFFF;
 
+  /* Texto do CTA secundário (ghost) do hero. Token NOVO, não altera nada
+     existente: --color-primary #7C5CFF rende só 4.33:1 sobre o hero
+     escuro (#0B1120); este tint sobe para 5.5:1. */
+  --btn-secondary-text: #8E75FF;
+
   /* Semantic section tokens */
   --section-alt-bg: var(--bg-section-alt);
   --hero-title-color: #ffffff;
+
+  /* Linhas radiais da órbita do hero (conn-svg). Antes hardcoded no
+     <defs> do SVG — tokenizado p/ ter variante por tema. */
+  --orbit-line-color: rgba(59, 130, 246, 0.25);
 }
 
 :root.light {
@@ -87,15 +96,28 @@
   --color-accent: #92400E;
   --color-accent-hover: #78350F;
   --color-silver: #64748B;
-  --color-silver-light: #475569;
+  /* Meio-termo real entre --color-silver (#64748B) e --text-secondary
+     (#475569). O valor antigo clonava o text-secondary e o token perdia
+     função própria. */
+  --color-silver-light: #55647A;
   --color-tertiary: var(--color-secondary);
   --color-tertiary-hover: var(--color-secondary-hover);
-  --bg-base: #e0e8f5b5;
-  --bg-elevated: #9ebedc;
+  /* #e0e8f5 com alfa b5 (0.71) já composto sobre o branco do viewport.
+     Opaco de propósito: era o único token com alfa da paleta, e todo
+     contraste de texto dependia de nada ser pintado atrás do body. */
+  --bg-base: #E9EFF8;
+  /* Neutro ACIMA do bg-base na escala de luminosidade — no dark, elevated é
+     mais claro que base; o antigo #9EBEDC invertia isso e derrubava
+     text-secondary (3.92), primary (3.67) e secondary (3.07) abaixo de AA. */
+  --bg-elevated: #F8FAFC;
   --bg-section-alt: #EDF2F7;
   --text-primary: #0F172A;
   --text-secondary: #475569;
-  --border: #E2E8F0;
+  /* O antigo #E2E8F0 dava 1.07:1 sobre o bg-base — borda invisível.
+     #B3C0D0 = 1.60:1 s/ base e 1.77:1 s/ elevated (~#CBD5E1 pedido na
+     revisão reprovava o próprio alvo de 1.5:1, com 1.28). Cards seguem
+     tendo --card-shadow como segundo delimitador. */
+  --border: #B3C0D0;
 
   /* Semantic card tokens — light */
   --card-bg: rgba(255, 255, 255, 0.75);
@@ -127,8 +149,17 @@
   --cta-stop-start: var(--color-primary);
   --cta-stop-end: var(--color-secondary);
 
-  /* Semantic section tokens — light */
-  --section-alt-bg: #F1F5F9;
+  /* No claro o primário puro já passa (6.31:1 sobre o hero #EDF2F7). */
+  --btn-secondary-text: var(--color-primary);
+
+  /* Linhas da órbita: roxo a 0.7 -> 3.59:1 no ponto mais forte sobre
+     #EDF2F7 (o azul dark a 0.25 dava 1.32:1 — invisível no claro). */
+  --orbit-line-color: rgba(109, 40, 217, 0.7);
+
+  /* Semantic section tokens — light.
+     Alias espelhando o dark: os dois tokens divergiam só aqui
+     (#F1F5F9 vs #EDF2F7), inconsistência silenciosa. */
+  --section-alt-bg: var(--bg-section-alt);
   --hero-title-color: #0F172A;
 }
 
@@ -212,20 +243,23 @@ body {
       rgba(217, 119, 6, 0.03) 100%);
 }
 
+/* Anéis: alfa calibrado p/ >=3:1 sobre o hero light #EDF2F7
+   (0.70 -> 3.59:1, 0.65 -> 3.24:1). Os antigos 0.35/0.25 davam 1.82/1.5x. */
 :root.light .orbit-ring-outer {
   box-shadow:
-    0 0 0 1px rgba(109, 40, 217, 0.35),
+    0 0 0 1px rgba(109, 40, 217, 0.7),
     0 0 40px rgba(109, 40, 217, 0.1);
 }
 
 :root.light .orbit-ring-inner {
   box-shadow:
-    0 0 0 1px rgba(109, 40, 217, 0.25),
+    0 0 0 1px rgba(109, 40, 217, 0.65),
     0 0 30px rgba(109, 40, 217, 0.08);
 }
 
 :root.light .profile-img {
-  border-color: rgba(109, 40, 217, 0.6);
+  /* 0.60 dava 2.97:1 — raspava o mínimo gráfico; 0.65 fecha 3.24:1 */
+  border-color: rgba(109, 40, 217, 0.65);
   box-shadow:
     0 0 0 4px rgba(109, 40, 217, 0.1),
     0 0 40px rgba(109, 40, 217, 0.2);
@@ -268,6 +302,14 @@ body {
     0 0 60px rgba(109, 40, 217, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border-color: rgba(109, 40, 217, 0.6);
+}
+
+/* AWS: #FF9900 é calibrado p/ node escuro (2.14:1 no branco). O âmbar
+   escuro rende 4.58:1 sobre a parada mais clara do node (#F1F5F9);
+   text-shadow laranja vira mancha no claro — removido. */
+:root.light .tech-node-text span {
+  color: #B45309;
+  text-shadow: none;
 }
 
 :root.light .btn-outline {

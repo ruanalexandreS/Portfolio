@@ -173,6 +173,12 @@
     pointer-events: none;
 }
 
+/* stop-color é propriedade de apresentação: aceita var() via CSS,
+   ao contrário do atributo SVG. Token por tema em styles.css. */
+.conn-stop {
+    stop-color: var(--orbit-line-color);
+}
+
 /* FOTO COM GLOW PREMIUM */
 .profile-img {
     position: absolute;
@@ -350,18 +356,46 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--color-primary);
-    color: white;
+    /* Mesmo fundo do CTA "Ver mais projetos" (.projects-cta): um único
+       tratamento de CTA primário no site. Paradas AA nos dois temas. */
+    background: var(--gradient-brand);
+    color: var(--btn-primary-text);
     border: none;
     box-shadow: 0 0 18px var(--btn-primary-glow),
         0 0 36px var(--btn-primary-glow-spread);
-    transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-    background: var(--color-primary-hover);
     box-shadow: 0 0 28px var(--btn-primary-glow-hover),
         0 0 56px var(--btn-primary-glow-spread-hover);
+    transform: translateY(-2px);
+}
+
+/* Ação secundária (download do CV): ghost com borda, não compete com o
+   primário. Texto usa token próprio: --color-primary puro dá 4.33:1
+   sobre o hero escuro — abaixo de AA. */
+.btn-secondary {
+    padding: 11px 30px; /* 2px a menos por lado compensa a borda */
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--btn-secondary-text, var(--color-primary));
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    color: var(--btn-primary-text);
     transform: translateY(-2px);
 }
 
@@ -479,7 +513,8 @@
         width: 100%;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
         width: auto;
         min-width: 150px;
         justify-content: center;

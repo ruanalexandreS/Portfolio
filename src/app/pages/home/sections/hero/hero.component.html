@@ -24,7 +24,7 @@
                 <div class="hero-btns-group">
                     <div class="hero-btns-row">
                         <button (click)="scrollPara('projects')" class="btn-primary">{{ t.hero.botaoProjetos }}</button>
-                        <a href="assets/curriculo.pdf" download="Curriculo_Ruan_Alexandre.pdf" class="btn-primary">{{ t.hero.botaoCV }}</a>
+                        <a href="assets/curriculo.pdf" download="Curriculo_Ruan_Alexandre.pdf" class="btn-secondary">{{ t.hero.botaoCV }}</a>
                     </div>
                     <div class="social-row">
                         <a href="https://github.com/ruanalexandreS" target="_blank" class="btn-outline">{{ t.hero.linkGithub }}</a>
@@ -43,8 +43,10 @@
                     <svg class="conn-svg" viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <radialGradient id="lineGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="rgba(59,130,246,0.25)" />
-                                <stop offset="100%" stop-color="rgba(59,130,246,0)" />
+                                <!-- Cor via CSS (classe conn-stop): o atributo stop-color
+                                     não resolve var(); o fade fica no stop-opacity. -->
+                                <stop class="conn-stop" offset="0%" />
+                                <stop class="conn-stop" offset="100%" stop-opacity="0" />
                             </radialGradient>
                         </defs>
                         <g stroke="url(#lineGrad)" stroke-width="1" stroke-dasharray="4 6">
@@ -85,7 +87,9 @@
                         <div class="tech-node tech-node-text" title="AWS"><span>AWS</span></div>
                     </div>
                     <div class="pivot p-in" style="--dur:19s; --start:240deg;">
-                        <div class="tech-node" title="GitHub"><i class="devicon-github-original" style="color:#94A3B8;"></i></div>
+                        <!-- var(--color-silver): no dark resolve #94A3B8 (idêntico ao
+                             antigo hardcode); no light #64748B = 4.35:1 no node branco -->
+                        <div class="tech-node" title="GitHub"><i class="devicon-github-original" style="color: var(--color-silver);"></i></div>
                     </div>
 
                     <img src="assets/minhafoto.webp" alt="Ruan Alexandre" class="profile-img">
