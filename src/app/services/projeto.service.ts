@@ -29,13 +29,15 @@ interface DadosTecnicosProjeto {
 export class ProjetoService {
   private idioma = inject(IdiomaService);
 
+  // A ordem deste array é a ordem de renderização do @for.
+  // id é identidade, não posição — por isso a sequência abaixo não é crescente.
   private readonly dadosTecnicos: readonly DadosTecnicosProjeto[] = [
     {
-      id: 1,
-      urlImagem: 'assets/Portfolio.webp',
-      urlGithub: 'https://github.com/ruanalexandreS/Portfolio',
-      urlDeploy: 'https://portfolio-ruan-alexandre-s.vercel.app/',
-      tecnologias: ['Angular 21', 'TypeScript', 'TailwindCSS', 'RxJS', 'Signals', 'EmailJS', 'Vercel'],
+      id: 3,
+      urlImagem: 'assets/NotaFiscal.webp',
+      urlGithub: 'https://github.com/ruanalexandreS/Korp_teste_RuanCampos',
+      urlDeploy: 'https://korp-teste-ruan-campos.vercel.app/products',
+      tecnologias: ['C#', '.NET 8', 'ASP.NET Core', 'Angular', 'EF Core', 'SQL Server', 'IHttpClientFactory', 'Microsserviços'],
       destaque: true
     },
     {
@@ -47,11 +49,11 @@ export class ProjetoService {
       destaque: true
     },
     {
-      id: 3,
-      urlImagem: 'assets/NotaFiscal.webp',
-      urlGithub: 'https://github.com/ruanalexandreS/Korp_teste_RuanCampos',
-      urlDeploy: 'https://korp-teste-ruan-campos.vercel.app/products',
-      tecnologias: ['C#', '.NET 8', 'ASP.NET Core', 'Angular', 'EF Core', 'SQL Server', 'IHttpClientFactory', 'Microsserviços'],
+      id: 1,
+      urlImagem: 'assets/Portfolio.webp',
+      urlGithub: 'https://github.com/ruanalexandreS/Portfolio',
+      urlDeploy: 'https://portfolio-ruan-alexandre-s.vercel.app/',
+      tecnologias: ['Angular 21', 'TypeScript', 'TailwindCSS', 'RxJS', 'Signals', 'EmailJS', 'Vercel'],
       destaque: true
     },
     {

@@ -39,7 +39,11 @@ export class HomeComponent implements OnDestroy {
 
   get categorias(): readonly string[] { return this.t.projetos.filtros; }
   get experiencias() { return this.t.carreira.itens; }
-  get projetosTodos(): Projeto[] { return this.projetoService.projetos(); }
+  // A home é vitrine: só os curados. A página /projetos lista todos.
+  // O recorte vem antes do filtro de categoria, que opera sobre este subconjunto.
+  get projetosTodos(): Projeto[] {
+    return this.projetoService.projetos().filter(p => p.destaque);
+  }
   get projetosExibidos(): Projeto[] {
     const filtroTodos = this.categorias[0];
     return this.categoriaAtiva === filtroTodos
