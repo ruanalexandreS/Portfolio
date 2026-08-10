@@ -31,8 +31,7 @@
                     <img [src]="projeto.urlImagem" [alt]="projeto.titulo" loading="lazy"
                         class="w-full h-full object-cover">
 
-                    <div
-                        class="absolute inset-0 bg-bg-base/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center gap-4">
 
                         @if (projeto.urlDeploy) {
                         <a [href]="projeto.urlDeploy" target="_blank"

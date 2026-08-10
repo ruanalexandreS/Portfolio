@@ -45,6 +45,32 @@
     transform: scale(1.05);
 }
 
+/* Overlay com os links "Ver Demo" / "Ver Código".
+   Touch-first: sem hover, os links precisam estar sempre acessíveis — no
+   celular o antigo opacity-0 os deixava invisíveis e inalcançáveis.
+   Scrim mais leve aqui (35%) porque fica permanente sobre o screenshot.
+   1ª declaração = fallback p/ browsers sem color-mix; a 2ª sobrescreve e
+   acompanha o tema. */
+.project-overlay {
+    opacity: 1;
+    background: rgba(11, 17, 32, 0.32);
+    background: color-mix(in srgb, var(--bg-base) 35%, transparent);
+    transition: opacity 0.3s ease;
+}
+
+/* Só onde existe cursor: preserva o revelar-no-hover do desktop. */
+@media (hover: hover) {
+    .project-overlay {
+        opacity: 0;
+        background: rgba(11, 17, 32, 0.6);
+        background: color-mix(in srgb, var(--bg-base) 60%, transparent);
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+}
+
 .project-body {
     flex: 1;
     display: flex;
