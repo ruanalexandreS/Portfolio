@@ -25,7 +25,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             @for (projeto of projetosExibidos; track projeto.id) {
             <div
-                class="project-card bg-bg-elevated border border-border-base rounded-xl overflow-hidden group hover:border-primary/50 shadow-lg">
+                class="project-card bg-bg-elevated border border-border-base rounded-xl overflow-hidden group shadow-lg">
 
                 <div class="project-image relative overflow-hidden">
                     <img [src]="projeto.urlImagem" [alt]="projeto.titulo" loading="lazy"
@@ -34,12 +34,12 @@
                     <div class="project-overlay absolute inset-0 flex items-center justify-center gap-4">
 
                         @if (projeto.urlDeploy) {
-                        <a [href]="projeto.urlDeploy" target="_blank"
+                        <a [href]="projeto.urlDeploy" target="_blank" rel="noopener noreferrer"
                             class="p-3 bg-[var(--color-silver)] rounded-full hover:bg-[var(--color-silver-light)] text-white transition-colors"
                             [title]="t.projetos.verDeploy">🔗</a>
                         }
 
-                        <a [href]="projeto.urlGithub" target="_blank"
+                        <a [href]="projeto.urlGithub" target="_blank" rel="noopener noreferrer"
                             class="p-3 bg-primary rounded-full hover:bg-primary-hover text-white transition-colors"
                             [title]="t.projetos.verGithub">💻</a>
 

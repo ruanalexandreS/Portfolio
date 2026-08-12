@@ -12,7 +12,7 @@
             @for (cert of t.certificados.itens; track cert.nome; let i = $index) {
             <div class="cert-card">
                 <div class="cert-card-top">
-                    <div class="cert-badge" [class]="badgeClasses[i]">
+                    <div class="cert-badge" [class]="badgeClasse(i)">
                         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="28" height="28">
                             <path d="M9 12l2 2 4-4M12 2l3 3-3 3-3-3 3-3z" />
                         </svg>
@@ -24,7 +24,7 @@
                             <span class="cert-dot">•</span>
                             <span>{{ cert.ano }}</span>
                             <span class="cert-dot">•</span>
-                            <span class="cert-status" [class]="statusClasses[i]">{{ cert.status }}</span>
+                            <span class="cert-status" [class]="statusClasse(i)">{{ cert.status }}</span>
                         </div>
                         <p class="cert-skills-label">{{ t.certificados.labelHabilidades }}</p>
                         <div class="cert-tags">
@@ -39,7 +39,7 @@
                         <span class="cert-credential-label">{{ t.certificados.labelCredencial }}</span>
                         <span class="cert-credential-id">{{ cert.credencial }}</span>
                     </div>
-                    <a [href]="verifyLinks[i]" target="_blank" class="cert-verify-btn">
+                    <a [href]="cert.credencialUrl" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
                             height="14">
                             <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

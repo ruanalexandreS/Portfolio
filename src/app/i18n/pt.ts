@@ -35,7 +35,6 @@ export const PT_TEXTOS: Textos = {
         paragrafo1: 'Desenvolvedor .NET Backend em formação, movido por uma vontade genuína de criar soluções que resolvem problemas reais. Há mais de 2 anos escrevendo código todos os dias, com foco em C#, ASP.NET Core e SQL Server.',
         paragrafo2: 'Hoje construo APIs REST em .NET com Clean Architecture, EF Core e testes com xUnit. No projeto Korp apliquei microsserviços e IHttpClientFactory; no KajitA, desenvolvi um e-commerce full-stack de ponta a ponta.',
         paragrafo3: 'Curso Engenharia de Software na UniCesumar e sigo a trilha .NET Backend Developer no Balta.io, com a certificação AZ-900 Azure em andamento.',
-        botaoCV: 'Baixar Currículo',
         badgeBackend: '⚙ .NET Backend Developer',
         badgeAws: '☁ Azure em Formação',
         badgeJunior: '◈ Full-Stack Junior'
@@ -121,9 +120,9 @@ export const PT_TEXTOS: Textos = {
         aprendizadoDescricao: 'Atualmente me preparando para certificações e aprofundando conhecimentos em .NET, Azure e boas práticas de engenharia de software.',
         aprendizadoTags: ['AZ-900 Azure', 'Docker Certified'],
         itens: [
-            { nome: 'C# Completo e Orientado a Objetos', emissor: 'Udemy', ano: '2024', status: 'Concluído', habilidades: ['C#', 'POO', 'SOLID', 'Collections'], credencial: 'UC-XXXXXXXX', botaoAcao: 'Verificar' },
-            { nome: '.NET Backend Developer', emissor: 'Balta.io', ano: 'Em andamento', status: 'Em Progresso', habilidades: ['ASP.NET Core', 'EF Core', 'SQL Server', 'Clean Architecture'], credencial: 'Em andamento', botaoAcao: 'Ver Curso' },
-            { nome: 'AZ-900: Microsoft Azure Fundamentals', emissor: 'Microsoft', ano: 'Previsto 2026', status: 'Em Preparação', habilidades: ['IaaS', 'PaaS', 'SaaS', 'Cloud Architecture'], credencial: 'Em preparação', botaoAcao: 'Ver Mais' }
+            { nome: 'C# Completo e Orientado a Objetos', emissor: 'Udemy', ano: '2024', status: 'Concluído', habilidades: ['C#', 'POO', 'SOLID', 'Collections'], credencial: 'Concluído', credencialUrl: 'https://www.udemy.com/', botaoAcao: 'Ver Mais' },
+            { nome: '.NET Backend Developer', emissor: 'Balta.io', ano: 'Em andamento', status: 'Em Progresso', habilidades: ['ASP.NET Core', 'EF Core', 'SQL Server', 'Clean Architecture'], credencial: 'Em andamento', credencialUrl: 'https://balta.io', botaoAcao: 'Ver Curso' },
+            { nome: 'AZ-900: Microsoft Azure Fundamentals', emissor: 'Microsoft', ano: 'Previsto 2026', status: 'Em Preparação', habilidades: ['IaaS', 'PaaS', 'SaaS', 'Cloud Architecture'], credencial: 'Em preparação', credencialUrl: 'https://learn.microsoft.com/pt-br/credentials/certifications/azure-fundamentals/', botaoAcao: 'Ver Mais' }
         ]
     },
     contato: {

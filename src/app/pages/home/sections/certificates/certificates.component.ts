@@ -14,7 +14,18 @@ export class CertificatesComponent {
   private idiomaService = inject(IdiomaService);
   get t() { return this.idiomaService.t(); }
 
-  readonly badgeClasses = ['cert-badge-blue', 'cert-badge-teal', 'cert-badge-yellow'];
-  readonly statusClasses = ['cert-status-done', 'cert-status-progress', 'cert-status-preparation'];
-  readonly verifyLinks = ['#', 'https://balta.io', 'https://aws.amazon.com/certification/'];
+  /* Decoração puramente posicional: as cores não descrevem o certificado,
+     só alternam pela posição no grid. Ficam aqui, não no i18n.
+     O módulo garante que nunca retornem undefined, independente de quantos
+     certificados a lista tiver. */
+  private readonly badges = ['cert-badge-blue', 'cert-badge-teal', 'cert-badge-yellow'];
+  private readonly statuses = ['cert-status-done', 'cert-status-progress', 'cert-status-preparation'];
+
+  badgeClasse(i: number): string {
+    return this.badges[i % this.badges.length];
+  }
+
+  statusClasse(i: number): string {
+    return this.statuses[i % this.statuses.length];
+  }
 }

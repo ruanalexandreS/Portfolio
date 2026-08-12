@@ -10,6 +10,15 @@ const CURRICULOS: Record<Idioma, string> = {
   ES: '/curriculo-es.pdf'
 };
 
+/* Nome do arquivo salvo pelo recrutador — não segue sufixo único (EN usa
+   "Resume"), por isso é mapa e não concatenação. Hífen, sem acento e sem
+   espaço: evita %20 e corrupção em ATS antigos. */
+const NOMES_CV: Record<Idioma, string> = {
+  PT: 'Ruan-Alexandre-CV.pdf',
+  EN: 'Ruan-Alexandre-Resume-EN.pdf',
+  ES: 'Ruan-Alexandre-CV-ES.pdf'
+};
+
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -33,5 +42,9 @@ export class HeroComponent {
   });
 
   urlCurriculo = computed(() => CURRICULOS[this.idiomaCurriculo()]);
-  nomeCurriculo = computed(() => `Ruan-Alexandre-CV-${this.idiomaCurriculo()}.pdf`);
+  /* O ?? é rede de segurança para drift entre os dois mapas: idiomaCurriculo
+     valida a chave contra CURRICULOS, não contra NOMES_CV. Sem ele, uma
+     chave ausente viraria undefined, o atributo download sumiria e o PDF
+     abriria no navegador em vez de baixar. */
+  nomeCurriculo = computed(() => NOMES_CV[this.idiomaCurriculo()] ?? NOMES_CV.PT);
 }

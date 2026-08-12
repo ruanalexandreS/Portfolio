@@ -266,6 +266,16 @@ body {
   animation: none;
 }
 
+/* O `bg-bg-elevated/95` do template nunca gerou CSS (token é hex, sem
+   <alpha-value>), então o header ficava opaco e o backdrop-blur não tinha
+   o que desfocar. Alfa derivado do token, sem convertê-lo.
+   `:root header` (0,1,1) supera a utilitária `.bg-bg-elevated` (0,1,0);
+   a 1ª declaração é fallback p/ browsers sem color-mix. */
+:root header {
+  background: rgba(15, 23, 42, 0.95);
+  background: color-mix(in srgb, var(--bg-elevated) 95%, transparent);
+}
+
 :root.light .header-fixed,
 :root.light header {
   background: rgba(255, 255, 255, 0.9) !important;

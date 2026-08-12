@@ -32,7 +32,6 @@ export interface SobreTextos {
     readonly paragrafo1: string;
     readonly paragrafo2: string;
     readonly paragrafo3: string;
-    readonly botaoCV: string;
     readonly badgeBackend: string;
     readonly badgeAws: string;
     readonly badgeJunior: string;
@@ -118,6 +117,10 @@ export interface ItemCertificado {
     readonly status: string;
     readonly habilidades: readonly string[];
     readonly credencial: string;
+    /** URL da credencial. '#' quando ainda não há o que verificar.
+        Vive aqui, e não em array paralelo no .ts, para sobreviver a
+        reordenação e remoção de certificados. */
+    readonly credencialUrl: string;
     readonly botaoAcao: string;
 }
 
