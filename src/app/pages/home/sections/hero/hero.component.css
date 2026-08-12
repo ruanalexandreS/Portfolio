@@ -3,7 +3,7 @@
    ========================================================================== */
 :host {
     display: block;
-    min-height: 100vh;
+    min-height: 100dvh;
     background-color: var(--bg-base);
     font-family: 'Inter', system-ui, sans-serif;
     color: var(--text-primary);
@@ -19,7 +19,7 @@
    2. CONTAINER PAI (CONTROLE DE DISPOSIÇÃO)
    ========================================================================== */
 .hero-section {
-    min-height: 85vh;
+    min-height: 85dvh;
     display: flex;
     align-items: center;
     padding: 7rem 0 40px;
@@ -480,11 +480,16 @@
     }
 
     /* Órbita unificada: geometria desktop (550px) escalada por breakpoint.
-       .orbit-visual define o box de layout no tamanho visual; o flex
-       "unsafe center" mantém o stage centralizado mesmo transbordando. */
+       --orbit-scale é a fonte única: a caixa de layout é DERIVADA dela
+       (550 × escala), então visual e caixa nunca divergem — transform não
+       afeta layout, e caixa fluida com escala fixa só mudaria o bug de lugar.
+       Cada escala cabe na largura útil (viewport − 40px do .hero-wrapper)
+       no ponto MAIS ESTREITO da sua faixa, o que fecha o vão entre os
+       breakpoints sem precisar de um breakpoint pontual novo. */
     .orbit-visual {
-        width: 468px;   /* 550 × 0.85 */
-        height: 468px;
+        --orbit-scale: 0.80;   /* faixa 481–768px: 440px ≤ 441px úteis */
+        width: calc(550px * var(--orbit-scale));
+        height: calc(550px * var(--orbit-scale));
         display: flex;
         justify-content: center;
         align-items: center;
@@ -494,9 +499,18 @@
     .orbit-stage {
         flex-shrink: 0;
         margin: 0;
-        transform: scale(0.85);
+        transform: scale(var(--orbit-scale));
         transform-origin: center center;
         overflow: visible;
+    }
+
+    /* Glow encolhe junto: a 0.58 o halo de 40px vira 23px e estourava a
+       largura útil em 390px. 20px → 11,6px mantém o brilho dentro da caixa. */
+    .tech-node {
+        box-shadow:
+            0 0 10px rgba(37, 99, 235, 0.35),
+            0 0 20px rgba(37, 99, 235, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.07);
     }
 
     .hero-btns {
@@ -517,11 +531,21 @@
         width: 100%;
     }
 
+    /* 150px de piso + padding de desktop deixavam só ~3px de folga em 430px.
+       130px e padding lateral menor dão folga real sem depender do wrap. */
     .btn-primary,
     .btn-secondary {
         width: auto;
-        min-width: 150px;
+        min-width: 130px;
         justify-content: center;
+    }
+
+    .btn-primary {
+        padding: 13px 20px;
+    }
+
+    .btn-secondary {
+        padding: 11px 18px;
     }
 
     .social-row {
@@ -537,13 +561,9 @@
 }
 
 @media (max-width: 480px) {
+    /* Só a escala muda: width/height derivam dela via calc(). */
     .orbit-visual {
-        width: 358px;   /* 550 × 0.65 */
-        height: 358px;
-    }
-
-    .orbit-stage {
-        transform: scale(0.65);
+        --orbit-scale: 0.58;   /* faixa 361–480px: 319px ≤ 321px úteis */
     }
 }
 
@@ -555,11 +575,6 @@
 
 @media (max-width: 360px) {
     .orbit-visual {
-        width: 303px;   /* 550 × 0.55 */
-        height: 303px;
-    }
-
-    .orbit-stage {
-        transform: scale(0.55);
+        --orbit-scale: 0.50;   /* piso 320px: 275px ≤ 280px úteis */
     }
 }

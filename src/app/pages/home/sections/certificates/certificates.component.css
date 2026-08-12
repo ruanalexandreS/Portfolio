@@ -26,7 +26,9 @@
 
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* min(320px, 100%) impede o card de exigir 320px quando a coluna é
+       menor — em 360px o container só oferece 312px úteis (px-6). */
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }

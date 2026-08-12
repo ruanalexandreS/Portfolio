@@ -5,9 +5,9 @@ import { IdiomaService, Textos, Idioma } from '../../../../services/idioma.servi
 /* Mapa fechado idioma -> PDF: o caminho nunca é montado por concatenação
    do valor do idioma (evita path traversal); chave fora do mapa cai no PT. */
 const CURRICULOS: Record<Idioma, string> = {
-  PT: '/curriculo-pt.pdf',
-  EN: '/curriculo-en.pdf',
-  ES: '/curriculo-es.pdf'
+  PT: 'assets/curriculo-pt.pdf',
+  EN: 'assets/curriculo-en.pdf',
+  ES: 'assets/curriculo-es.pdf'
 };
 
 /* Nome do arquivo salvo pelo recrutador — não segue sufixo único (EN usa
